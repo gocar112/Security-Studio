@@ -7,7 +7,7 @@
  * is medium or low, because a vulnerable library is a review item and not
  * an interrupt.
  *
- * 931 rules, 931 of them for CISA KEV entries.
+ * 1427 rules, 1427 of them for CISA KEV entries.
  *
  */
 
@@ -20971,6 +20971,10991 @@ rule NVD_CVE_2021_22005_vmware_cloud_foundation : vulnerable_component kev
         $p3 = "cloud_foundation" nocase
         $v0 = "3.0"
         $v1 = "5.0"
+    condition:
+        any of ($p*) and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2021_22005_vmware_vcenter_server : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain vmware vcenter server, affected by CVE-2021-22005"
+        severity = "high"
+        cve = "CVE-2021-22005"
+        cvss = "9.8"
+        vendor = "vmware"
+        product = "vcenter_server"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2021-22005"
+    strings:
+        $p = "vcenter server" nocase
+        $p2 = "vcenter-server" nocase
+        $p3 = "vcenter_server" nocase
+        $v0 = "6.5"
+        $v1 = "6.7"
+        $v2 = "7.0"
+    condition:
+        any of ($p*) and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2021_22017_vmware_vcenter_server : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain vmware vcenter server, affected by CVE-2021-22017"
+        severity = "high"
+        cve = "CVE-2021-22017"
+        cvss = "5.3"
+        vendor = "vmware"
+        product = "vcenter_server"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2021-22017"
+    strings:
+        $p = "vcenter server" nocase
+        $p2 = "vcenter-server" nocase
+        $p3 = "vcenter_server" nocase
+        $v0 = "6.7"
+    condition:
+        any of ($p*) and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2021_22941_citrix_sharefile_storagezones_controlle : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain citrix sharefile storagezones controller, affected by CVE-2021-22941"
+        severity = "high"
+        cve = "CVE-2021-22941"
+        cvss = "9.8"
+        vendor = "citrix"
+        product = "sharefile_storagezones_controller"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2021-22941"
+    strings:
+        $p = "sharefile storagezones controller" nocase
+        $p2 = "sharefile-storagezones-controller" nocase
+        $p3 = "sharefile_storagezones_controller" nocase
+        $v0 = "5.11.20"
+    condition:
+        any of ($p*) and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2021_20035_sonicwall_sma_500v : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain sonicwall sma 500v, affected by CVE-2021-20035"
+        severity = "high"
+        cve = "CVE-2021-20035"
+        cvss = "6.5"
+        vendor = "sonicwall"
+        product = "sma_500v"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2021-20035"
+    strings:
+        $p = "sma 500v" nocase
+        $p2 = "sma-500v" nocase
+        $p3 = "sma_500v" nocase
+        $v0 = "10.2.0.0"
+        $v1 = "10.2.0.8-37sv"
+        $v2 = "10.2.1.0"
+        $v3 = "10.2.1.1-19sv"
+        $v4 = "9.0.0.11-31sv"
+    condition:
+        any of ($p*) and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2021_41773_apache_http_server : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain apache http server, affected by CVE-2021-41773"
+        severity = "high"
+        cve = "CVE-2021-41773"
+        cvss = "9.8"
+        vendor = "apache"
+        product = "http_server"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2021-41773"
+    strings:
+        $p = "http server" nocase
+        $p2 = "http-server" nocase
+        $p3 = "http_server" nocase
+        $v0 = "2.4.49"
+    condition:
+        any of ($p*) and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2021_41773_oracle_instantis_enterprisetrack : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain oracle instantis enterprisetrack, affected by CVE-2021-41773"
+        severity = "high"
+        cve = "CVE-2021-41773"
+        cvss = "9.8"
+        vendor = "oracle"
+        product = "instantis_enterprisetrack"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2021-41773"
+    strings:
+        $p = "instantis enterprisetrack" nocase
+        $p2 = "instantis-enterprisetrack" nocase
+        $p3 = "instantis_enterprisetrack" nocase
+        $v0 = "17.1"
+        $v1 = "17.2"
+        $v2 = "17.3"
+    condition:
+        any of ($p*) and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2021_39226_grafana_grafana : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain grafana grafana, affected by CVE-2021-39226"
+        severity = "high"
+        cve = "CVE-2021-39226"
+        cvss = "9.8"
+        vendor = "grafana"
+        product = "grafana"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2021-39226"
+    strings:
+        $p = "grafana" nocase
+        $v0 = "7.5.11"
+        $v1 = "8.0.0"
+        $v2 = "8.1.6"
+    condition:
+        $p and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2021_42013_apache_http_server : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain apache http server, affected by CVE-2021-42013"
+        severity = "high"
+        cve = "CVE-2021-42013"
+        cvss = "9.8"
+        vendor = "apache"
+        product = "http_server"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2021-42013"
+    strings:
+        $p = "http server" nocase
+        $p2 = "http-server" nocase
+        $p3 = "http_server" nocase
+        $v0 = "2.4.49"
+        $v1 = "2.4.50"
+    condition:
+        any of ($p*) and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2021_42013_oracle_instantis_enterprisetrack : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain oracle instantis enterprisetrack, affected by CVE-2021-42013"
+        severity = "high"
+        cve = "CVE-2021-42013"
+        cvss = "9.8"
+        vendor = "oracle"
+        product = "instantis_enterprisetrack"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2021-42013"
+    strings:
+        $p = "instantis enterprisetrack" nocase
+        $p2 = "instantis-enterprisetrack" nocase
+        $p3 = "instantis_enterprisetrack" nocase
+        $v0 = "17.1"
+        $v1 = "17.2"
+        $v2 = "17.3"
+    condition:
+        any of ($p*) and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2021_42013_oracle_jd_edwards_enterpriseone_tools : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain oracle jd edwards enterpriseone tools, affected by CVE-2021-42013"
+        severity = "high"
+        cve = "CVE-2021-42013"
+        cvss = "9.8"
+        vendor = "oracle"
+        product = "jd_edwards_enterpriseone_tools"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2021-42013"
+    strings:
+        $p = "jd edwards enterpriseone tools" nocase
+        $p2 = "jd-edwards-enterpriseone-tools" nocase
+        $p3 = "jd_edwards_enterpriseone_tools" nocase
+        $v0 = "9.2.6.0"
+    condition:
+        any of ($p*) and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2021_42013_oracle_secure_backup : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain oracle secure backup, affected by CVE-2021-42013"
+        severity = "high"
+        cve = "CVE-2021-42013"
+        cvss = "9.8"
+        vendor = "oracle"
+        product = "secure_backup"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2021-42013"
+    strings:
+        $p = "secure backup" nocase
+        $p2 = "secure-backup" nocase
+        $p3 = "secure_backup" nocase
+        $v0 = "18.1.0.1.0"
+    condition:
+        any of ($p*) and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2021_30632_google_chrome : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain google chrome, affected by CVE-2021-30632"
+        severity = "high"
+        cve = "CVE-2021-30632"
+        cvss = "8.8"
+        vendor = "google"
+        product = "chrome"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2021-30632"
+    strings:
+        $p = "chrome" nocase
+        $v0 = "93.0.4577.82"
+    condition:
+        $p and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2021_30633_google_chrome : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain google chrome, affected by CVE-2021-30633"
+        severity = "high"
+        cve = "CVE-2021-30633"
+        cvss = "9.6"
+        vendor = "google"
+        product = "chrome"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2021-30633"
+    strings:
+        $p = "chrome" nocase
+        $v0 = "93.0.4577.82"
+    condition:
+        $p and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2021_37973_google_chrome : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain google chrome, affected by CVE-2021-37973"
+        severity = "high"
+        cve = "CVE-2021-37973"
+        cvss = "9.6"
+        vendor = "google"
+        product = "chrome"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2021-37973"
+    strings:
+        $p = "chrome" nocase
+        $v0 = "94.0.4606.61"
+    condition:
+        $p and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2021_37975_google_chrome : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain google chrome, affected by CVE-2021-37975"
+        severity = "high"
+        cve = "CVE-2021-37975"
+        cvss = "8.8"
+        vendor = "google"
+        product = "chrome"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2021-37975"
+    strings:
+        $p = "chrome" nocase
+        $v0 = "94.0.4606.71"
+    condition:
+        $p and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2021_37976_google_chrome : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain google chrome, affected by CVE-2021-37976"
+        severity = "high"
+        cve = "CVE-2021-37976"
+        cvss = "6.5"
+        vendor = "google"
+        product = "chrome"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2021-37976"
+    strings:
+        $p = "chrome" nocase
+        $v0 = "94.0.4606.71"
+    condition:
+        $p and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2021_20123_draytek_vigorconnect : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain draytek vigorconnect, affected by CVE-2021-20123"
+        severity = "high"
+        cve = "CVE-2021-20123"
+        cvss = "7.5"
+        vendor = "draytek"
+        product = "vigorconnect"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2021-20123"
+    strings:
+        $p = "vigorconnect" nocase
+        $v0 = "1.6.0"
+    condition:
+        $p and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2021_20124_draytek_vigorconnect : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain draytek vigorconnect, affected by CVE-2021-20124"
+        severity = "high"
+        cve = "CVE-2021-20124"
+        cvss = "7.5"
+        vendor = "draytek"
+        product = "vigorconnect"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2021-20124"
+    strings:
+        $p = "vigorconnect" nocase
+        $v0 = "1.6.0"
+    condition:
+        $p and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2021_27561_yealink_device_management : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain yealink device management, affected by CVE-2021-27561"
+        severity = "high"
+        cve = "CVE-2021-27561"
+        cvss = "9.8"
+        vendor = "yealink"
+        product = "device_management"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2021-27561"
+    strings:
+        $p = "device management" nocase
+        $p2 = "device-management" nocase
+        $p3 = "device_management" nocase
+        $v0 = "3.6.0.20"
+    condition:
+        any of ($p*) and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2021_42258_bqe_billquick_web_suite : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain bqe billquick web suite, affected by CVE-2021-42258"
+        severity = "high"
+        cve = "CVE-2021-42258"
+        cvss = "9.8"
+        vendor = "bqe"
+        product = "billquick_web_suite"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2021-42258"
+    strings:
+        $p = "billquick web suite" nocase
+        $p2 = "billquick-web-suite" nocase
+        $p3 = "billquick_web_suite" nocase
+        $v0 = "22.0.9.1"
+    condition:
+        any of ($p*) and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2021_42237_sitecore_experience_platform : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain sitecore experience platform, affected by CVE-2021-42237"
+        severity = "high"
+        cve = "CVE-2021-42237"
+        cvss = "9.8"
+        vendor = "sitecore"
+        product = "experience_platform"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2021-42237"
+    strings:
+        $p = "experience platform" nocase
+        $p2 = "experience-platform" nocase
+        $p3 = "experience_platform" nocase
+        $v0 = "7.5"
+        $v1 = "8.0"
+        $v2 = "8.1"
+        $v3 = "8.2"
+    condition:
+        any of ($p*) and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2021_41277_metabase_metabase : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain metabase metabase, affected by CVE-2021-41277"
+        severity = "high"
+        cve = "CVE-2021-41277"
+        cvss = "10.0"
+        vendor = "metabase"
+        product = "metabase"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2021-41277"
+    strings:
+        $p = "metabase" nocase
+        $v0 = "0.40.0"
+        $v1 = "0.40.1"
+        $v2 = "0.40.2"
+        $v3 = "0.40.3"
+        $v4 = "0.40.4"
+        $v5 = "1.40.0"
+        $v6 = "1.40.1"
+        $v7 = "1.40.2"
+        $v8 = "1.40.3"
+        $v9 = "1.40.4"
+    condition:
+        $p and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2021_44026_roundcube_webmail : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain roundcube webmail, affected by CVE-2021-44026"
+        severity = "high"
+        cve = "CVE-2021-44026"
+        cvss = "9.8"
+        vendor = "roundcube"
+        product = "webmail"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2021-44026"
+    strings:
+        $p = "webmail" nocase
+        $v0 = "1.3.17"
+        $v1 = "1.4.0"
+        $v2 = "1.4.12"
+    condition:
+        $p and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2021_38000_google_chrome : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain google chrome, affected by CVE-2021-38000"
+        severity = "high"
+        cve = "CVE-2021-38000"
+        cvss = "6.1"
+        vendor = "google"
+        product = "chrome"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2021-38000"
+    strings:
+        $p = "chrome" nocase
+        $v0 = "95.0.4638.69"
+    condition:
+        $p and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2021_38003_google_chrome : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain google chrome, affected by CVE-2021-38003"
+        severity = "high"
+        cve = "CVE-2021-38003"
+        cvss = "8.8"
+        vendor = "google"
+        product = "chrome"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2021-38003"
+    strings:
+        $p = "chrome" nocase
+        $v0 = "95.0.4638.69"
+    condition:
+        $p and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2021_44077_zohocorp_manageengine_servicedesk_plus : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain zohocorp manageengine servicedesk plus, affected by CVE-2021-44077"
+        severity = "high"
+        cve = "CVE-2021-44077"
+        cvss = "9.8"
+        vendor = "zohocorp"
+        product = "manageengine_servicedesk_plus"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2021-44077"
+    strings:
+        $p = "manageengine servicedesk plus" nocase
+        $p2 = "manageengine-servicedesk-plus" nocase
+        $p3 = "manageengine_servicedesk_plus" nocase
+        $v0 = "11.1"
+        $v1 = "11.2"
+        $v2 = "11.3"
+    condition:
+        any of ($p*) and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2021_44077_zohocorp_manageengine_servicedesk_plus_ms : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain zohocorp manageengine servicedesk plus msp, affected by CVE-2021-44077"
+        severity = "high"
+        cve = "CVE-2021-44077"
+        cvss = "9.8"
+        vendor = "zohocorp"
+        product = "manageengine_servicedesk_plus_msp"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2021-44077"
+    strings:
+        $p = "manageengine servicedesk plus msp" nocase
+        $p2 = "manageengine-servicedesk-plus-msp" nocase
+        $p3 = "manageengine_servicedesk_plus_msp" nocase
+        $v0 = "10.5"
+    condition:
+        any of ($p*) and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2021_44077_zohocorp_manageengine_supportcenter_plus : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain zohocorp manageengine supportcenter plus, affected by CVE-2021-44077"
+        severity = "high"
+        cve = "CVE-2021-44077"
+        cvss = "9.8"
+        vendor = "zohocorp"
+        product = "manageengine_supportcenter_plus"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2021-44077"
+    strings:
+        $p = "manageengine supportcenter plus" nocase
+        $p2 = "manageengine-supportcenter-plus" nocase
+        $p3 = "manageengine_supportcenter_plus" nocase
+        $v0 = "11.0"
+    condition:
+        any of ($p*) and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2021_23758_michaelschwarz_ajax_net_professional : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain michaelschwarz ajax.net professional, affected by CVE-2021-23758"
+        severity = "high"
+        cve = "CVE-2021-23758"
+        cvss = "8.1"
+        vendor = "michaelschwarz"
+        product = "ajax.net_professional"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2021-23758"
+    strings:
+        $p = "ajax.net professional" nocase
+        $p2 = "ajax.net-professional" nocase
+        $p3 = "ajax.net_professional" nocase
+        $v0 = "21.10.30.1"
+    condition:
+        any of ($p*) and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2021_43798_grafana_grafana : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain grafana grafana, affected by CVE-2021-43798"
+        severity = "high"
+        cve = "CVE-2021-43798"
+        cvss = "7.5"
+        vendor = "grafana"
+        product = "grafana"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2021-43798"
+    strings:
+        $p = "grafana" nocase
+        $v0 = "8.0.0"
+        $v1 = "8.0.1"
+        $v2 = "8.0.7"
+        $v3 = "8.1.0"
+        $v4 = "8.1.8"
+        $v5 = "8.2.0"
+        $v6 = "8.2.7"
+        $v7 = "8.3.0"
+    condition:
+        $p and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2021_44529_ivanti_endpoint_manager_cloud_services : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain ivanti endpoint manager cloud services appliance, affected by CVE-2021-44529"
+        severity = "high"
+        cve = "CVE-2021-44529"
+        cvss = "9.8"
+        vendor = "ivanti"
+        product = "endpoint_manager_cloud_services_appliance"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2021-44529"
+    strings:
+        $p = "endpoint manager cloud services appliance" nocase
+        $p2 = "endpoint-manager-cloud-services-appliance" nocase
+        $p3 = "endpoint_manager_cloud_services_appliance" nocase
+        $v0 = "4.5"
+        $v1 = "4.6"
+    condition:
+        any of ($p*) and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2021_44228_apache_log4j : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain apache log4j, affected by CVE-2021-44228"
+        severity = "high"
+        cve = "CVE-2021-44228"
+        cvss = "10.0"
+        vendor = "apache"
+        product = "log4j"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2021-44228"
+    strings:
+        $p = "log4j" nocase
+        $v0 = "2.0"
+        $v1 = "2.0.1"
+        $v2 = "2.12.2"
+        $v3 = "2.13.0"
+        $v4 = "2.15.0"
+        $v5 = "2.3.1"
+        $v6 = "2.4.0"
+    condition:
+        $p and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2021_44228_siemens_capital : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain siemens capital, affected by CVE-2021-44228"
+        severity = "high"
+        cve = "CVE-2021-44228"
+        cvss = "10.0"
+        vendor = "siemens"
+        product = "capital"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2021-44228"
+    strings:
+        $p = "capital" nocase
+        $v0 = "2019.1"
+    condition:
+        $p and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2021_44228_siemens_comos : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain siemens comos, affected by CVE-2021-44228"
+        severity = "high"
+        cve = "CVE-2021-44228"
+        cvss = "10.0"
+        vendor = "siemens"
+        product = "comos"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2021-44228"
+    strings:
+        $p = "comos" nocase
+        $v0 = "10.4.2"
+    condition:
+        $p and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2021_44228_siemens_desigo_cc_advanced_reports : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain siemens desigo cc advanced reports, affected by CVE-2021-44228"
+        severity = "high"
+        cve = "CVE-2021-44228"
+        cvss = "10.0"
+        vendor = "siemens"
+        product = "desigo_cc_advanced_reports"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2021-44228"
+    strings:
+        $p = "desigo cc advanced reports" nocase
+        $p2 = "desigo-cc-advanced-reports" nocase
+        $p3 = "desigo_cc_advanced_reports" nocase
+        $v0 = "3.0"
+        $v1 = "4.0"
+        $v2 = "4.1"
+        $v3 = "4.2"
+        $v4 = "5.0"
+        $v5 = "5.1"
+    condition:
+        any of ($p*) and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2021_44228_siemens_desigo_cc_info_center : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain siemens desigo cc info center, affected by CVE-2021-44228"
+        severity = "high"
+        cve = "CVE-2021-44228"
+        cvss = "10.0"
+        vendor = "siemens"
+        product = "desigo_cc_info_center"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2021-44228"
+    strings:
+        $p = "desigo cc info center" nocase
+        $p2 = "desigo-cc-info-center" nocase
+        $p3 = "desigo_cc_info_center" nocase
+        $v0 = "5.0"
+        $v1 = "5.1"
+    condition:
+        any of ($p*) and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2021_44228_siemens_energy_engage : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain siemens energy engage, affected by CVE-2021-44228"
+        severity = "high"
+        cve = "CVE-2021-44228"
+        cvss = "10.0"
+        vendor = "siemens"
+        product = "energy_engage"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2021-44228"
+    strings:
+        $p = "energy engage" nocase
+        $p2 = "energy-engage" nocase
+        $p3 = "energy_engage" nocase
+        $v0 = "3.1"
+    condition:
+        any of ($p*) and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2021_44228_siemens_energyip : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain siemens energyip, affected by CVE-2021-44228"
+        severity = "high"
+        cve = "CVE-2021-44228"
+        cvss = "10.0"
+        vendor = "siemens"
+        product = "energyip"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2021-44228"
+    strings:
+        $p = "energyip" nocase
+        $v0 = "8.5"
+        $v1 = "8.6"
+        $v2 = "8.7"
+        $v3 = "9.0"
+    condition:
+        $p and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2021_44228_siemens_energyip_prepay : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain siemens energyip prepay, affected by CVE-2021-44228"
+        severity = "high"
+        cve = "CVE-2021-44228"
+        cvss = "10.0"
+        vendor = "siemens"
+        product = "energyip_prepay"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2021-44228"
+    strings:
+        $p = "energyip prepay" nocase
+        $p2 = "energyip-prepay" nocase
+        $p3 = "energyip_prepay" nocase
+        $v0 = "3.8.0.12"
+    condition:
+        any of ($p*) and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2021_44228_siemens_opcenter_intelligence : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain siemens opcenter intelligence, affected by CVE-2021-44228"
+        severity = "high"
+        cve = "CVE-2021-44228"
+        cvss = "10.0"
+        vendor = "siemens"
+        product = "opcenter_intelligence"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2021-44228"
+    strings:
+        $p = "opcenter intelligence" nocase
+        $p2 = "opcenter-intelligence" nocase
+        $p3 = "opcenter_intelligence" nocase
+        $v0 = "3.2"
+        $v1 = "3.5"
+    condition:
+        any of ($p*) and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2021_44228_siemens_operation_scheduler : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain siemens operation scheduler, affected by CVE-2021-44228"
+        severity = "high"
+        cve = "CVE-2021-44228"
+        cvss = "10.0"
+        vendor = "siemens"
+        product = "operation_scheduler"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2021-44228"
+    strings:
+        $p = "operation scheduler" nocase
+        $p2 = "operation-scheduler" nocase
+        $p3 = "operation_scheduler" nocase
+        $v0 = "1.1.3"
+    condition:
+        any of ($p*) and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2021_44228_siemens_sentron_powermanager : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain siemens sentron powermanager, affected by CVE-2021-44228"
+        severity = "high"
+        cve = "CVE-2021-44228"
+        cvss = "10.0"
+        vendor = "siemens"
+        product = "sentron_powermanager"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2021-44228"
+    strings:
+        $p = "sentron powermanager" nocase
+        $p2 = "sentron-powermanager" nocase
+        $p3 = "sentron_powermanager" nocase
+        $v0 = "4.1"
+        $v1 = "4.2"
+    condition:
+        any of ($p*) and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2021_44228_siemens_siguard_dsa : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain siemens siguard dsa, affected by CVE-2021-44228"
+        severity = "high"
+        cve = "CVE-2021-44228"
+        cvss = "10.0"
+        vendor = "siemens"
+        product = "siguard_dsa"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2021-44228"
+    strings:
+        $p = "siguard dsa" nocase
+        $p2 = "siguard-dsa" nocase
+        $p3 = "siguard_dsa" nocase
+        $v0 = "4.2"
+        $v1 = "4.4.1"
+    condition:
+        any of ($p*) and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2021_44228_siemens_sipass_integrated : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain siemens sipass integrated, affected by CVE-2021-44228"
+        severity = "high"
+        cve = "CVE-2021-44228"
+        cvss = "10.0"
+        vendor = "siemens"
+        product = "sipass_integrated"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2021-44228"
+    strings:
+        $p = "sipass integrated" nocase
+        $p2 = "sipass-integrated" nocase
+        $p3 = "sipass_integrated" nocase
+        $v0 = "2.80"
+        $v1 = "2.85"
+    condition:
+        any of ($p*) and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2021_44228_siemens_siveillance_command : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain siemens siveillance command, affected by CVE-2021-44228"
+        severity = "high"
+        cve = "CVE-2021-44228"
+        cvss = "10.0"
+        vendor = "siemens"
+        product = "siveillance_command"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2021-44228"
+    strings:
+        $p = "siveillance command" nocase
+        $p2 = "siveillance-command" nocase
+        $p3 = "siveillance_command" nocase
+        $v0 = "4.16.2.1"
+    condition:
+        any of ($p*) and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2021_44228_siemens_siveillance_identity : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain siemens siveillance identity, affected by CVE-2021-44228"
+        severity = "high"
+        cve = "CVE-2021-44228"
+        cvss = "10.0"
+        vendor = "siemens"
+        product = "siveillance_identity"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2021-44228"
+    strings:
+        $p = "siveillance identity" nocase
+        $p2 = "siveillance-identity" nocase
+        $p3 = "siveillance_identity" nocase
+        $v0 = "1.5"
+        $v1 = "1.6"
+    condition:
+        any of ($p*) and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2021_44228_siemens_spectrum_power_4 : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain siemens spectrum power 4, affected by CVE-2021-44228"
+        severity = "high"
+        cve = "CVE-2021-44228"
+        cvss = "10.0"
+        vendor = "siemens"
+        product = "spectrum_power_4"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2021-44228"
+    strings:
+        $p = "spectrum power 4" nocase
+        $p2 = "spectrum-power-4" nocase
+        $p3 = "spectrum_power_4" nocase
+        $v0 = "4.70"
+    condition:
+        any of ($p*) and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2021_44228_siemens_spectrum_power_7 : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain siemens spectrum power 7, affected by CVE-2021-44228"
+        severity = "high"
+        cve = "CVE-2021-44228"
+        cvss = "10.0"
+        vendor = "siemens"
+        product = "spectrum_power_7"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2021-44228"
+    strings:
+        $p = "spectrum power 7" nocase
+        $p2 = "spectrum-power-7" nocase
+        $p3 = "spectrum_power_7" nocase
+        $v0 = "2.30"
+    condition:
+        any of ($p*) and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2021_44228_siemens_vesys : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain siemens vesys, affected by CVE-2021-44228"
+        severity = "high"
+        cve = "CVE-2021-44228"
+        cvss = "10.0"
+        vendor = "siemens"
+        product = "vesys"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2021-44228"
+    strings:
+        $p = "vesys" nocase
+        $v0 = "2019.1"
+        $v1 = "2020.1"
+        $v2 = "2021.1"
+    condition:
+        $p and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2021_44228_intel_datacenter_manager : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain intel datacenter manager, affected by CVE-2021-44228"
+        severity = "high"
+        cve = "CVE-2021-44228"
+        cvss = "10.0"
+        vendor = "intel"
+        product = "datacenter_manager"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2021-44228"
+    strings:
+        $p = "datacenter manager" nocase
+        $p2 = "datacenter-manager" nocase
+        $p3 = "datacenter_manager" nocase
+        $v0 = "5.1"
+    condition:
+        any of ($p*) and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2021_44228_sonicwall_email_security : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain sonicwall email security, affected by CVE-2021-44228"
+        severity = "high"
+        cve = "CVE-2021-44228"
+        cvss = "10.0"
+        vendor = "sonicwall"
+        product = "email_security"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2021-44228"
+    strings:
+        $p = "email security" nocase
+        $p2 = "email-security" nocase
+        $p3 = "email_security" nocase
+        $v0 = "10.0.13"
+    condition:
+        any of ($p*) and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2021_44228_cisco_advanced_malware_protection_virt : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain cisco advanced malware protection virtual private cloud appliance, affected by CVE-2021-44228"
+        severity = "high"
+        cve = "CVE-2021-44228"
+        cvss = "10.0"
+        vendor = "cisco"
+        product = "advanced_malware_protection_virtual_private_cloud_appliance"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2021-44228"
+    strings:
+        $p = "advanced malware protection virtual private cloud appliance" nocase
+        $p2 = "advanced-malware-protection-virtual-private-cloud-appliance" nocase
+        $p3 = "advanced_malware_protection_virtual_private_cloud_appliance" nocase
+        $v0 = "3.5.4"
+    condition:
+        any of ($p*) and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2021_44228_cisco_automated_subsea_tuning : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain cisco automated subsea tuning, affected by CVE-2021-44228"
+        severity = "high"
+        cve = "CVE-2021-44228"
+        cvss = "10.0"
+        vendor = "cisco"
+        product = "automated_subsea_tuning"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2021-44228"
+    strings:
+        $p = "automated subsea tuning" nocase
+        $p2 = "automated-subsea-tuning" nocase
+        $p3 = "automated_subsea_tuning" nocase
+        $v0 = "02.01.00"
+        $v1 = "2.1.0"
+    condition:
+        any of ($p*) and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2021_44228_cisco_business_process_automation : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain cisco business process automation, affected by CVE-2021-44228"
+        severity = "high"
+        cve = "CVE-2021-44228"
+        cvss = "10.0"
+        vendor = "cisco"
+        product = "business_process_automation"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2021-44228"
+    strings:
+        $p = "business process automation" nocase
+        $p2 = "business-process-automation" nocase
+        $p3 = "business_process_automation" nocase
+        $v0 = "3.0.000.115"
+        $v1 = "3.1.000.000"
+        $v2 = "3.1.000.044"
+        $v3 = "3.2.000.000"
+        $v4 = "3.2.000.009"
+    condition:
+        any of ($p*) and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2021_44228_cisco_cloudcenter : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain cisco cloudcenter, affected by CVE-2021-44228"
+        severity = "high"
+        cve = "CVE-2021-44228"
+        cvss = "10.0"
+        vendor = "cisco"
+        product = "cloudcenter"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2021-44228"
+    strings:
+        $p = "cloudcenter" nocase
+        $v0 = "4.10.0.16"
+    condition:
+        $p and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2021_44228_cisco_cloudcenter_cost_optimizer : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain cisco cloudcenter cost optimizer, affected by CVE-2021-44228"
+        severity = "high"
+        cve = "CVE-2021-44228"
+        cvss = "10.0"
+        vendor = "cisco"
+        product = "cloudcenter_cost_optimizer"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2021-44228"
+    strings:
+        $p = "cloudcenter cost optimizer" nocase
+        $p2 = "cloudcenter-cost-optimizer" nocase
+        $p3 = "cloudcenter_cost_optimizer" nocase
+        $v0 = "5.5.2"
+    condition:
+        any of ($p*) and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2021_44228_cisco_cloudcenter_suite_admin : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain cisco cloudcenter suite admin, affected by CVE-2021-44228"
+        severity = "high"
+        cve = "CVE-2021-44228"
+        cvss = "10.0"
+        vendor = "cisco"
+        product = "cloudcenter_suite_admin"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2021-44228"
+    strings:
+        $p = "cloudcenter suite admin" nocase
+        $p2 = "cloudcenter-suite-admin" nocase
+        $p3 = "cloudcenter_suite_admin" nocase
+        $v0 = "5.3.1"
+    condition:
+        any of ($p*) and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2021_44228_cisco_cloudcenter_workload_manager : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain cisco cloudcenter workload manager, affected by CVE-2021-44228"
+        severity = "high"
+        cve = "CVE-2021-44228"
+        cvss = "10.0"
+        vendor = "cisco"
+        product = "cloudcenter_workload_manager"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2021-44228"
+    strings:
+        $p = "cloudcenter workload manager" nocase
+        $p2 = "cloudcenter-workload-manager" nocase
+        $p3 = "cloudcenter_workload_manager" nocase
+        $v0 = "5.5.2"
+    condition:
+        any of ($p*) and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2021_44228_cisco_common_services_platform_collect : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain cisco common services platform collector, affected by CVE-2021-44228"
+        severity = "high"
+        cve = "CVE-2021-44228"
+        cvss = "10.0"
+        vendor = "cisco"
+        product = "common_services_platform_collector"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2021-44228"
+    strings:
+        $p = "common services platform collector" nocase
+        $p2 = "common-services-platform-collector" nocase
+        $p3 = "common_services_platform_collector" nocase
+        $v0 = "2.10.0"
+        $v1 = "2.10.0.1"
+        $v2 = "2.9.1.3"
+    condition:
+        any of ($p*) and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2021_44228_cisco_crosswork_data_gateway : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain cisco crosswork data gateway, affected by CVE-2021-44228"
+        severity = "high"
+        cve = "CVE-2021-44228"
+        cvss = "10.0"
+        vendor = "cisco"
+        product = "crosswork_data_gateway"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2021-44228"
+    strings:
+        $p = "crosswork data gateway" nocase
+        $p2 = "crosswork-data-gateway" nocase
+        $p3 = "crosswork_data_gateway" nocase
+        $v0 = "2.0.2"
+        $v1 = "3.0.0"
+    condition:
+        any of ($p*) and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2021_44228_cisco_crosswork_network_controller : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain cisco crosswork network controller, affected by CVE-2021-44228"
+        severity = "high"
+        cve = "CVE-2021-44228"
+        cvss = "10.0"
+        vendor = "cisco"
+        product = "crosswork_network_controller"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2021-44228"
+    strings:
+        $p = "crosswork network controller" nocase
+        $p2 = "crosswork-network-controller" nocase
+        $p3 = "crosswork_network_controller" nocase
+        $v0 = "2.0.1"
+        $v1 = "3.0.0"
+    condition:
+        any of ($p*) and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2021_44228_cisco_crosswork_optimization_engine : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain cisco crosswork optimization engine, affected by CVE-2021-44228"
+        severity = "high"
+        cve = "CVE-2021-44228"
+        cvss = "10.0"
+        vendor = "cisco"
+        product = "crosswork_optimization_engine"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2021-44228"
+    strings:
+        $p = "crosswork optimization engine" nocase
+        $p2 = "crosswork-optimization-engine" nocase
+        $p3 = "crosswork_optimization_engine" nocase
+        $v0 = "2.0.1"
+        $v1 = "3.0.0"
+    condition:
+        any of ($p*) and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2021_44228_cisco_crosswork_platform_infrastructur : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain cisco crosswork platform infrastructure, affected by CVE-2021-44228"
+        severity = "high"
+        cve = "CVE-2021-44228"
+        cvss = "10.0"
+        vendor = "cisco"
+        product = "crosswork_platform_infrastructure"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2021-44228"
+    strings:
+        $p = "crosswork platform infrastructure" nocase
+        $p2 = "crosswork-platform-infrastructure" nocase
+        $p3 = "crosswork_platform_infrastructure" nocase
+        $v0 = "4.0.1"
+        $v1 = "4.1.0"
+    condition:
+        any of ($p*) and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2021_44228_cisco_crosswork_zero_touch_provisionin : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain cisco crosswork zero touch provisioning, affected by CVE-2021-44228"
+        severity = "high"
+        cve = "CVE-2021-44228"
+        cvss = "10.0"
+        vendor = "cisco"
+        product = "crosswork_zero_touch_provisioning"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2021-44228"
+    strings:
+        $p = "crosswork zero touch provisioning" nocase
+        $p2 = "crosswork-zero-touch-provisioning" nocase
+        $p3 = "crosswork_zero_touch_provisioning" nocase
+        $v0 = "2.0.1"
+        $v1 = "3.0.0"
+    condition:
+        any of ($p*) and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2021_44228_cisco_customer_experience_cloud_agent : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain cisco customer experience cloud agent, affected by CVE-2021-44228"
+        severity = "high"
+        cve = "CVE-2021-44228"
+        cvss = "10.0"
+        vendor = "cisco"
+        product = "customer_experience_cloud_agent"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2021-44228"
+    strings:
+        $p = "customer experience cloud agent" nocase
+        $p2 = "customer-experience-cloud-agent" nocase
+        $p3 = "customer_experience_cloud_agent" nocase
+        $v0 = "1.12.1"
+    condition:
+        any of ($p*) and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2021_44228_cisco_cyber_vision_sensor_management_e : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain cisco cyber vision sensor management extension, affected by CVE-2021-44228"
+        severity = "high"
+        cve = "CVE-2021-44228"
+        cvss = "10.0"
+        vendor = "cisco"
+        product = "cyber_vision_sensor_management_extension"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2021-44228"
+    strings:
+        $p = "cyber vision sensor management extension" nocase
+        $p2 = "cyber-vision-sensor-management-extension" nocase
+        $p3 = "cyber_vision_sensor_management_extension" nocase
+        $v0 = "4.0.2"
+        $v1 = "4.0.3"
+    condition:
+        any of ($p*) and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2021_44228_cisco_dna_center : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain cisco dna center, affected by CVE-2021-44228"
+        severity = "high"
+        cve = "CVE-2021-44228"
+        cvss = "10.0"
+        vendor = "cisco"
+        product = "dna_center"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2021-44228"
+    strings:
+        $p = "dna center" nocase
+        $p2 = "dna-center" nocase
+        $p3 = "dna_center" nocase
+        $v0 = "2.1.2.8"
+        $v1 = "2.2.2.0"
+        $v2 = "2.2.2.8"
+        $v3 = "2.2.3.0"
+        $v4 = "2.2.3.4"
+    condition:
+        any of ($p*) and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2021_44228_cisco_evolved_programmable_network_man : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain cisco evolved programmable network manager, affected by CVE-2021-44228"
+        severity = "high"
+        cve = "CVE-2021-44228"
+        cvss = "10.0"
+        vendor = "cisco"
+        product = "evolved_programmable_network_manager"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2021-44228"
+    strings:
+        $p = "evolved programmable network manager" nocase
+        $p2 = "evolved-programmable-network-manager" nocase
+        $p3 = "evolved_programmable_network_manager" nocase
+        $v0 = "3.0"
+        $v1 = "3.1"
+        $v2 = "4.0"
+        $v3 = "4.1"
+        $v4 = "4.1.1"
+        $v5 = "5.0"
+        $v6 = "5.1"
+    condition:
+        any of ($p*) and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2021_44228_cisco_identity_services_engine : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain cisco identity services engine, affected by CVE-2021-44228"
+        severity = "high"
+        cve = "CVE-2021-44228"
+        cvss = "10.0"
+        vendor = "cisco"
+        product = "identity_services_engine"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2021-44228"
+    strings:
+        $p = "identity services engine" nocase
+        $p2 = "identity-services-engine" nocase
+        $p3 = "identity_services_engine" nocase
+        $v0 = "2.4.0"
+    condition:
+        any of ($p*) and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2021_44228_cisco_integrated_management_controller : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain cisco integrated management controller supervisor, affected by CVE-2021-44228"
+        severity = "high"
+        cve = "CVE-2021-44228"
+        cvss = "10.0"
+        vendor = "cisco"
+        product = "integrated_management_controller_supervisor"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2021-44228"
+    strings:
+        $p = "integrated management controller supervisor" nocase
+        $p2 = "integrated-management-controller-supervisor" nocase
+        $p3 = "integrated_management_controller_supervisor" nocase
+        $v0 = "2.3.2.0"
+        $v1 = "2.3.2.1"
+    condition:
+        any of ($p*) and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2021_44228_cisco_intersight_virtual_appliance : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain cisco intersight virtual appliance, affected by CVE-2021-44228"
+        severity = "high"
+        cve = "CVE-2021-44228"
+        cvss = "10.0"
+        vendor = "cisco"
+        product = "intersight_virtual_appliance"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2021-44228"
+    strings:
+        $p = "intersight virtual appliance" nocase
+        $p2 = "intersight-virtual-appliance" nocase
+        $p3 = "intersight_virtual_appliance" nocase
+        $v0 = "1.0.9-343"
+        $v1 = "1.0.9-361"
+    condition:
+        any of ($p*) and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2021_44228_cisco_network_assurance_engine : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain cisco network assurance engine, affected by CVE-2021-44228"
+        severity = "high"
+        cve = "CVE-2021-44228"
+        cvss = "10.0"
+        vendor = "cisco"
+        product = "network_assurance_engine"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2021-44228"
+    strings:
+        $p = "network assurance engine" nocase
+        $p2 = "network-assurance-engine" nocase
+        $p3 = "network_assurance_engine" nocase
+        $v0 = "6.0.2"
+    condition:
+        any of ($p*) and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2021_44228_cisco_network_services_orchestrator : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain cisco network services orchestrator, affected by CVE-2021-44228"
+        severity = "high"
+        cve = "CVE-2021-44228"
+        cvss = "10.0"
+        vendor = "cisco"
+        product = "network_services_orchestrator"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2021-44228"
+    strings:
+        $p = "network services orchestrator" nocase
+        $p2 = "network-services-orchestrator" nocase
+        $p3 = "network_services_orchestrator" nocase
+        $v0 = "5.3.5.1"
+        $v1 = "5.4"
+        $v2 = "5.4.5.2"
+        $v3 = "5.5"
+        $v4 = "5.5.4.1"
+        $v5 = "5.6"
+        $v6 = "5.6.3.1"
+    condition:
+        any of ($p*) and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2021_44228_cisco_nexus_dashboard : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain cisco nexus dashboard, affected by CVE-2021-44228"
+        severity = "high"
+        cve = "CVE-2021-44228"
+        cvss = "10.0"
+        vendor = "cisco"
+        product = "nexus_dashboard"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2021-44228"
+    strings:
+        $p = "nexus dashboard" nocase
+        $p2 = "nexus-dashboard" nocase
+        $p3 = "nexus_dashboard" nocase
+        $v0 = "2.1.2"
+    condition:
+        any of ($p*) and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2021_44228_cisco_nexus_insights : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain cisco nexus insights, affected by CVE-2021-44228"
+        severity = "high"
+        cve = "CVE-2021-44228"
+        cvss = "10.0"
+        vendor = "cisco"
+        product = "nexus_insights"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2021-44228"
+    strings:
+        $p = "nexus insights" nocase
+        $p2 = "nexus-insights" nocase
+        $p3 = "nexus_insights" nocase
+        $v0 = "6.0.2"
+    condition:
+        any of ($p*) and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2021_44228_cisco_optical_network_controller : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain cisco optical network controller, affected by CVE-2021-44228"
+        severity = "high"
+        cve = "CVE-2021-44228"
+        cvss = "10.0"
+        vendor = "cisco"
+        product = "optical_network_controller"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2021-44228"
+    strings:
+        $p = "optical network controller" nocase
+        $p2 = "optical-network-controller" nocase
+        $p3 = "optical_network_controller" nocase
+        $v0 = "1.1"
+        $v1 = "1.1.0"
+    condition:
+        any of ($p*) and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2021_44228_cisco_packaged_contact_center_enterpri : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain cisco packaged contact center enterprise, affected by CVE-2021-44228"
+        severity = "high"
+        cve = "CVE-2021-44228"
+        cvss = "10.0"
+        vendor = "cisco"
+        product = "packaged_contact_center_enterprise"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2021-44228"
+    strings:
+        $p = "packaged contact center enterprise" nocase
+        $p2 = "packaged-contact-center-enterprise" nocase
+        $p3 = "packaged_contact_center_enterprise" nocase
+        $v0 = "11.6"
+    condition:
+        any of ($p*) and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2021_44228_cisco_paging_server : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain cisco paging server, affected by CVE-2021-44228"
+        severity = "high"
+        cve = "CVE-2021-44228"
+        cvss = "10.0"
+        vendor = "cisco"
+        product = "paging_server"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2021-44228"
+    strings:
+        $p = "paging server" nocase
+        $p2 = "paging-server" nocase
+        $p3 = "paging_server" nocase
+        $v0 = "14.4.1"
+    condition:
+        any of ($p*) and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2021_44228_cisco_prime_service_catalog : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain cisco prime service catalog, affected by CVE-2021-44228"
+        severity = "high"
+        cve = "CVE-2021-44228"
+        cvss = "10.0"
+        vendor = "cisco"
+        product = "prime_service_catalog"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2021-44228"
+    strings:
+        $p = "prime service catalog" nocase
+        $p2 = "prime-service-catalog" nocase
+        $p3 = "prime_service_catalog" nocase
+        $v0 = "12.1"
+    condition:
+        any of ($p*) and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2021_44228_cisco_sd_wan_vmanage : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain cisco sd-wan vmanage, affected by CVE-2021-44228"
+        severity = "high"
+        cve = "CVE-2021-44228"
+        cvss = "10.0"
+        vendor = "cisco"
+        product = "sd-wan_vmanage"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2021-44228"
+    strings:
+        $p = "sd-wan vmanage" nocase
+        $p2 = "sd-wan-vmanage" nocase
+        $p3 = "sd-wan_vmanage" nocase
+        $v0 = "20.3"
+        $v1 = "20.3.4.1"
+        $v2 = "20.4"
+        $v3 = "20.4.2.1"
+        $v4 = "20.5"
+        $v5 = "20.5.1.1"
+        $v6 = "20.6"
+        $v7 = "20.6.1"
+        $v8 = "20.6.2.1"
+        $v9 = "20.7"
+        $v10 = "20.8"
+    condition:
+        any of ($p*) and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2021_44228_cisco_smart_phy : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain cisco smart phy, affected by CVE-2021-44228"
+        severity = "high"
+        cve = "CVE-2021-44228"
+        cvss = "10.0"
+        vendor = "cisco"
+        product = "smart_phy"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2021-44228"
+    strings:
+        $p = "smart phy" nocase
+        $p2 = "smart-phy" nocase
+        $p3 = "smart_phy" nocase
+        $v0 = "21.3"
+        $v1 = "3.1.2"
+        $v2 = "3.1.3"
+        $v3 = "3.1.4"
+        $v4 = "3.1.5"
+        $v5 = "3.2.1"
+    condition:
+        any of ($p*) and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2021_44228_cisco_ucs_director : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain cisco ucs director, affected by CVE-2021-44228"
+        severity = "high"
+        cve = "CVE-2021-44228"
+        cvss = "10.0"
+        vendor = "cisco"
+        product = "ucs_director"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2021-44228"
+    strings:
+        $p = "ucs director" nocase
+        $p2 = "ucs-director" nocase
+        $p3 = "ucs_director" nocase
+        $v0 = "6.8.2.0"
+    condition:
+        any of ($p*) and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2021_44228_cisco_unified_customer_voice_portal : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain cisco unified customer voice portal, affected by CVE-2021-44228"
+        severity = "high"
+        cve = "CVE-2021-44228"
+        cvss = "10.0"
+        vendor = "cisco"
+        product = "unified_customer_voice_portal"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2021-44228"
+    strings:
+        $p = "unified customer voice portal" nocase
+        $p2 = "unified-customer-voice-portal" nocase
+        $p3 = "unified_customer_voice_portal" nocase
+        $v0 = "11.6"
+        $v1 = "12.0"
+        $v2 = "12.5"
+    condition:
+        any of ($p*) and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2021_44228_cisco_video_surveillance_operations_ma : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain cisco video surveillance operations manager, affected by CVE-2021-44228"
+        severity = "high"
+        cve = "CVE-2021-44228"
+        cvss = "10.0"
+        vendor = "cisco"
+        product = "video_surveillance_operations_manager"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2021-44228"
+    strings:
+        $p = "video surveillance operations manager" nocase
+        $p2 = "video-surveillance-operations-manager" nocase
+        $p3 = "video_surveillance_operations_manager" nocase
+        $v0 = "7.14.4"
+    condition:
+        any of ($p*) and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2021_44228_cisco_virtual_topology_system : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain cisco virtual topology system, affected by CVE-2021-44228"
+        severity = "high"
+        cve = "CVE-2021-44228"
+        cvss = "10.0"
+        vendor = "cisco"
+        product = "virtual_topology_system"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2021-44228"
+    strings:
+        $p = "virtual topology system" nocase
+        $p2 = "virtual-topology-system" nocase
+        $p3 = "virtual_topology_system" nocase
+        $v0 = "2.6.6"
+        $v1 = "2.6.7"
+    condition:
+        any of ($p*) and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2021_44228_cisco_virtualized_infrastructure_manag : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain cisco virtualized infrastructure manager, affected by CVE-2021-44228"
+        severity = "high"
+        cve = "CVE-2021-44228"
+        cvss = "10.0"
+        vendor = "cisco"
+        product = "virtualized_infrastructure_manager"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2021-44228"
+    strings:
+        $p = "virtualized infrastructure manager" nocase
+        $p2 = "virtualized-infrastructure-manager" nocase
+        $p3 = "virtualized_infrastructure_manager" nocase
+        $v0 = "3.2.0"
+        $v1 = "3.4.0"
+        $v2 = "3.4.4"
+    condition:
+        any of ($p*) and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2021_44228_cisco_wan_automation_engine : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain cisco wan automation engine, affected by CVE-2021-44228"
+        severity = "high"
+        cve = "CVE-2021-44228"
+        cvss = "10.0"
+        vendor = "cisco"
+        product = "wan_automation_engine"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2021-44228"
+    strings:
+        $p = "wan automation engine" nocase
+        $p2 = "wan-automation-engine" nocase
+        $p3 = "wan_automation_engine" nocase
+        $v0 = "7.1.3"
+        $v1 = "7.2.1"
+        $v2 = "7.2.2"
+        $v3 = "7.2.3"
+        $v4 = "7.3"
+        $v5 = "7.3.0.2"
+        $v6 = "7.4"
+        $v7 = "7.5"
+        $v8 = "7.6"
+    condition:
+        any of ($p*) and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2021_44228_cisco_webex_meetings_server : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain cisco webex meetings server, affected by CVE-2021-44228"
+        severity = "high"
+        cve = "CVE-2021-44228"
+        cvss = "10.0"
+        vendor = "cisco"
+        product = "webex_meetings_server"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2021-44228"
+    strings:
+        $p = "webex meetings server" nocase
+        $p2 = "webex-meetings-server" nocase
+        $p3 = "webex_meetings_server" nocase
+        $v0 = "3.0"
+        $v1 = "4.0"
+    condition:
+        any of ($p*) and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2021_44228_cisco_workload_optimization_manager : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain cisco workload optimization manager, affected by CVE-2021-44228"
+        severity = "high"
+        cve = "CVE-2021-44228"
+        cvss = "10.0"
+        vendor = "cisco"
+        product = "workload_optimization_manager"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2021-44228"
+    strings:
+        $p = "workload optimization manager" nocase
+        $p2 = "workload-optimization-manager" nocase
+        $p3 = "workload_optimization_manager" nocase
+        $v0 = "3.2.1"
+    condition:
+        any of ($p*) and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2021_44228_cisco_cloudcenter_suite : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain cisco cloudcenter suite, affected by CVE-2021-44228"
+        severity = "high"
+        cve = "CVE-2021-44228"
+        cvss = "10.0"
+        vendor = "cisco"
+        product = "cloudcenter_suite"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2021-44228"
+    strings:
+        $p = "cloudcenter suite" nocase
+        $p2 = "cloudcenter-suite" nocase
+        $p3 = "cloudcenter_suite" nocase
+        $v0 = "4.10.0.15"
+        $v1 = "5.3.0"
+        $v2 = "5.4.1"
+        $v3 = "5.5.0"
+        $v4 = "5.5.1"
+    condition:
+        any of ($p*) and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2021_44228_cisco_crosswork_network_automation : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain cisco crosswork network automation, affected by CVE-2021-44228"
+        severity = "high"
+        cve = "CVE-2021-44228"
+        cvss = "10.0"
+        vendor = "cisco"
+        product = "crosswork_network_automation"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2021-44228"
+    strings:
+        $p = "crosswork network automation" nocase
+        $p2 = "crosswork-network-automation" nocase
+        $p3 = "crosswork_network_automation" nocase
+        $v0 = "2.0.0"
+        $v1 = "3.0.0"
+        $v2 = "4.1.0"
+        $v3 = "4.1.1"
+    condition:
+        any of ($p*) and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2021_44228_cisco_cx_cloud_agent : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain cisco cx cloud agent, affected by CVE-2021-44228"
+        severity = "high"
+        cve = "CVE-2021-44228"
+        cvss = "10.0"
+        vendor = "cisco"
+        product = "cx_cloud_agent"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2021-44228"
+    strings:
+        $p = "cx cloud agent" nocase
+        $p2 = "cx-cloud-agent" nocase
+        $p3 = "cx_cloud_agent" nocase
+        $v0 = "001.012"
+    condition:
+        any of ($p*) and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2021_44228_cisco_cyber_vision : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain cisco cyber vision, affected by CVE-2021-44228"
+        severity = "high"
+        cve = "CVE-2021-44228"
+        cvss = "10.0"
+        vendor = "cisco"
+        product = "cyber_vision"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2021-44228"
+    strings:
+        $p = "cyber vision" nocase
+        $p2 = "cyber-vision" nocase
+        $p3 = "cyber_vision" nocase
+        $v0 = "4.0.2"
+    condition:
+        any of ($p*) and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2021_44228_cisco_emergency_responder : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain cisco emergency responder, affected by CVE-2021-44228"
+        severity = "high"
+        cve = "CVE-2021-44228"
+        cvss = "10.0"
+        vendor = "cisco"
+        product = "emergency_responder"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2021-44228"
+    strings:
+        $p = "emergency responder" nocase
+        $p2 = "emergency-responder" nocase
+        $p3 = "emergency_responder" nocase
+        $v0 = "11.5"
+    condition:
+        any of ($p*) and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2021_44228_cisco_secure_firewall_threat_defense : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain cisco secure firewall threat defense, affected by CVE-2021-44228"
+        severity = "high"
+        cve = "CVE-2021-44228"
+        cvss = "10.0"
+        vendor = "cisco"
+        product = "secure_firewall_threat_defense"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2021-44228"
+    strings:
+        $p = "secure firewall threat defense" nocase
+        $p2 = "secure-firewall-threat-defense" nocase
+        $p3 = "secure_firewall_threat_defense" nocase
+        $v0 = "6.2.3"
+        $v1 = "6.3.0"
+        $v2 = "6.4.0"
+        $v3 = "6.5.0"
+        $v4 = "6.6.0"
+        $v5 = "6.7.0"
+        $v6 = "7.0.0"
+        $v7 = "7.1.0"
+    condition:
+        any of ($p*) and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2021_44228_cisco_ucs_central_software : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain cisco ucs central software, affected by CVE-2021-44228"
+        severity = "high"
+        cve = "CVE-2021-44228"
+        cvss = "10.0"
+        vendor = "cisco"
+        product = "ucs_central_software"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2021-44228"
+    strings:
+        $p = "ucs central software" nocase
+        $p2 = "ucs-central-software" nocase
+        $p3 = "ucs_central_software" nocase
+        $v0 = "2.0"
+    condition:
+        any of ($p*) and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2021_44228_cisco_unity_connection : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain cisco unity connection, affected by CVE-2021-44228"
+        severity = "high"
+        cve = "CVE-2021-44228"
+        cvss = "10.0"
+        vendor = "cisco"
+        product = "unity_connection"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2021-44228"
+    strings:
+        $p = "unity connection" nocase
+        $p2 = "unity-connection" nocase
+        $p3 = "unity_connection" nocase
+        $v0 = "11.5"
+    condition:
+        any of ($p*) and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2021_44228_snowsoftware_snow_commander : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain snowsoftware snow commander, affected by CVE-2021-44228"
+        severity = "high"
+        cve = "CVE-2021-44228"
+        cvss = "10.0"
+        vendor = "snowsoftware"
+        product = "snow_commander"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2021-44228"
+    strings:
+        $p = "snow commander" nocase
+        $p2 = "snow-commander" nocase
+        $p3 = "snow_commander" nocase
+        $v0 = "8.10.0"
+    condition:
+        any of ($p*) and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2021_44228_snowsoftware_vm_access_proxy : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain snowsoftware vm access proxy, affected by CVE-2021-44228"
+        severity = "high"
+        cve = "CVE-2021-44228"
+        cvss = "10.0"
+        vendor = "snowsoftware"
+        product = "vm_access_proxy"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2021-44228"
+    strings:
+        $p = "vm access proxy" nocase
+        $p2 = "vm-access-proxy" nocase
+        $p3 = "vm_access_proxy" nocase
+        $v0 = "3.6"
+    condition:
+        any of ($p*) and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2021_44228_bentley_synchro : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain bentley synchro, affected by CVE-2021-44228"
+        severity = "high"
+        cve = "CVE-2021-44228"
+        cvss = "10.0"
+        vendor = "bentley"
+        product = "synchro"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2021-44228"
+    strings:
+        $p = "synchro" nocase
+        $v0 = "6.1"
+        $v1 = "6.2.4.2"
+    condition:
+        $p and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2021_44228_bentley_synchro_4d : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain bentley synchro 4d, affected by CVE-2021-44228"
+        severity = "high"
+        cve = "CVE-2021-44228"
+        cvss = "10.0"
+        vendor = "bentley"
+        product = "synchro_4d"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2021-44228"
+    strings:
+        $p = "synchro 4d" nocase
+        $p2 = "synchro-4d" nocase
+        $p3 = "synchro_4d" nocase
+        $v0 = "6.4.3.2"
+    condition:
+        any of ($p*) and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2021_44228_percussion_rhythmyx : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain percussion rhythmyx, affected by CVE-2021-44228"
+        severity = "high"
+        cve = "CVE-2021-44228"
+        cvss = "10.0"
+        vendor = "percussion"
+        product = "rhythmyx"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2021-44228"
+    strings:
+        $p = "rhythmyx" nocase
+        $v0 = "7.3.2"
+    condition:
+        $p and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2021_44228_apple_xcode : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain apple xcode, affected by CVE-2021-44228"
+        severity = "high"
+        cve = "CVE-2021-44228"
+        cvss = "10.0"
+        vendor = "apple"
+        product = "xcode"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2021-44228"
+    strings:
+        $p = "xcode" nocase
+        $v0 = "13.3"
+    condition:
+        $p and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2021_44515_zohocorp_manageengine_desktop_central : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain zohocorp manageengine desktop central, affected by CVE-2021-44515"
+        severity = "high"
+        cve = "CVE-2021-44515"
+        cvss = "9.8"
+        vendor = "zohocorp"
+        product = "manageengine_desktop_central"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2021-44515"
+    strings:
+        $p = "manageengine desktop central" nocase
+        $p2 = "manageengine-desktop-central" nocase
+        $p3 = "manageengine_desktop_central" nocase
+        $v0 = "10.1.2127.18"
+        $v1 = "10.1.2128.0"
+        $v2 = "10.1.2137.3"
+    condition:
+        any of ($p*) and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2021_39935_gitlab_gitlab : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain gitlab gitlab, affected by CVE-2021-39935"
+        severity = "high"
+        cve = "CVE-2021-39935"
+        cvss = "6.8"
+        vendor = "gitlab"
+        product = "gitlab"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2021-39935"
+    strings:
+        $p = "gitlab" nocase
+        $v0 = "10.5.0"
+        $v1 = "14.3.6"
+        $v2 = "14.4.0"
+        $v3 = "14.4.4"
+        $v4 = "14.5.0"
+        $v5 = "14.5.2"
+    condition:
+        $p and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2021_45046_apache_log4j : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain apache log4j, affected by CVE-2021-45046"
+        severity = "high"
+        cve = "CVE-2021-45046"
+        cvss = "9.0"
+        vendor = "apache"
+        product = "log4j"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2021-45046"
+    strings:
+        $p = "log4j" nocase
+        $v0 = "2.0"
+        $v1 = "2.0.1"
+        $v2 = "2.12.2"
+        $v3 = "2.13.0"
+        $v4 = "2.16.0"
+    condition:
+        $p and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2021_45046_siemens_captial : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain siemens captial, affected by CVE-2021-45046"
+        severity = "high"
+        cve = "CVE-2021-45046"
+        cvss = "9.0"
+        vendor = "siemens"
+        product = "captial"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2021-45046"
+    strings:
+        $p = "captial" nocase
+        $v0 = "2019.1"
+    condition:
+        $p and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2021_45046_siemens_desigo_cc_advanced_reports : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain siemens desigo cc advanced reports, affected by CVE-2021-45046"
+        severity = "high"
+        cve = "CVE-2021-45046"
+        cvss = "9.0"
+        vendor = "siemens"
+        product = "desigo_cc_advanced_reports"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2021-45046"
+    strings:
+        $p = "desigo cc advanced reports" nocase
+        $p2 = "desigo-cc-advanced-reports" nocase
+        $p3 = "desigo_cc_advanced_reports" nocase
+        $v0 = "4.0"
+        $v1 = "4.1"
+        $v2 = "4.2"
+        $v3 = "5.0"
+        $v4 = "5.1"
+    condition:
+        any of ($p*) and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2021_45046_siemens_desigo_cc_info_center : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain siemens desigo cc info center, affected by CVE-2021-45046"
+        severity = "high"
+        cve = "CVE-2021-45046"
+        cvss = "9.0"
+        vendor = "siemens"
+        product = "desigo_cc_info_center"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2021-45046"
+    strings:
+        $p = "desigo cc info center" nocase
+        $p2 = "desigo-cc-info-center" nocase
+        $p3 = "desigo_cc_info_center" nocase
+        $v0 = "5.0"
+        $v1 = "5.1"
+    condition:
+        any of ($p*) and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2021_45046_siemens_energy_engage : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain siemens energy engage, affected by CVE-2021-45046"
+        severity = "high"
+        cve = "CVE-2021-45046"
+        cvss = "9.0"
+        vendor = "siemens"
+        product = "energy_engage"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2021-45046"
+    strings:
+        $p = "energy engage" nocase
+        $p2 = "energy-engage" nocase
+        $p3 = "energy_engage" nocase
+        $v0 = "3.1"
+    condition:
+        any of ($p*) and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2021_45046_siemens_energyip : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain siemens energyip, affected by CVE-2021-45046"
+        severity = "high"
+        cve = "CVE-2021-45046"
+        cvss = "9.0"
+        vendor = "siemens"
+        product = "energyip"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2021-45046"
+    strings:
+        $p = "energyip" nocase
+        $v0 = "8.5"
+        $v1 = "8.6"
+        $v2 = "8.7"
+        $v3 = "9.0"
+    condition:
+        $p and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2021_45046_siemens_energyip_prepay : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain siemens energyip prepay, affected by CVE-2021-45046"
+        severity = "high"
+        cve = "CVE-2021-45046"
+        cvss = "9.0"
+        vendor = "siemens"
+        product = "energyip_prepay"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2021-45046"
+    strings:
+        $p = "energyip prepay" nocase
+        $p2 = "energyip-prepay" nocase
+        $p3 = "energyip_prepay" nocase
+        $v0 = "3.7"
+        $v1 = "3.8"
+    condition:
+        any of ($p*) and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2021_45046_siemens_opcenter_intelligence : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain siemens opcenter intelligence, affected by CVE-2021-45046"
+        severity = "high"
+        cve = "CVE-2021-45046"
+        cvss = "9.0"
+        vendor = "siemens"
+        product = "opcenter_intelligence"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2021-45046"
+    strings:
+        $p = "opcenter intelligence" nocase
+        $p2 = "opcenter-intelligence" nocase
+        $p3 = "opcenter_intelligence" nocase
+        $v0 = "3.2"
+    condition:
+        any of ($p*) and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2021_45046_siemens_operation_scheduler : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain siemens operation scheduler, affected by CVE-2021-45046"
+        severity = "high"
+        cve = "CVE-2021-45046"
+        cvss = "9.0"
+        vendor = "siemens"
+        product = "operation_scheduler"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2021-45046"
+    strings:
+        $p = "operation scheduler" nocase
+        $p2 = "operation-scheduler" nocase
+        $p3 = "operation_scheduler" nocase
+        $v0 = "1.1.3"
+    condition:
+        any of ($p*) and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2021_45046_siemens_sentron_powermanager : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain siemens sentron powermanager, affected by CVE-2021-45046"
+        severity = "high"
+        cve = "CVE-2021-45046"
+        cvss = "9.0"
+        vendor = "siemens"
+        product = "sentron_powermanager"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2021-45046"
+    strings:
+        $p = "sentron powermanager" nocase
+        $p2 = "sentron-powermanager" nocase
+        $p3 = "sentron_powermanager" nocase
+        $v0 = "4.1"
+        $v1 = "4.2"
+    condition:
+        any of ($p*) and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2021_45046_siemens_siguard_dsa : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain siemens siguard dsa, affected by CVE-2021-45046"
+        severity = "high"
+        cve = "CVE-2021-45046"
+        cvss = "9.0"
+        vendor = "siemens"
+        product = "siguard_dsa"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2021-45046"
+    strings:
+        $p = "siguard dsa" nocase
+        $p2 = "siguard-dsa" nocase
+        $p3 = "siguard_dsa" nocase
+        $v0 = "4.2"
+        $v1 = "4.3"
+        $v2 = "4.4"
+    condition:
+        any of ($p*) and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2021_45046_siemens_sipass_integrated : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain siemens sipass integrated, affected by CVE-2021-45046"
+        severity = "high"
+        cve = "CVE-2021-45046"
+        cvss = "9.0"
+        vendor = "siemens"
+        product = "sipass_integrated"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2021-45046"
+    strings:
+        $p = "sipass integrated" nocase
+        $p2 = "sipass-integrated" nocase
+        $p3 = "sipass_integrated" nocase
+        $v0 = "2.80"
+        $v1 = "2.85"
+    condition:
+        any of ($p*) and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2021_45046_siemens_siveillance_command : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain siemens siveillance command, affected by CVE-2021-45046"
+        severity = "high"
+        cve = "CVE-2021-45046"
+        cvss = "9.0"
+        vendor = "siemens"
+        product = "siveillance_command"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2021-45046"
+    strings:
+        $p = "siveillance command" nocase
+        $p2 = "siveillance-command" nocase
+        $p3 = "siveillance_command" nocase
+        $v0 = "4.16.2.1"
+    condition:
+        any of ($p*) and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2021_45046_siemens_siveillance_identity : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain siemens siveillance identity, affected by CVE-2021-45046"
+        severity = "high"
+        cve = "CVE-2021-45046"
+        cvss = "9.0"
+        vendor = "siemens"
+        product = "siveillance_identity"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2021-45046"
+    strings:
+        $p = "siveillance identity" nocase
+        $p2 = "siveillance-identity" nocase
+        $p3 = "siveillance_identity" nocase
+        $v0 = "1.5"
+        $v1 = "1.6"
+    condition:
+        any of ($p*) and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2021_45046_siemens_spectrum_power_4 : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain siemens spectrum power 4, affected by CVE-2021-45046"
+        severity = "high"
+        cve = "CVE-2021-45046"
+        cvss = "9.0"
+        vendor = "siemens"
+        product = "spectrum_power_4"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2021-45046"
+    strings:
+        $p = "spectrum power 4" nocase
+        $p2 = "spectrum-power-4" nocase
+        $p3 = "spectrum_power_4" nocase
+        $v0 = "4.70"
+    condition:
+        any of ($p*) and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2021_45046_siemens_spectrum_power_7 : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain siemens spectrum power 7, affected by CVE-2021-45046"
+        severity = "high"
+        cve = "CVE-2021-45046"
+        cvss = "9.0"
+        vendor = "siemens"
+        product = "spectrum_power_7"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2021-45046"
+    strings:
+        $p = "spectrum power 7" nocase
+        $p2 = "spectrum-power-7" nocase
+        $p3 = "spectrum_power_7" nocase
+        $v0 = "2.30"
+    condition:
+        any of ($p*) and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2021_45046_siemens_vesys : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain siemens vesys, affected by CVE-2021-45046"
+        severity = "high"
+        cve = "CVE-2021-45046"
+        cvss = "9.0"
+        vendor = "siemens"
+        product = "vesys"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2021-45046"
+    strings:
+        $p = "vesys" nocase
+        $v0 = "2019.1"
+    condition:
+        $p and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2021_45046_sonicwall_email_security : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain sonicwall email security, affected by CVE-2021-45046"
+        severity = "high"
+        cve = "CVE-2021-45046"
+        cvss = "9.0"
+        vendor = "sonicwall"
+        product = "email_security"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2021-45046"
+    strings:
+        $p = "email security" nocase
+        $p2 = "email-security" nocase
+        $p3 = "email_security" nocase
+        $v0 = "10.0.12"
+    condition:
+        any of ($p*) and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2021_43890_microsoft_app_installer : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain microsoft app installer, affected by CVE-2021-43890"
+        severity = "high"
+        cve = "CVE-2021-43890"
+        cvss = "7.1"
+        vendor = "microsoft"
+        product = "app_installer"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2021-43890"
+    strings:
+        $p = "app installer" nocase
+        $p2 = "app-installer" nocase
+        $p3 = "app_installer" nocase
+        $v0 = "1.11"
+        $v1 = "1.16"
+    condition:
+        any of ($p*) and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2021_22054_vmware_workspace_one_uem_console : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain vmware workspace one uem console, affected by CVE-2021-22054"
+        severity = "high"
+        cve = "CVE-2021-22054"
+        cvss = "7.5"
+        vendor = "vmware"
+        product = "workspace_one_uem_console"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2021-22054"
+    strings:
+        $p = "workspace one uem console" nocase
+        $p2 = "workspace-one-uem-console" nocase
+        $p3 = "workspace_one_uem_console" nocase
+        $v0 = "20.0.8.0"
+        $v1 = "20.0.8.36"
+        $v2 = "20.11.0.0"
+        $v3 = "20.11.0.40"
+        $v4 = "21.2.0.0"
+        $v5 = "21.2.0.27"
+        $v6 = "21.5.0.0"
+        $v7 = "21.5.0.37"
+    condition:
+        any of ($p*) and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2021_44207_acclaimsystems_usaherds : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain acclaimsystems usaherds, affected by CVE-2021-44207"
+        severity = "high"
+        cve = "CVE-2021-44207"
+        cvss = "8.1"
+        vendor = "acclaimsystems"
+        product = "usaherds"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2021-44207"
+    strings:
+        $p = "usaherds" nocase
+        $v0 = "7.4.0.1"
+    condition:
+        $p and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2021_35247_solarwinds_serv_u : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain solarwinds serv-u, affected by CVE-2021-35247"
+        severity = "high"
+        cve = "CVE-2021-35247"
+        cvss = "4.3"
+        vendor = "solarwinds"
+        product = "serv-u"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2021-35247"
+    strings:
+        $p = "serv-u" nocase
+        $v0 = "15.3"
+    condition:
+        $p and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2022_23131_zabbix_zabbix : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain zabbix zabbix, affected by CVE-2022-23131"
+        severity = "high"
+        cve = "CVE-2022-23131"
+        cvss = "9.1"
+        vendor = "zabbix"
+        product = "zabbix"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2022-23131"
+    strings:
+        $p = "zabbix" nocase
+        $v0 = "5.4.0"
+        $v1 = "5.4.8"
+        $v2 = "6.0.0"
+    condition:
+        $p and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2022_23134_zabbix_zabbix : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain zabbix zabbix, affected by CVE-2022-23134"
+        severity = "high"
+        cve = "CVE-2022-23134"
+        cvss = "3.7"
+        vendor = "zabbix"
+        product = "zabbix"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2022-23134"
+    strings:
+        $p = "zabbix" nocase
+        $v0 = "5.4.0"
+        $v1 = "5.4.8"
+        $v2 = "6.0.0"
+    condition:
+        $p and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2021_35587_oracle_access_manager : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain oracle access manager, affected by CVE-2021-35587"
+        severity = "high"
+        cve = "CVE-2021-35587"
+        cvss = "9.8"
+        vendor = "oracle"
+        product = "access_manager"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2021-35587"
+    strings:
+        $p = "access manager" nocase
+        $p2 = "access-manager" nocase
+        $p3 = "access_manager" nocase
+        $v0 = "11.1.2.3.0"
+        $v1 = "12.2.1.3.0"
+        $v2 = "12.2.1.4.0"
+    condition:
+        any of ($p*) and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2021_4034_redhat_enterprise_linux_server_update_s : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain redhat enterprise linux server update services for sap solutions, affected by CVE-2021-4034"
+        severity = "high"
+        cve = "CVE-2021-4034"
+        cvss = "7.8"
+        vendor = "redhat"
+        product = "enterprise_linux_server_update_services_for_sap_solutions"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2021-4034"
+    strings:
+        $p = "enterprise linux server update services for sap solutions" nocase
+        $p2 = "enterprise-linux-server-update-services-for-sap-solutions" nocase
+        $p3 = "enterprise_linux_server_update_services_for_sap_solutions" nocase
+        $v0 = "7.6"
+        $v1 = "7.7"
+    condition:
+        any of ($p*) and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2021_4034_suse_enterprise_storage : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain suse enterprise storage, affected by CVE-2021-4034"
+        severity = "high"
+        cve = "CVE-2021-4034"
+        cvss = "7.8"
+        vendor = "suse"
+        product = "enterprise_storage"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2021-4034"
+    strings:
+        $p = "enterprise storage" nocase
+        $p2 = "enterprise-storage" nocase
+        $p3 = "enterprise_storage" nocase
+        $v0 = "7.0"
+    condition:
+        any of ($p*) and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2021_4034_suse_linux_enterprise_high_performanc : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain suse linux enterprise high performance computing, affected by CVE-2021-4034"
+        severity = "high"
+        cve = "CVE-2021-4034"
+        cvss = "7.8"
+        vendor = "suse"
+        product = "linux_enterprise_high_performance_computing"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2021-4034"
+    strings:
+        $p = "linux enterprise high performance computing" nocase
+        $p2 = "linux-enterprise-high-performance-computing" nocase
+        $p3 = "linux_enterprise_high_performance_computing" nocase
+        $v0 = "15.0"
+    condition:
+        any of ($p*) and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2021_4034_suse_manager_proxy : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain suse manager proxy, affected by CVE-2021-4034"
+        severity = "high"
+        cve = "CVE-2021-4034"
+        cvss = "7.8"
+        vendor = "suse"
+        product = "manager_proxy"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2021-4034"
+    strings:
+        $p = "manager proxy" nocase
+        $p2 = "manager-proxy" nocase
+        $p3 = "manager_proxy" nocase
+        $v0 = "4.1"
+    condition:
+        any of ($p*) and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2021_4034_suse_manager_server : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain suse manager server, affected by CVE-2021-4034"
+        severity = "high"
+        cve = "CVE-2021-4034"
+        cvss = "7.8"
+        vendor = "suse"
+        product = "manager_server"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2021-4034"
+    strings:
+        $p = "manager server" nocase
+        $p2 = "manager-server" nocase
+        $p3 = "manager_server" nocase
+        $v0 = "4.1"
+    condition:
+        any of ($p*) and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2021_4034_oracle_http_server : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain oracle http server, affected by CVE-2021-4034"
+        severity = "high"
+        cve = "CVE-2021-4034"
+        cvss = "7.8"
+        vendor = "oracle"
+        product = "http_server"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2021-4034"
+    strings:
+        $p = "http server" nocase
+        $p2 = "http-server" nocase
+        $p3 = "http_server" nocase
+        $v0 = "12.2.1.3.0"
+        $v1 = "12.2.1.4.0"
+    condition:
+        any of ($p*) and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2021_4034_oracle_zfs_storage_appliance_kit : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain oracle zfs storage appliance kit, affected by CVE-2021-4034"
+        severity = "high"
+        cve = "CVE-2021-4034"
+        cvss = "7.8"
+        vendor = "oracle"
+        product = "zfs_storage_appliance_kit"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2021-4034"
+    strings:
+        $p = "zfs storage appliance kit" nocase
+        $p2 = "zfs-storage-appliance-kit" nocase
+        $p3 = "zfs_storage_appliance_kit" nocase
+        $v0 = "8.8"
+    condition:
+        any of ($p*) and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2021_4034_siemens_sinumerik_edge : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain siemens sinumerik edge, affected by CVE-2021-4034"
+        severity = "high"
+        cve = "CVE-2021-4034"
+        cvss = "7.8"
+        vendor = "siemens"
+        product = "sinumerik_edge"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2021-4034"
+    strings:
+        $p = "sinumerik edge" nocase
+        $p2 = "sinumerik-edge" nocase
+        $p3 = "sinumerik_edge" nocase
+        $v0 = "3.3.0"
+    condition:
+        any of ($p*) and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2021_4034_starwindsoftware_command_center : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain starwindsoftware command center, affected by CVE-2021-4034"
+        severity = "high"
+        cve = "CVE-2021-4034"
+        cvss = "7.8"
+        vendor = "starwindsoftware"
+        product = "command_center"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2021-4034"
+    strings:
+        $p = "command center" nocase
+        $p2 = "command-center" nocase
+        $p3 = "command_center" nocase
+        $v0 = "1.0"
+    condition:
+        any of ($p*) and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2022_24682_synacor_zimbra_collaboration_suite : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain synacor zimbra collaboration suite, affected by CVE-2022-24682"
+        severity = "high"
+        cve = "CVE-2022-24682"
+        cvss = "6.1"
+        vendor = "synacor"
+        product = "zimbra_collaboration_suite"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2022-24682"
+    strings:
+        $p = "zimbra collaboration suite" nocase
+        $p2 = "zimbra-collaboration-suite" nocase
+        $p3 = "zimbra_collaboration_suite" nocase
+        $v0 = "8.8.0"
+        $v1 = "8.8.15"
+    condition:
+        any of ($p*) and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2022_22536_sap_content_server : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain sap content server, affected by CVE-2022-22536"
+        severity = "high"
+        cve = "CVE-2022-22536"
+        cvss = "10.0"
+        vendor = "sap"
+        product = "content_server"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2022-22536"
+    strings:
+        $p = "content server" nocase
+        $p2 = "content-server" nocase
+        $p3 = "content_server" nocase
+        $v0 = "7.53"
+    condition:
+        any of ($p*) and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2022_22536_sap_netweaver_application_server_aba : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain sap netweaver application server abap, affected by CVE-2022-22536"
+        severity = "high"
+        cve = "CVE-2022-22536"
+        cvss = "10.0"
+        vendor = "sap"
+        product = "netweaver_application_server_abap"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2022-22536"
+    strings:
+        $p = "netweaver application server abap" nocase
+        $p2 = "netweaver-application-server-abap" nocase
+        $p3 = "netweaver_application_server_abap" nocase
+        $v0 = "7.22"
+        $v1 = "7.49"
+        $v2 = "7.53"
+        $v3 = "7.77"
+        $v4 = "7.81"
+        $v5 = "7.85"
+        $v6 = "7.86"
+        $v7 = "7.87"
+        $v8 = "8.04"
+    condition:
+        any of ($p*) and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2022_22536_sap_web_dispatcher : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain sap web dispatcher, affected by CVE-2022-22536"
+        severity = "high"
+        cve = "CVE-2022-22536"
+        cvss = "10.0"
+        vendor = "sap"
+        product = "web_dispatcher"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2022-22536"
+    strings:
+        $p = "web dispatcher" nocase
+        $p2 = "web-dispatcher" nocase
+        $p3 = "web_dispatcher" nocase
+        $v0 = "7.49"
+        $v1 = "7.53"
+        $v2 = "7.77"
+        $v3 = "7.81"
+        $v4 = "7.85"
+        $v5 = "7.86"
+        $v6 = "7.87"
+    condition:
+        any of ($p*) and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2022_24112_apache_apisix : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain apache apisix, affected by CVE-2022-24112"
+        severity = "high"
+        cve = "CVE-2022-24112"
+        cvss = "9.8"
+        vendor = "apache"
+        product = "apisix"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2022-24112"
+    strings:
+        $p = "apisix" nocase
+        $v0 = "2.10.4"
+        $v1 = "2.11.0"
+        $v2 = "2.12.1"
+    condition:
+        $p and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2021_4102_google_chrome : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain google chrome, affected by CVE-2021-4102"
+        severity = "high"
+        cve = "CVE-2021-4102"
+        cvss = "8.8"
+        vendor = "google"
+        product = "chrome"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2021-4102"
+    strings:
+        $p = "chrome" nocase
+        $v0 = "96.0.4664.110"
+    condition:
+        $p and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2022_24086_adobe_commerce : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain adobe commerce, affected by CVE-2022-24086"
+        severity = "high"
+        cve = "CVE-2022-24086"
+        cvss = "9.8"
+        vendor = "adobe"
+        product = "commerce"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2022-24086"
+    strings:
+        $p = "commerce" nocase
+        $v0 = "2.3.0"
+        $v1 = "2.3.3"
+        $v2 = "2.3.6"
+        $v3 = "2.3.7"
+        $v4 = "2.4.0"
+        $v5 = "2.4.2"
+        $v6 = "2.4.3"
+    condition:
+        $p and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2022_24086_adobe_magento : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain adobe magento, affected by CVE-2022-24086"
+        severity = "high"
+        cve = "CVE-2022-24086"
+        cvss = "9.8"
+        vendor = "adobe"
+        product = "magento"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2022-24086"
+    strings:
+        $p = "magento" nocase
+        $v0 = "2.3.0"
+        $v1 = "2.3.3"
+        $v2 = "2.3.6"
+        $v3 = "2.3.7"
+        $v4 = "2.4.0"
+        $v5 = "2.4.2"
+        $v6 = "2.4.3"
+    condition:
+        $p and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2021_3560_polkit_project_polkit : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain polkit project polkit, affected by CVE-2021-3560"
+        severity = "high"
+        cve = "CVE-2021-3560"
+        cvss = "7.8"
+        vendor = "polkit_project"
+        product = "polkit"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2021-3560"
+    strings:
+        $p = "polkit" nocase
+        $v0 = "0.119"
+    condition:
+        $p and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2021_3560_redhat_virtualization : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain redhat virtualization, affected by CVE-2021-3560"
+        severity = "high"
+        cve = "CVE-2021-3560"
+        cvss = "7.8"
+        vendor = "redhat"
+        product = "virtualization"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2021-3560"
+    strings:
+        $p = "virtualization" nocase
+        $v0 = "4.0"
+    condition:
+        $p and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2021_3560_redhat_virtualization_host : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain redhat virtualization host, affected by CVE-2021-3560"
+        severity = "high"
+        cve = "CVE-2021-3560"
+        cvss = "7.8"
+        vendor = "redhat"
+        product = "virtualization_host"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2021-3560"
+    strings:
+        $p = "virtualization host" nocase
+        $p2 = "virtualization-host" nocase
+        $p3 = "virtualization_host" nocase
+        $v0 = "4.0"
+    condition:
+        any of ($p*) and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2021_3560_redhat_openshift_container_platform : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain redhat openshift container platform, affected by CVE-2021-3560"
+        severity = "high"
+        cve = "CVE-2021-3560"
+        cvss = "7.8"
+        vendor = "redhat"
+        product = "openshift_container_platform"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2021-3560"
+    strings:
+        $p = "openshift container platform" nocase
+        $p2 = "openshift-container-platform" nocase
+        $p3 = "openshift_container_platform" nocase
+        $v0 = "4.7"
+    condition:
+        any of ($p*) and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2022_0492_redhat_codeready_linux_builder : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain redhat codeready linux builder, affected by CVE-2022-0492"
+        severity = "high"
+        cve = "CVE-2022-0492"
+        cvss = "7.8"
+        vendor = "redhat"
+        product = "codeready_linux_builder"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2022-0492"
+    strings:
+        $p = "codeready linux builder" nocase
+        $p2 = "codeready-linux-builder" nocase
+        $p3 = "codeready_linux_builder" nocase
+        $v0 = "8.0"
+        $v1 = "8.2"
+    condition:
+        any of ($p*) and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2022_0492_redhat_codeready_linux_builder_for_powe : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain redhat codeready linux builder for power little endian, affected by CVE-2022-0492"
+        severity = "high"
+        cve = "CVE-2022-0492"
+        cvss = "7.8"
+        vendor = "redhat"
+        product = "codeready_linux_builder_for_power_little_endian"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2022-0492"
+    strings:
+        $p = "codeready linux builder for power little endian" nocase
+        $p2 = "codeready-linux-builder-for-power-little-endian" nocase
+        $p3 = "codeready_linux_builder_for_power_little_endian" nocase
+        $v0 = "8.0"
+        $v1 = "8.2"
+    condition:
+        any of ($p*) and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2022_0492_redhat_virtualization_host : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain redhat virtualization host, affected by CVE-2022-0492"
+        severity = "high"
+        cve = "CVE-2022-0492"
+        cvss = "7.8"
+        vendor = "redhat"
+        product = "virtualization_host"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2022-0492"
+    strings:
+        $p = "virtualization host" nocase
+        $p2 = "virtualization-host" nocase
+        $p3 = "virtualization_host" nocase
+        $v0 = "4.0"
+    condition:
+        any of ($p*) and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2022_22947_vmware_spring_cloud_gateway : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain vmware spring cloud gateway, affected by CVE-2022-22947"
+        severity = "high"
+        cve = "CVE-2022-22947"
+        cvss = "10.0"
+        vendor = "vmware"
+        product = "spring_cloud_gateway"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2022-22947"
+    strings:
+        $p = "spring cloud gateway" nocase
+        $p2 = "spring-cloud-gateway" nocase
+        $p3 = "spring_cloud_gateway" nocase
+        $v0 = "3.0.7"
+        $v1 = "3.1.0"
+    condition:
+        any of ($p*) and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2022_22947_oracle_commerce_guided_search : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain oracle commerce guided search, affected by CVE-2022-22947"
+        severity = "high"
+        cve = "CVE-2022-22947"
+        cvss = "10.0"
+        vendor = "oracle"
+        product = "commerce_guided_search"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2022-22947"
+    strings:
+        $p = "commerce guided search" nocase
+        $p2 = "commerce-guided-search" nocase
+        $p3 = "commerce_guided_search" nocase
+        $v0 = "11.3.2"
+    condition:
+        any of ($p*) and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2022_22947_oracle_communications_cloud_native_core : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain oracle communications cloud native core binding support function, affected by CVE-2022-22947"
+        severity = "high"
+        cve = "CVE-2022-22947"
+        cvss = "10.0"
+        vendor = "oracle"
+        product = "communications_cloud_native_core_binding_support_function"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2022-22947"
+    strings:
+        $p = "communications cloud native core binding support function" nocase
+        $p2 = "communications-cloud-native-core-binding-support-function" nocase
+        $p3 = "communications_cloud_native_core_binding_support_function" nocase
+        $v0 = "1.11.0"
+        $v1 = "22.1.3"
+    condition:
+        any of ($p*) and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2022_0847_redhat_virtualization_host : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain redhat virtualization host, affected by CVE-2022-0847"
+        severity = "high"
+        cve = "CVE-2022-0847"
+        cvss = "7.8"
+        vendor = "redhat"
+        product = "virtualization_host"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2022-0847"
+    strings:
+        $p = "virtualization host" nocase
+        $p2 = "virtualization-host" nocase
+        $p3 = "virtualization_host" nocase
+        $v0 = "4.0"
+    condition:
+        any of ($p*) and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2022_0847_ovirt_ovirt_engine : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain ovirt ovirt-engine, affected by CVE-2022-0847"
+        severity = "high"
+        cve = "CVE-2022-0847"
+        cvss = "7.8"
+        vendor = "ovirt"
+        product = "ovirt-engine"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2022-0847"
+    strings:
+        $p = "ovirt-engine" nocase
+        $v0 = "4.4.10.2"
+    condition:
+        $p and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2022_26143_mitel_micollab : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain mitel micollab, affected by CVE-2022-26143"
+        severity = "high"
+        cve = "CVE-2022-26143"
+        cvss = "9.8"
+        vendor = "mitel"
+        product = "micollab"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2022-26143"
+    strings:
+        $p = "micollab" nocase
+        $v0 = "9.4"
+    condition:
+        $p and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2022_26143_mitel_mivoice_business_express : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain mitel mivoice business express, affected by CVE-2022-26143"
+        severity = "high"
+        cve = "CVE-2022-26143"
+        cvss = "9.8"
+        vendor = "mitel"
+        product = "mivoice_business_express"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2022-26143"
+    strings:
+        $p = "mivoice business express" nocase
+        $p2 = "mivoice-business-express" nocase
+        $p3 = "mivoice_business_express" nocase
+        $v0 = "8.1"
+    condition:
+        any of ($p*) and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2022_22620_apple_safari : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain apple safari, affected by CVE-2022-22620"
+        severity = "high"
+        cve = "CVE-2022-22620"
+        cvss = "8.8"
+        vendor = "apple"
+        product = "safari"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2022-22620"
+    strings:
+        $p = "safari" nocase
+        $v0 = "15.3"
+    condition:
+        $p and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2022_22948_vmware_cloud_foundation : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain vmware cloud foundation, affected by CVE-2022-22948"
+        severity = "high"
+        cve = "CVE-2022-22948"
+        cvss = "6.5"
+        vendor = "vmware"
+        product = "cloud_foundation"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2022-22948"
+    strings:
+        $p = "cloud foundation" nocase
+        $p2 = "cloud-foundation" nocase
+        $p3 = "cloud_foundation" nocase
+        $v0 = "3.0"
+        $v1 = "3.11"
+        $v2 = "4.0"
+        $v3 = "4.4.1"
+    condition:
+        any of ($p*) and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2022_22948_vmware_vcenter_server : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain vmware vcenter server, affected by CVE-2022-22948"
+        severity = "high"
+        cve = "CVE-2022-22948"
+        cvss = "6.5"
+        vendor = "vmware"
+        product = "vcenter_server"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2022-22948"
+    strings:
+        $p = "vcenter server" nocase
+        $p2 = "vcenter-server" nocase
+        $p3 = "vcenter_server" nocase
+        $v0 = "6.5"
+        $v1 = "6.7"
+        $v2 = "7.0"
+    condition:
+        any of ($p*) and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2022_22963_vmware_spring_cloud_function : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain vmware spring cloud function, affected by CVE-2022-22963"
+        severity = "high"
+        cve = "CVE-2022-22963"
+        cvss = "9.8"
+        vendor = "vmware"
+        product = "spring_cloud_function"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2022-22963"
+    strings:
+        $p = "spring cloud function" nocase
+        $p2 = "spring-cloud-function" nocase
+        $p3 = "spring_cloud_function" nocase
+        $v0 = "3.1.6"
+        $v1 = "3.2.0"
+        $v2 = "3.2.2"
+    condition:
+        any of ($p*) and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2022_22963_oracle_banking_branch : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain oracle banking branch, affected by CVE-2022-22963"
+        severity = "high"
+        cve = "CVE-2022-22963"
+        cvss = "9.8"
+        vendor = "oracle"
+        product = "banking_branch"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2022-22963"
+    strings:
+        $p = "banking branch" nocase
+        $p2 = "banking-branch" nocase
+        $p3 = "banking_branch" nocase
+        $v0 = "14.5"
+    condition:
+        any of ($p*) and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2022_22963_oracle_banking_cash_management : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain oracle banking cash management, affected by CVE-2022-22963"
+        severity = "high"
+        cve = "CVE-2022-22963"
+        cvss = "9.8"
+        vendor = "oracle"
+        product = "banking_cash_management"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2022-22963"
+    strings:
+        $p = "banking cash management" nocase
+        $p2 = "banking-cash-management" nocase
+        $p3 = "banking_cash_management" nocase
+        $v0 = "14.5"
+    condition:
+        any of ($p*) and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2022_22963_oracle_banking_corporate_lending_proces : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain oracle banking corporate lending process management, affected by CVE-2022-22963"
+        severity = "high"
+        cve = "CVE-2022-22963"
+        cvss = "9.8"
+        vendor = "oracle"
+        product = "banking_corporate_lending_process_management"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2022-22963"
+    strings:
+        $p = "banking corporate lending process management" nocase
+        $p2 = "banking-corporate-lending-process-management" nocase
+        $p3 = "banking_corporate_lending_process_management" nocase
+        $v0 = "14.5"
+    condition:
+        any of ($p*) and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2022_22963_oracle_banking_credit_facilities_proces : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain oracle banking credit facilities process management, affected by CVE-2022-22963"
+        severity = "high"
+        cve = "CVE-2022-22963"
+        cvss = "9.8"
+        vendor = "oracle"
+        product = "banking_credit_facilities_process_management"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2022-22963"
+    strings:
+        $p = "banking credit facilities process management" nocase
+        $p2 = "banking-credit-facilities-process-management" nocase
+        $p3 = "banking_credit_facilities_process_management" nocase
+        $v0 = "14.5"
+    condition:
+        any of ($p*) and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2022_22963_oracle_banking_electronic_data_exchange : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain oracle banking electronic data exchange for corporates, affected by CVE-2022-22963"
+        severity = "high"
+        cve = "CVE-2022-22963"
+        cvss = "9.8"
+        vendor = "oracle"
+        product = "banking_electronic_data_exchange_for_corporates"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2022-22963"
+    strings:
+        $p = "banking electronic data exchange for corporates" nocase
+        $p2 = "banking-electronic-data-exchange-for-corporates" nocase
+        $p3 = "banking_electronic_data_exchange_for_corporates" nocase
+        $v0 = "14.5"
+    condition:
+        any of ($p*) and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2022_22963_oracle_banking_liquidity_management : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain oracle banking liquidity management, affected by CVE-2022-22963"
+        severity = "high"
+        cve = "CVE-2022-22963"
+        cvss = "9.8"
+        vendor = "oracle"
+        product = "banking_liquidity_management"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2022-22963"
+    strings:
+        $p = "banking liquidity management" nocase
+        $p2 = "banking-liquidity-management" nocase
+        $p3 = "banking_liquidity_management" nocase
+        $v0 = "14.2"
+        $v1 = "14.5"
+    condition:
+        any of ($p*) and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2022_22963_oracle_banking_origination : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain oracle banking origination, affected by CVE-2022-22963"
+        severity = "high"
+        cve = "CVE-2022-22963"
+        cvss = "9.8"
+        vendor = "oracle"
+        product = "banking_origination"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2022-22963"
+    strings:
+        $p = "banking origination" nocase
+        $p2 = "banking-origination" nocase
+        $p3 = "banking_origination" nocase
+        $v0 = "14.5"
+    condition:
+        any of ($p*) and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2022_22963_oracle_banking_supply_chain_finance : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain oracle banking supply chain finance, affected by CVE-2022-22963"
+        severity = "high"
+        cve = "CVE-2022-22963"
+        cvss = "9.8"
+        vendor = "oracle"
+        product = "banking_supply_chain_finance"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2022-22963"
+    strings:
+        $p = "banking supply chain finance" nocase
+        $p2 = "banking-supply-chain-finance" nocase
+        $p3 = "banking_supply_chain_finance" nocase
+        $v0 = "14.5"
+    condition:
+        any of ($p*) and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2022_22963_oracle_banking_trade_finance_process_ma : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain oracle banking trade finance process management, affected by CVE-2022-22963"
+        severity = "high"
+        cve = "CVE-2022-22963"
+        cvss = "9.8"
+        vendor = "oracle"
+        product = "banking_trade_finance_process_management"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2022-22963"
+    strings:
+        $p = "banking trade finance process management" nocase
+        $p2 = "banking-trade-finance-process-management" nocase
+        $p3 = "banking_trade_finance_process_management" nocase
+        $v0 = "14.5"
+    condition:
+        any of ($p*) and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2022_22963_oracle_banking_virtual_account_manageme : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain oracle banking virtual account management, affected by CVE-2022-22963"
+        severity = "high"
+        cve = "CVE-2022-22963"
+        cvss = "9.8"
+        vendor = "oracle"
+        product = "banking_virtual_account_management"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2022-22963"
+    strings:
+        $p = "banking virtual account management" nocase
+        $p2 = "banking-virtual-account-management" nocase
+        $p3 = "banking_virtual_account_management" nocase
+        $v0 = "14.5"
+    condition:
+        any of ($p*) and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2022_22963_oracle_communications_cloud_native_core : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain oracle communications cloud native core automated test suite, affected by CVE-2022-22963"
+        severity = "high"
+        cve = "CVE-2022-22963"
+        cvss = "9.8"
+        vendor = "oracle"
+        product = "communications_cloud_native_core_automated_test_suite"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2022-22963"
+    strings:
+        $p = "communications cloud native core automated test suite" nocase
+        $p2 = "communications-cloud-native-core-automated-test-suite" nocase
+        $p3 = "communications_cloud_native_core_automated_test_suite" nocase
+        $v0 = "1.9.0"
+        $v1 = "22.1.0"
+    condition:
+        any of ($p*) and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2022_22963_oracle_communications_communications_po : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain oracle communications communications policy management, affected by CVE-2022-22963"
+        severity = "high"
+        cve = "CVE-2022-22963"
+        cvss = "9.8"
+        vendor = "oracle"
+        product = "communications_communications_policy_management"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2022-22963"
+    strings:
+        $p = "communications communications policy management" nocase
+        $p2 = "communications-communications-policy-management" nocase
+        $p3 = "communications_communications_policy_management" nocase
+        $v0 = "12.6.0.0.0"
+    condition:
+        any of ($p*) and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2022_22963_oracle_financial_services_analytical_ap : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain oracle financial services analytical applications infrastructure, affected by CVE-2022-22963"
+        severity = "high"
+        cve = "CVE-2022-22963"
+        cvss = "9.8"
+        vendor = "oracle"
+        product = "financial_services_analytical_applications_infrastructure"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2022-22963"
+    strings:
+        $p = "financial services analytical applications infrastructure" nocase
+        $p2 = "financial-services-analytical-applications-infrastructure" nocase
+        $p3 = "financial_services_analytical_applications_infrastructure" nocase
+        $v0 = "8.1.1.0"
+        $v1 = "8.1.2.0"
+    condition:
+        any of ($p*) and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2022_22963_oracle_financial_services_behavior_dete : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain oracle financial services behavior detection platform, affected by CVE-2022-22963"
+        severity = "high"
+        cve = "CVE-2022-22963"
+        cvss = "9.8"
+        vendor = "oracle"
+        product = "financial_services_behavior_detection_platform"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2022-22963"
+    strings:
+        $p = "financial services behavior detection platform" nocase
+        $p2 = "financial-services-behavior-detection-platform" nocase
+        $p3 = "financial_services_behavior_detection_platform" nocase
+        $v0 = "8.1.1.0"
+        $v1 = "8.1.1.1"
+        $v2 = "8.1.2.0"
+    condition:
+        any of ($p*) and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2022_22963_oracle_financial_services_enterprise_ca : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain oracle financial services enterprise case management, affected by CVE-2022-22963"
+        severity = "high"
+        cve = "CVE-2022-22963"
+        cvss = "9.8"
+        vendor = "oracle"
+        product = "financial_services_enterprise_case_management"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2022-22963"
+    strings:
+        $p = "financial services enterprise case management" nocase
+        $p2 = "financial-services-enterprise-case-management" nocase
+        $p3 = "financial_services_enterprise_case_management" nocase
+        $v0 = "8.1.1.0"
+        $v1 = "8.1.1.1"
+        $v2 = "8.1.2.0"
+    condition:
+        any of ($p*) and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2022_22963_oracle_mysql_enterprise_monitor : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain oracle mysql enterprise monitor, affected by CVE-2022-22963"
+        severity = "high"
+        cve = "CVE-2022-22963"
+        cvss = "9.8"
+        vendor = "oracle"
+        product = "mysql_enterprise_monitor"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2022-22963"
+    strings:
+        $p = "mysql enterprise monitor" nocase
+        $p2 = "mysql-enterprise-monitor" nocase
+        $p3 = "mysql_enterprise_monitor" nocase
+        $v0 = "8.0.29"
+    condition:
+        any of ($p*) and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2022_22963_oracle_product_lifecycle_analytics : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain oracle product lifecycle analytics, affected by CVE-2022-22963"
+        severity = "high"
+        cve = "CVE-2022-22963"
+        cvss = "9.8"
+        vendor = "oracle"
+        product = "product_lifecycle_analytics"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2022-22963"
+    strings:
+        $p = "product lifecycle analytics" nocase
+        $p2 = "product-lifecycle-analytics" nocase
+        $p3 = "product_lifecycle_analytics" nocase
+        $v0 = "3.6.1.0"
+    condition:
+        any of ($p*) and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2022_22963_oracle_retail_xstore_point_of_service : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain oracle retail xstore point of service, affected by CVE-2022-22963"
+        severity = "high"
+        cve = "CVE-2022-22963"
+        cvss = "9.8"
+        vendor = "oracle"
+        product = "retail_xstore_point_of_service"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2022-22963"
+    strings:
+        $p = "retail xstore point of service" nocase
+        $p2 = "retail-xstore-point-of-service" nocase
+        $p3 = "retail_xstore_point_of_service" nocase
+        $v0 = "20.0.1"
+        $v1 = "21.0.0"
+    condition:
+        any of ($p*) and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2022_22963_oracle_sd_wan_edge : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain oracle sd-wan edge, affected by CVE-2022-22963"
+        severity = "high"
+        cve = "CVE-2022-22963"
+        cvss = "9.8"
+        vendor = "oracle"
+        product = "sd-wan_edge"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2022-22963"
+    strings:
+        $p = "sd-wan edge" nocase
+        $p2 = "sd-wan-edge" nocase
+        $p3 = "sd-wan_edge" nocase
+        $v0 = "9.0"
+        $v1 = "9.1"
+    condition:
+        any of ($p*) and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2022_22965_vmware_spring_framework : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain vmware spring framework, affected by CVE-2022-22965"
+        severity = "high"
+        cve = "CVE-2022-22965"
+        cvss = "9.8"
+        vendor = "vmware"
+        product = "spring_framework"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2022-22965"
+    strings:
+        $p = "spring framework" nocase
+        $p2 = "spring-framework" nocase
+        $p3 = "spring_framework" nocase
+        $v0 = "5.2.20"
+        $v1 = "5.3.0"
+        $v2 = "5.3.18"
+    condition:
+        any of ($p*) and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2022_22965_cisco_cx_cloud_agent : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain cisco cx cloud agent, affected by CVE-2022-22965"
+        severity = "high"
+        cve = "CVE-2022-22965"
+        cvss = "9.8"
+        vendor = "cisco"
+        product = "cx_cloud_agent"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2022-22965"
+    strings:
+        $p = "cx cloud agent" nocase
+        $p2 = "cx-cloud-agent" nocase
+        $p3 = "cx_cloud_agent" nocase
+        $v0 = "2.1.0"
+    condition:
+        any of ($p*) and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2022_22965_oracle_communications_cloud_native_core : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain oracle communications cloud native core automated test suite, affected by CVE-2022-22965"
+        severity = "high"
+        cve = "CVE-2022-22965"
+        cvss = "9.8"
+        vendor = "oracle"
+        product = "communications_cloud_native_core_automated_test_suite"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2022-22965"
+    strings:
+        $p = "communications cloud native core automated test suite" nocase
+        $p2 = "communications-cloud-native-core-automated-test-suite" nocase
+        $p3 = "communications_cloud_native_core_automated_test_suite" nocase
+        $v0 = "1.9.0"
+        $v1 = "22.1.0"
+    condition:
+        any of ($p*) and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2022_22965_oracle_communications_policy_management : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain oracle communications policy management, affected by CVE-2022-22965"
+        severity = "high"
+        cve = "CVE-2022-22965"
+        cvss = "9.8"
+        vendor = "oracle"
+        product = "communications_policy_management"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2022-22965"
+    strings:
+        $p = "communications policy management" nocase
+        $p2 = "communications-policy-management" nocase
+        $p3 = "communications_policy_management" nocase
+        $v0 = "12.6.0.0.0"
+    condition:
+        any of ($p*) and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2022_22965_oracle_financial_services_analytical_ap : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain oracle financial services analytical applications infrastructure, affected by CVE-2022-22965"
+        severity = "high"
+        cve = "CVE-2022-22965"
+        cvss = "9.8"
+        vendor = "oracle"
+        product = "financial_services_analytical_applications_infrastructure"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2022-22965"
+    strings:
+        $p = "financial services analytical applications infrastructure" nocase
+        $p2 = "financial-services-analytical-applications-infrastructure" nocase
+        $p3 = "financial_services_analytical_applications_infrastructure" nocase
+        $v0 = "8.1.1"
+        $v1 = "8.1.2.0"
+    condition:
+        any of ($p*) and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2022_22965_oracle_financial_services_behavior_dete : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain oracle financial services behavior detection platform, affected by CVE-2022-22965"
+        severity = "high"
+        cve = "CVE-2022-22965"
+        cvss = "9.8"
+        vendor = "oracle"
+        product = "financial_services_behavior_detection_platform"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2022-22965"
+    strings:
+        $p = "financial services behavior detection platform" nocase
+        $p2 = "financial-services-behavior-detection-platform" nocase
+        $p3 = "financial_services_behavior_detection_platform" nocase
+        $v0 = "8.1.1.0"
+        $v1 = "8.1.1.1"
+        $v2 = "8.1.2.0"
+    condition:
+        any of ($p*) and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2022_22965_oracle_financial_services_enterprise_ca : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain oracle financial services enterprise case management, affected by CVE-2022-22965"
+        severity = "high"
+        cve = "CVE-2022-22965"
+        cvss = "9.8"
+        vendor = "oracle"
+        product = "financial_services_enterprise_case_management"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2022-22965"
+    strings:
+        $p = "financial services enterprise case management" nocase
+        $p2 = "financial-services-enterprise-case-management" nocase
+        $p3 = "financial_services_enterprise_case_management" nocase
+        $v0 = "8.1.1.0"
+        $v1 = "8.1.1.1"
+        $v2 = "8.1.2.0"
+    condition:
+        any of ($p*) and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2022_22965_oracle_mysql_enterprise_monitor : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain oracle mysql enterprise monitor, affected by CVE-2022-22965"
+        severity = "high"
+        cve = "CVE-2022-22965"
+        cvss = "9.8"
+        vendor = "oracle"
+        product = "mysql_enterprise_monitor"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2022-22965"
+    strings:
+        $p = "mysql enterprise monitor" nocase
+        $p2 = "mysql-enterprise-monitor" nocase
+        $p3 = "mysql_enterprise_monitor" nocase
+        $v0 = "8.0.29"
+    condition:
+        any of ($p*) and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2022_22965_oracle_product_lifecycle_analytics : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain oracle product lifecycle analytics, affected by CVE-2022-22965"
+        severity = "high"
+        cve = "CVE-2022-22965"
+        cvss = "9.8"
+        vendor = "oracle"
+        product = "product_lifecycle_analytics"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2022-22965"
+    strings:
+        $p = "product lifecycle analytics" nocase
+        $p2 = "product-lifecycle-analytics" nocase
+        $p3 = "product_lifecycle_analytics" nocase
+        $v0 = "3.6.1"
+    condition:
+        any of ($p*) and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2022_22965_oracle_retail_xstore_point_of_service : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain oracle retail xstore point of service, affected by CVE-2022-22965"
+        severity = "high"
+        cve = "CVE-2022-22965"
+        cvss = "9.8"
+        vendor = "oracle"
+        product = "retail_xstore_point_of_service"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2022-22965"
+    strings:
+        $p = "retail xstore point of service" nocase
+        $p2 = "retail-xstore-point-of-service" nocase
+        $p3 = "retail_xstore_point_of_service" nocase
+        $v0 = "20.0.1"
+        $v1 = "21.0.0"
+    condition:
+        any of ($p*) and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2022_22965_oracle_sd_wan_edge : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain oracle sd-wan edge, affected by CVE-2022-22965"
+        severity = "high"
+        cve = "CVE-2022-22965"
+        cvss = "9.8"
+        vendor = "oracle"
+        product = "sd-wan_edge"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2022-22965"
+    strings:
+        $p = "sd-wan edge" nocase
+        $p2 = "sd-wan-edge" nocase
+        $p3 = "sd-wan_edge" nocase
+        $v0 = "9.0"
+        $v1 = "9.1"
+    condition:
+        any of ($p*) and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2022_22965_siemens_operation_scheduler : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain siemens operation scheduler, affected by CVE-2022-22965"
+        severity = "high"
+        cve = "CVE-2022-22965"
+        cvss = "9.8"
+        vendor = "siemens"
+        product = "operation_scheduler"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2022-22965"
+    strings:
+        $p = "operation scheduler" nocase
+        $p2 = "operation-scheduler" nocase
+        $p3 = "operation_scheduler" nocase
+        $v0 = "2.0.4"
+    condition:
+        any of ($p*) and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2022_22965_siemens_sipass_integrated : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain siemens sipass integrated, affected by CVE-2022-22965"
+        severity = "high"
+        cve = "CVE-2022-22965"
+        cvss = "9.8"
+        vendor = "siemens"
+        product = "sipass_integrated"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2022-22965"
+    strings:
+        $p = "sipass integrated" nocase
+        $p2 = "sipass-integrated" nocase
+        $p3 = "sipass_integrated" nocase
+        $v0 = "2.80"
+        $v1 = "2.85"
+    condition:
+        any of ($p*) and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2022_22965_siemens_siveillance_identity : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain siemens siveillance identity, affected by CVE-2022-22965"
+        severity = "high"
+        cve = "CVE-2022-22965"
+        cvss = "9.8"
+        vendor = "siemens"
+        product = "siveillance_identity"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2022-22965"
+    strings:
+        $p = "siveillance identity" nocase
+        $p2 = "siveillance-identity" nocase
+        $p3 = "siveillance_identity" nocase
+        $v0 = "1.5"
+        $v1 = "1.6"
+    condition:
+        any of ($p*) and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2022_22965_veritas_access_appliance : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain veritas access appliance, affected by CVE-2022-22965"
+        severity = "high"
+        cve = "CVE-2022-22965"
+        cvss = "9.8"
+        vendor = "veritas"
+        product = "access_appliance"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2022-22965"
+    strings:
+        $p = "access appliance" nocase
+        $p2 = "access-appliance" nocase
+        $p3 = "access_appliance" nocase
+        $v0 = "7.4.3"
+        $v1 = "7.4.3.100"
+        $v2 = "7.4.3.200"
+    condition:
+        any of ($p*) and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2022_22965_veritas_flex_appliance : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain veritas flex appliance, affected by CVE-2022-22965"
+        severity = "high"
+        cve = "CVE-2022-22965"
+        cvss = "9.8"
+        vendor = "veritas"
+        product = "flex_appliance"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2022-22965"
+    strings:
+        $p = "flex appliance" nocase
+        $p2 = "flex-appliance" nocase
+        $p3 = "flex_appliance" nocase
+        $v0 = "1.3"
+        $v1 = "2.0"
+        $v2 = "2.0.1"
+        $v3 = "2.0.2"
+        $v4 = "2.1"
+    condition:
+        any of ($p*) and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2022_22965_veritas_netbackup_flex_scale_appliance : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain veritas netbackup flex scale appliance, affected by CVE-2022-22965"
+        severity = "high"
+        cve = "CVE-2022-22965"
+        cvss = "9.8"
+        vendor = "veritas"
+        product = "netbackup_flex_scale_appliance"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2022-22965"
+    strings:
+        $p = "netbackup flex scale appliance" nocase
+        $p2 = "netbackup-flex-scale-appliance" nocase
+        $p3 = "netbackup_flex_scale_appliance" nocase
+        $v0 = "2.1"
+        $v1 = "3.0"
+    condition:
+        any of ($p*) and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2022_22965_siemens_simatic_speech_assistant_for_mac : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain siemens simatic speech assistant for machines, affected by CVE-2022-22965"
+        severity = "high"
+        cve = "CVE-2022-22965"
+        cvss = "9.8"
+        vendor = "siemens"
+        product = "simatic_speech_assistant_for_machines"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2022-22965"
+    strings:
+        $p = "simatic speech assistant for machines" nocase
+        $p2 = "simatic-speech-assistant-for-machines" nocase
+        $p3 = "simatic_speech_assistant_for_machines" nocase
+        $v0 = "1.2.1"
+    condition:
+        any of ($p*) and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2022_22965_siemens_sinec_network_management_system : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain siemens sinec network management system, affected by CVE-2022-22965"
+        severity = "high"
+        cve = "CVE-2022-22965"
+        cvss = "9.8"
+        vendor = "siemens"
+        product = "sinec_network_management_system"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2022-22965"
+    strings:
+        $p = "sinec network management system" nocase
+        $p2 = "sinec-network-management-system" nocase
+        $p3 = "sinec_network_management_system" nocase
+        $v0 = "1.0.3"
+    condition:
+        any of ($p*) and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2022_22965_oracle_commerce_platform : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain oracle commerce platform, affected by CVE-2022-22965"
+        severity = "high"
+        cve = "CVE-2022-22965"
+        cvss = "9.8"
+        vendor = "oracle"
+        product = "commerce_platform"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2022-22965"
+    strings:
+        $p = "commerce platform" nocase
+        $p2 = "commerce-platform" nocase
+        $p3 = "commerce_platform" nocase
+        $v0 = "11.3.2"
+    condition:
+        any of ($p*) and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2022_22965_oracle_communications_unified_inventory : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain oracle communications unified inventory management, affected by CVE-2022-22965"
+        severity = "high"
+        cve = "CVE-2022-22965"
+        cvss = "9.8"
+        vendor = "oracle"
+        product = "communications_unified_inventory_management"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2022-22965"
+    strings:
+        $p = "communications unified inventory management" nocase
+        $p2 = "communications-unified-inventory-management" nocase
+        $p3 = "communications_unified_inventory_management" nocase
+        $v0 = "7.4.1"
+        $v1 = "7.4.2"
+        $v2 = "7.5.0"
+    condition:
+        any of ($p*) and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2022_22965_oracle_retail_bulk_data_integration : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain oracle retail bulk data integration, affected by CVE-2022-22965"
+        severity = "high"
+        cve = "CVE-2022-22965"
+        cvss = "9.8"
+        vendor = "oracle"
+        product = "retail_bulk_data_integration"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2022-22965"
+    strings:
+        $p = "retail bulk data integration" nocase
+        $p2 = "retail-bulk-data-integration" nocase
+        $p3 = "retail_bulk_data_integration" nocase
+        $v0 = "16.0.3"
+    condition:
+        any of ($p*) and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2022_22965_oracle_retail_customer_management_and_s : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain oracle retail customer management and segmentation foundation, affected by CVE-2022-22965"
+        severity = "high"
+        cve = "CVE-2022-22965"
+        cvss = "9.8"
+        vendor = "oracle"
+        product = "retail_customer_management_and_segmentation_foundation"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2022-22965"
+    strings:
+        $p = "retail customer management and segmentation foundation" nocase
+        $p2 = "retail-customer-management-and-segmentation-foundation" nocase
+        $p3 = "retail_customer_management_and_segmentation_foundation" nocase
+        $v0 = "17.0"
+        $v1 = "18.0"
+        $v2 = "19.0"
+    condition:
+        any of ($p*) and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2022_22965_oracle_retail_financial_integration : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain oracle retail financial integration, affected by CVE-2022-22965"
+        severity = "high"
+        cve = "CVE-2022-22965"
+        cvss = "9.8"
+        vendor = "oracle"
+        product = "retail_financial_integration"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2022-22965"
+    strings:
+        $p = "retail financial integration" nocase
+        $p2 = "retail-financial-integration" nocase
+        $p3 = "retail_financial_integration" nocase
+        $v0 = "14.1.3.2"
+        $v1 = "15.0.3.1"
+        $v2 = "16.0.3"
+        $v3 = "19.0.1"
+    condition:
+        any of ($p*) and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2022_22965_oracle_retail_integration_bus : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain oracle retail integration bus, affected by CVE-2022-22965"
+        severity = "high"
+        cve = "CVE-2022-22965"
+        cvss = "9.8"
+        vendor = "oracle"
+        product = "retail_integration_bus"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2022-22965"
+    strings:
+        $p = "retail integration bus" nocase
+        $p2 = "retail-integration-bus" nocase
+        $p3 = "retail_integration_bus" nocase
+        $v0 = "14.1.3.2"
+        $v1 = "15.0.3.1"
+        $v2 = "16.0.3"
+        $v3 = "19.0.1"
+    condition:
+        any of ($p*) and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2022_22965_oracle_retail_merchandising_system : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain oracle retail merchandising system, affected by CVE-2022-22965"
+        severity = "high"
+        cve = "CVE-2022-22965"
+        cvss = "9.8"
+        vendor = "oracle"
+        product = "retail_merchandising_system"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2022-22965"
+    strings:
+        $p = "retail merchandising system" nocase
+        $p2 = "retail-merchandising-system" nocase
+        $p3 = "retail_merchandising_system" nocase
+        $v0 = "16.0.3"
+        $v1 = "19.0.1"
+    condition:
+        any of ($p*) and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2022_22965_oracle_weblogic_server : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain oracle weblogic server, affected by CVE-2022-22965"
+        severity = "high"
+        cve = "CVE-2022-22965"
+        cvss = "9.8"
+        vendor = "oracle"
+        product = "weblogic_server"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2022-22965"
+    strings:
+        $p = "weblogic server" nocase
+        $p2 = "weblogic-server" nocase
+        $p3 = "weblogic_server" nocase
+        $v0 = "12.2.1.3.0"
+        $v1 = "12.2.1.4.0"
+        $v2 = "14.1.1.0.0"
+    condition:
+        any of ($p*) and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2022_0609_google_chrome : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain google chrome, affected by CVE-2022-0609"
+        severity = "high"
+        cve = "CVE-2022-0609"
+        cvss = "8.8"
+        vendor = "google"
+        product = "chrome"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2022-0609"
+    strings:
+        $p = "chrome" nocase
+        $v0 = "98.0.4758.102"
+    condition:
+        $p and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2022_22954_vmware_identity_manager : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain vmware identity manager, affected by CVE-2022-22954"
+        severity = "high"
+        cve = "CVE-2022-22954"
+        cvss = "9.8"
+        vendor = "vmware"
+        product = "identity_manager"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2022-22954"
+    strings:
+        $p = "identity manager" nocase
+        $p2 = "identity-manager" nocase
+        $p3 = "identity_manager" nocase
+        $v0 = "3.3.3"
+        $v1 = "3.3.4"
+        $v2 = "3.3.5"
+        $v3 = "3.3.6"
+    condition:
+        any of ($p*) and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2022_22954_vmware_vrealize_automation : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain vmware vrealize automation, affected by CVE-2022-22954"
+        severity = "high"
+        cve = "CVE-2022-22954"
+        cvss = "9.8"
+        vendor = "vmware"
+        product = "vrealize_automation"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2022-22954"
+    strings:
+        $p = "vrealize automation" nocase
+        $p2 = "vrealize-automation" nocase
+        $p3 = "vrealize_automation" nocase
+        $v0 = "7.6"
+    condition:
+        any of ($p*) and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2022_22954_vmware_workspace_one_access : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain vmware workspace one access, affected by CVE-2022-22954"
+        severity = "high"
+        cve = "CVE-2022-22954"
+        cvss = "9.8"
+        vendor = "vmware"
+        product = "workspace_one_access"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2022-22954"
+    strings:
+        $p = "workspace one access" nocase
+        $p2 = "workspace-one-access" nocase
+        $p3 = "workspace_one_access" nocase
+        $v0 = "20.10.0.0"
+        $v1 = "20.10.0.1"
+        $v2 = "21.08.0.0"
+        $v3 = "21.08.0.1"
+    condition:
+        any of ($p*) and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2022_22954_vmware_cloud_foundation : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain vmware cloud foundation, affected by CVE-2022-22954"
+        severity = "high"
+        cve = "CVE-2022-22954"
+        cvss = "9.8"
+        vendor = "vmware"
+        product = "cloud_foundation"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2022-22954"
+    strings:
+        $p = "cloud foundation" nocase
+        $p2 = "cloud-foundation" nocase
+        $p3 = "cloud_foundation" nocase
+        $v0 = "4.0"
+        $v1 = "4.3.1"
+    condition:
+        any of ($p*) and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2022_22954_vmware_vrealize_suite_lifecycle_manager : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain vmware vrealize suite lifecycle manager, affected by CVE-2022-22954"
+        severity = "high"
+        cve = "CVE-2022-22954"
+        cvss = "9.8"
+        vendor = "vmware"
+        product = "vrealize_suite_lifecycle_manager"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2022-22954"
+    strings:
+        $p = "vrealize suite lifecycle manager" nocase
+        $p2 = "vrealize-suite-lifecycle-manager" nocase
+        $p3 = "vrealize_suite_lifecycle_manager" nocase
+        $v0 = "8.0"
+        $v1 = "8.2"
+    condition:
+        any of ($p*) and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2022_22960_vmware_cloud_foundation : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain vmware cloud foundation, affected by CVE-2022-22960"
+        severity = "high"
+        cve = "CVE-2022-22960"
+        cvss = "7.8"
+        vendor = "vmware"
+        product = "cloud_foundation"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2022-22960"
+    strings:
+        $p = "cloud foundation" nocase
+        $p2 = "cloud-foundation" nocase
+        $p3 = "cloud_foundation" nocase
+        $v0 = "3.0"
+        $v1 = "5.0"
+    condition:
+        any of ($p*) and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2022_22960_vmware_identity_manager : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain vmware identity manager, affected by CVE-2022-22960"
+        severity = "high"
+        cve = "CVE-2022-22960"
+        cvss = "7.8"
+        vendor = "vmware"
+        product = "identity_manager"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2022-22960"
+    strings:
+        $p = "identity manager" nocase
+        $p2 = "identity-manager" nocase
+        $p3 = "identity_manager" nocase
+        $v0 = "3.3.3"
+        $v1 = "3.3.4"
+        $v2 = "3.3.5"
+        $v3 = "3.3.6"
+    condition:
+        any of ($p*) and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2022_22960_vmware_vrealize_automation : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain vmware vrealize automation, affected by CVE-2022-22960"
+        severity = "high"
+        cve = "CVE-2022-22960"
+        cvss = "7.8"
+        vendor = "vmware"
+        product = "vrealize_automation"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2022-22960"
+    strings:
+        $p = "vrealize automation" nocase
+        $p2 = "vrealize-automation" nocase
+        $p3 = "vrealize_automation" nocase
+        $v0 = "7.6"
+    condition:
+        any of ($p*) and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2022_22960_vmware_vrealize_suite_lifecycle_manager : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain vmware vrealize suite lifecycle manager, affected by CVE-2022-22960"
+        severity = "high"
+        cve = "CVE-2022-22960"
+        cvss = "7.8"
+        vendor = "vmware"
+        product = "vrealize_suite_lifecycle_manager"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2022-22960"
+    strings:
+        $p = "vrealize suite lifecycle manager" nocase
+        $p2 = "vrealize-suite-lifecycle-manager" nocase
+        $p3 = "vrealize_suite_lifecycle_manager" nocase
+        $v0 = "8.0"
+        $v1 = "9.0"
+    condition:
+        any of ($p*) and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2022_22960_vmware_workspace_one_access : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain vmware workspace one access, affected by CVE-2022-22960"
+        severity = "high"
+        cve = "CVE-2022-22960"
+        cvss = "7.8"
+        vendor = "vmware"
+        product = "workspace_one_access"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2022-22960"
+    strings:
+        $p = "workspace one access" nocase
+        $p2 = "workspace-one-access" nocase
+        $p3 = "workspace_one_access" nocase
+        $v0 = "20.10.0.0"
+        $v1 = "20.10.0.1"
+        $v2 = "21.08.0.0"
+        $v3 = "21.08.0.1"
+    condition:
+        any of ($p*) and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2022_24816_geosolutionsgroup_jai_ext : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain geosolutionsgroup jai-ext, affected by CVE-2022-24816"
+        severity = "high"
+        cve = "CVE-2022-24816"
+        cvss = "10.0"
+        vendor = "geosolutionsgroup"
+        product = "jai-ext"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2022-24816"
+    strings:
+        $p = "jai-ext" nocase
+        $v0 = "1.1.22"
+    condition:
+        $p and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2022_28810_zohocorp_manageengine_adselfservice_plus : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain zohocorp manageengine adselfservice plus, affected by CVE-2022-28810"
+        severity = "high"
+        cve = "CVE-2022-28810"
+        cvss = "6.8"
+        vendor = "zohocorp"
+        product = "manageengine_adselfservice_plus"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2022-28810"
+    strings:
+        $p = "manageengine adselfservice plus" nocase
+        $p2 = "manageengine-adselfservice-plus" nocase
+        $p3 = "manageengine_adselfservice_plus" nocase
+        $v0 = "6.1"
+    condition:
+        any of ($p*) and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2022_29464_wso2_api_manager : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain wso2 api manager, affected by CVE-2022-29464"
+        severity = "high"
+        cve = "CVE-2022-29464"
+        cvss = "9.8"
+        vendor = "wso2"
+        product = "api_manager"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2022-29464"
+    strings:
+        $p = "api manager" nocase
+        $p2 = "api-manager" nocase
+        $p3 = "api_manager" nocase
+        $v0 = "2.2.0"
+        $v1 = "4.0.0"
+    condition:
+        any of ($p*) and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2022_29464_wso2_enterprise_integrator : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain wso2 enterprise integrator, affected by CVE-2022-29464"
+        severity = "high"
+        cve = "CVE-2022-29464"
+        cvss = "9.8"
+        vendor = "wso2"
+        product = "enterprise_integrator"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2022-29464"
+    strings:
+        $p = "enterprise integrator" nocase
+        $p2 = "enterprise-integrator" nocase
+        $p3 = "enterprise_integrator" nocase
+        $v0 = "6.2.0"
+        $v1 = "6.6.0"
+    condition:
+        any of ($p*) and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2022_29464_wso2_identity_server : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain wso2 identity server, affected by CVE-2022-29464"
+        severity = "high"
+        cve = "CVE-2022-29464"
+        cvss = "9.8"
+        vendor = "wso2"
+        product = "identity_server"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2022-29464"
+    strings:
+        $p = "identity server" nocase
+        $p2 = "identity-server" nocase
+        $p3 = "identity_server" nocase
+        $v0 = "5.11.0"
+        $v1 = "5.2.0"
+    condition:
+        any of ($p*) and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2022_29464_wso2_identity_server_analytics : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain wso2 identity server analytics, affected by CVE-2022-29464"
+        severity = "high"
+        cve = "CVE-2022-29464"
+        cvss = "9.8"
+        vendor = "wso2"
+        product = "identity_server_analytics"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2022-29464"
+    strings:
+        $p = "identity server analytics" nocase
+        $p2 = "identity-server-analytics" nocase
+        $p3 = "identity_server_analytics" nocase
+        $v0 = "5.4.0"
+        $v1 = "5.4.1"
+        $v2 = "5.5.0"
+        $v3 = "5.6.0"
+    condition:
+        any of ($p*) and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2022_29464_wso2_identity_server_as_key_manager : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain wso2 identity server as key manager, affected by CVE-2022-29464"
+        severity = "high"
+        cve = "CVE-2022-29464"
+        cvss = "9.8"
+        vendor = "wso2"
+        product = "identity_server_as_key_manager"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2022-29464"
+    strings:
+        $p = "identity server as key manager" nocase
+        $p2 = "identity-server-as-key-manager" nocase
+        $p3 = "identity_server_as_key_manager" nocase
+        $v0 = "5.10.0"
+        $v1 = "5.3.0"
+    condition:
+        any of ($p*) and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2022_29464_wso2_open_banking_am : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain wso2 open banking am, affected by CVE-2022-29464"
+        severity = "high"
+        cve = "CVE-2022-29464"
+        cvss = "9.8"
+        vendor = "wso2"
+        product = "open_banking_am"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2022-29464"
+    strings:
+        $p = "open banking am" nocase
+        $p2 = "open-banking-am" nocase
+        $p3 = "open_banking_am" nocase
+        $v0 = "1.3.0"
+        $v1 = "2.0.0"
+    condition:
+        any of ($p*) and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2022_29464_wso2_open_banking_iam : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain wso2 open banking iam, affected by CVE-2022-29464"
+        severity = "high"
+        cve = "CVE-2022-29464"
+        cvss = "9.8"
+        vendor = "wso2"
+        product = "open_banking_iam"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2022-29464"
+    strings:
+        $p = "open banking iam" nocase
+        $p2 = "open-banking-iam" nocase
+        $p3 = "open_banking_iam" nocase
+        $v0 = "2.0.0"
+    condition:
+        any of ($p*) and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2022_29464_wso2_open_banking_km : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain wso2 open banking km, affected by CVE-2022-29464"
+        severity = "high"
+        cve = "CVE-2022-29464"
+        cvss = "9.8"
+        vendor = "wso2"
+        product = "open_banking_km"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2022-29464"
+    strings:
+        $p = "open banking km" nocase
+        $p2 = "open-banking-km" nocase
+        $p3 = "open_banking_km" nocase
+        $v0 = "1.3.0"
+        $v1 = "1.5.0"
+    condition:
+        any of ($p*) and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2022_21445_oracle_application_development_framewor : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain oracle application development framework, affected by CVE-2022-21445"
+        severity = "high"
+        cve = "CVE-2022-21445"
+        cvss = "9.8"
+        vendor = "oracle"
+        product = "application_development_framework"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2022-21445"
+    strings:
+        $p = "application development framework" nocase
+        $p2 = "application-development-framework" nocase
+        $p3 = "application_development_framework" nocase
+        $v0 = "12.2.1.3.0"
+        $v1 = "12.2.1.4.0"
+    condition:
+        any of ($p*) and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2022_27924_synacor_zimbra_collaboration_suite : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain synacor zimbra collaboration suite, affected by CVE-2022-27924"
+        severity = "high"
+        cve = "CVE-2022-27924"
+        cvss = "7.5"
+        vendor = "synacor"
+        product = "zimbra_collaboration_suite"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2022-27924"
+    strings:
+        $p = "zimbra collaboration suite" nocase
+        $p2 = "zimbra-collaboration-suite" nocase
+        $p3 = "zimbra_collaboration_suite" nocase
+        $v0 = "8.8.15"
+        $v1 = "9.0.0"
+    condition:
+        any of ($p*) and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2022_27925_synacor_zimbra_collaboration_suite : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain synacor zimbra collaboration suite, affected by CVE-2022-27925"
+        severity = "high"
+        cve = "CVE-2022-27925"
+        cvss = "7.2"
+        vendor = "synacor"
+        product = "zimbra_collaboration_suite"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2022-27925"
+    strings:
+        $p = "zimbra collaboration suite" nocase
+        $p2 = "zimbra-collaboration-suite" nocase
+        $p3 = "zimbra_collaboration_suite" nocase
+        $v0 = "8.8.15"
+        $v1 = "9.0.0"
+    condition:
+        any of ($p*) and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2022_27926_synacor_zimbra_collaboration_suite : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain synacor zimbra collaboration suite, affected by CVE-2022-27926"
+        severity = "high"
+        cve = "CVE-2022-27926"
+        cvss = "6.1"
+        vendor = "synacor"
+        product = "zimbra_collaboration_suite"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2022-27926"
+    strings:
+        $p = "zimbra collaboration suite" nocase
+        $p2 = "zimbra-collaboration-suite" nocase
+        $p3 = "zimbra_collaboration_suite" nocase
+        $v0 = "9.0.0"
+    condition:
+        any of ($p*) and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2022_29499_mitel_mivoice_connect : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain mitel mivoice connect, affected by CVE-2022-29499"
+        severity = "high"
+        cve = "CVE-2022-29499"
+        cvss = "9.8"
+        vendor = "mitel"
+        product = "mivoice_connect"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2022-29499"
+    strings:
+        $p = "mivoice connect" nocase
+        $p2 = "mivoice-connect" nocase
+        $p3 = "mivoice_connect" nocase
+        $v0 = "22.20.2300.0"
+    condition:
+        any of ($p*) and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2022_24706_apache_couchdb : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain apache couchdb, affected by CVE-2022-24706"
+        severity = "high"
+        cve = "CVE-2022-24706"
+        cvss = "9.8"
+        vendor = "apache"
+        product = "couchdb"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2022-24706"
+    strings:
+        $p = "couchdb" nocase
+        $v0 = "3.2.2"
+    condition:
+        $p and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2022_1388_f5_big_ip_access_policy_manager : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain f5 big-ip access policy manager, affected by CVE-2022-1388"
+        severity = "high"
+        cve = "CVE-2022-1388"
+        cvss = "9.8"
+        vendor = "f5"
+        product = "big-ip_access_policy_manager"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2022-1388"
+    strings:
+        $p = "big-ip access policy manager" nocase
+        $p2 = "big-ip-access-policy-manager" nocase
+        $p3 = "big-ip_access_policy_manager" nocase
+        $v0 = "11.6.1"
+        $v1 = "11.6.5"
+        $v2 = "12.1.0"
+        $v3 = "12.1.6"
+        $v4 = "13.1.0"
+        $v5 = "13.1.5"
+        $v6 = "14.1.0"
+        $v7 = "14.1.4.6"
+        $v8 = "15.1.0"
+        $v9 = "15.1.5.1"
+        $v10 = "16.1.0"
+        $v11 = "16.1.2.2"
+    condition:
+        any of ($p*) and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2022_1388_f5_big_ip_advanced_firewall_manager : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain f5 big-ip advanced firewall manager, affected by CVE-2022-1388"
+        severity = "high"
+        cve = "CVE-2022-1388"
+        cvss = "9.8"
+        vendor = "f5"
+        product = "big-ip_advanced_firewall_manager"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2022-1388"
+    strings:
+        $p = "big-ip advanced firewall manager" nocase
+        $p2 = "big-ip-advanced-firewall-manager" nocase
+        $p3 = "big-ip_advanced_firewall_manager" nocase
+        $v0 = "11.6.1"
+        $v1 = "11.6.5"
+        $v2 = "12.1.0"
+        $v3 = "12.1.6"
+        $v4 = "13.1.0"
+        $v5 = "13.1.5"
+        $v6 = "14.1.0"
+        $v7 = "14.1.4.6"
+        $v8 = "15.1.0"
+        $v9 = "15.1.5.1"
+        $v10 = "16.1.0"
+        $v11 = "16.1.2.2"
+    condition:
+        any of ($p*) and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2022_1388_f5_big_ip_analytics : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain f5 big-ip analytics, affected by CVE-2022-1388"
+        severity = "high"
+        cve = "CVE-2022-1388"
+        cvss = "9.8"
+        vendor = "f5"
+        product = "big-ip_analytics"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2022-1388"
+    strings:
+        $p = "big-ip analytics" nocase
+        $p2 = "big-ip-analytics" nocase
+        $p3 = "big-ip_analytics" nocase
+        $v0 = "11.6.1"
+        $v1 = "11.6.5"
+        $v2 = "12.1.0"
+        $v3 = "12.1.6"
+        $v4 = "13.1.0"
+        $v5 = "13.1.5"
+        $v6 = "14.1.0"
+        $v7 = "14.1.4.6"
+        $v8 = "15.1.0"
+        $v9 = "15.1.5.1"
+        $v10 = "16.1.0"
+        $v11 = "16.1.2.2"
+    condition:
+        any of ($p*) and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2022_1388_f5_big_ip_application_acceleration : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain f5 big-ip application acceleration manager, affected by CVE-2022-1388"
+        severity = "high"
+        cve = "CVE-2022-1388"
+        cvss = "9.8"
+        vendor = "f5"
+        product = "big-ip_application_acceleration_manager"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2022-1388"
+    strings:
+        $p = "big-ip application acceleration manager" nocase
+        $p2 = "big-ip-application-acceleration-manager" nocase
+        $p3 = "big-ip_application_acceleration_manager" nocase
+        $v0 = "11.6.1"
+        $v1 = "11.6.5"
+        $v2 = "12.1.0"
+        $v3 = "12.1.6"
+        $v4 = "13.1.0"
+        $v5 = "13.1.5"
+        $v6 = "14.1.0"
+        $v7 = "14.1.4.6"
+        $v8 = "15.1.0"
+        $v9 = "15.1.5.1"
+        $v10 = "16.1.0"
+        $v11 = "16.1.2.2"
+    condition:
+        any of ($p*) and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2022_1388_f5_big_ip_application_security_mana : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain f5 big-ip application security manager, affected by CVE-2022-1388"
+        severity = "high"
+        cve = "CVE-2022-1388"
+        cvss = "9.8"
+        vendor = "f5"
+        product = "big-ip_application_security_manager"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2022-1388"
+    strings:
+        $p = "big-ip application security manager" nocase
+        $p2 = "big-ip-application-security-manager" nocase
+        $p3 = "big-ip_application_security_manager" nocase
+        $v0 = "11.6.1"
+        $v1 = "11.6.5"
+        $v2 = "12.1.0"
+        $v3 = "12.1.6"
+        $v4 = "13.1.0"
+        $v5 = "13.1.5"
+        $v6 = "14.1.0"
+        $v7 = "14.1.4.6"
+        $v8 = "15.1.0"
+        $v9 = "15.1.5.1"
+        $v10 = "16.1.0"
+        $v11 = "16.1.2.2"
+    condition:
+        any of ($p*) and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2022_1388_f5_big_ip_domain_name_system : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain f5 big-ip domain name system, affected by CVE-2022-1388"
+        severity = "high"
+        cve = "CVE-2022-1388"
+        cvss = "9.8"
+        vendor = "f5"
+        product = "big-ip_domain_name_system"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2022-1388"
+    strings:
+        $p = "big-ip domain name system" nocase
+        $p2 = "big-ip-domain-name-system" nocase
+        $p3 = "big-ip_domain_name_system" nocase
+        $v0 = "11.6.1"
+        $v1 = "11.6.5"
+        $v2 = "12.1.0"
+        $v3 = "12.1.6"
+        $v4 = "13.1.0"
+        $v5 = "13.1.5"
+        $v6 = "14.1.0"
+        $v7 = "14.1.4.6"
+        $v8 = "15.1.0"
+        $v9 = "15.1.5.1"
+        $v10 = "16.1.0"
+        $v11 = "16.1.2.2"
+    condition:
+        any of ($p*) and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2022_1388_f5_big_ip_fraud_protection_service : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain f5 big-ip fraud protection service, affected by CVE-2022-1388"
+        severity = "high"
+        cve = "CVE-2022-1388"
+        cvss = "9.8"
+        vendor = "f5"
+        product = "big-ip_fraud_protection_service"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2022-1388"
+    strings:
+        $p = "big-ip fraud protection service" nocase
+        $p2 = "big-ip-fraud-protection-service" nocase
+        $p3 = "big-ip_fraud_protection_service" nocase
+        $v0 = "11.6.1"
+        $v1 = "11.6.5"
+        $v2 = "12.1.0"
+        $v3 = "12.1.6"
+        $v4 = "13.1.0"
+        $v5 = "13.1.5"
+        $v6 = "14.1.0"
+        $v7 = "14.1.4.6"
+        $v8 = "15.1.0"
+        $v9 = "15.1.5.1"
+        $v10 = "16.1.0"
+        $v11 = "16.1.2.2"
+    condition:
+        any of ($p*) and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2022_1388_f5_big_ip_global_traffic_manager : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain f5 big-ip global traffic manager, affected by CVE-2022-1388"
+        severity = "high"
+        cve = "CVE-2022-1388"
+        cvss = "9.8"
+        vendor = "f5"
+        product = "big-ip_global_traffic_manager"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2022-1388"
+    strings:
+        $p = "big-ip global traffic manager" nocase
+        $p2 = "big-ip-global-traffic-manager" nocase
+        $p3 = "big-ip_global_traffic_manager" nocase
+        $v0 = "11.6.1"
+        $v1 = "11.6.5"
+        $v2 = "12.1.0"
+        $v3 = "12.1.6"
+        $v4 = "13.1.0"
+        $v5 = "13.1.5"
+        $v6 = "14.1.0"
+        $v7 = "14.1.4.6"
+        $v8 = "15.1.0"
+        $v9 = "15.1.5.1"
+        $v10 = "16.1.0"
+        $v11 = "16.1.2.2"
+    condition:
+        any of ($p*) and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2022_1388_f5_big_ip_link_controller : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain f5 big-ip link controller, affected by CVE-2022-1388"
+        severity = "high"
+        cve = "CVE-2022-1388"
+        cvss = "9.8"
+        vendor = "f5"
+        product = "big-ip_link_controller"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2022-1388"
+    strings:
+        $p = "big-ip link controller" nocase
+        $p2 = "big-ip-link-controller" nocase
+        $p3 = "big-ip_link_controller" nocase
+        $v0 = "11.6.1"
+        $v1 = "11.6.5"
+        $v2 = "12.1.0"
+        $v3 = "12.1.6"
+        $v4 = "13.1.0"
+        $v5 = "13.1.5"
+        $v6 = "14.1.0"
+        $v7 = "14.1.4.6"
+        $v8 = "15.1.0"
+        $v9 = "15.1.5.1"
+        $v10 = "16.1.0"
+        $v11 = "16.1.2.2"
+    condition:
+        any of ($p*) and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2022_1388_f5_big_ip_local_traffic_manager : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain f5 big-ip local traffic manager, affected by CVE-2022-1388"
+        severity = "high"
+        cve = "CVE-2022-1388"
+        cvss = "9.8"
+        vendor = "f5"
+        product = "big-ip_local_traffic_manager"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2022-1388"
+    strings:
+        $p = "big-ip local traffic manager" nocase
+        $p2 = "big-ip-local-traffic-manager" nocase
+        $p3 = "big-ip_local_traffic_manager" nocase
+        $v0 = "11.6.1"
+        $v1 = "11.6.5"
+        $v2 = "12.1.0"
+        $v3 = "12.1.6"
+        $v4 = "13.1.0"
+        $v5 = "13.1.5"
+        $v6 = "14.1.0"
+        $v7 = "14.1.4.6"
+        $v8 = "15.1.0"
+        $v9 = "15.1.5.1"
+        $v10 = "16.1.0"
+        $v11 = "16.1.2.2"
+    condition:
+        any of ($p*) and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2022_1388_f5_big_ip_policy_enforcement_manage : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain f5 big-ip policy enforcement manager, affected by CVE-2022-1388"
+        severity = "high"
+        cve = "CVE-2022-1388"
+        cvss = "9.8"
+        vendor = "f5"
+        product = "big-ip_policy_enforcement_manager"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2022-1388"
+    strings:
+        $p = "big-ip policy enforcement manager" nocase
+        $p2 = "big-ip-policy-enforcement-manager" nocase
+        $p3 = "big-ip_policy_enforcement_manager" nocase
+        $v0 = "11.6.1"
+        $v1 = "11.6.5"
+        $v2 = "12.1.0"
+        $v3 = "12.1.6"
+        $v4 = "13.1.0"
+        $v5 = "13.1.5"
+        $v6 = "14.1.0"
+        $v7 = "14.1.4.6"
+        $v8 = "15.1.0"
+        $v9 = "15.1.5.1"
+        $v10 = "16.1.0"
+        $v11 = "16.1.2.2"
+    condition:
+        any of ($p*) and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2022_30333_rarlab_unrar : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain rarlab unrar, affected by CVE-2022-30333"
+        severity = "high"
+        cve = "CVE-2022-30333"
+        cvss = "7.5"
+        vendor = "rarlab"
+        product = "unrar"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2022-30333"
+    strings:
+        $p = "unrar" nocase
+        $v0 = "6.12"
+    condition:
+        $p and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2022_26134_atlassian_confluence_data_center : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain atlassian confluence data center, affected by CVE-2022-26134"
+        severity = "high"
+        cve = "CVE-2022-26134"
+        cvss = "9.8"
+        vendor = "atlassian"
+        product = "confluence_data_center"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2022-26134"
+    strings:
+        $p = "confluence data center" nocase
+        $p2 = "confluence-data-center" nocase
+        $p3 = "confluence_data_center" nocase
+        $v0 = "1.3"
+        $v1 = "7.13.0"
+        $v2 = "7.13.7"
+        $v3 = "7.14.0"
+        $v4 = "7.14.3"
+        $v5 = "7.15.0"
+        $v6 = "7.15.2"
+        $v7 = "7.16.0"
+        $v8 = "7.16.4"
+        $v9 = "7.17.0"
+        $v10 = "7.17.4"
+        $v11 = "7.18.0"
+    condition:
+        any of ($p*) and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2022_26134_atlassian_confluence_server : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain atlassian confluence server, affected by CVE-2022-26134"
+        severity = "high"
+        cve = "CVE-2022-26134"
+        cvss = "9.8"
+        vendor = "atlassian"
+        product = "confluence_server"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2022-26134"
+    strings:
+        $p = "confluence server" nocase
+        $p2 = "confluence-server" nocase
+        $p3 = "confluence_server" nocase
+        $v0 = "1.3"
+        $v1 = "7.13.0"
+        $v2 = "7.13.7"
+        $v3 = "7.14.0"
+        $v4 = "7.14.3"
+        $v5 = "7.15.0"
+        $v6 = "7.15.2"
+        $v7 = "7.16.0"
+        $v8 = "7.16.4"
+        $v9 = "7.17.0"
+        $v10 = "7.17.4"
+        $v11 = "7.18.0"
+    condition:
+        any of ($p*) and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2022_26352_dotcms_dotcms : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain dotcms dotcms, affected by CVE-2022-26352"
+        severity = "high"
+        cve = "CVE-2022-26352"
+        cvss = "9.8"
+        vendor = "dotcms"
+        product = "dotcms"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2022-26352"
+    strings:
+        $p = "dotcms" nocase
+        $v0 = "22.02"
+        $v1 = "3.0"
+    condition:
+        $p and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2022_33891_apache_spark : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain apache spark, affected by CVE-2022-33891"
+        severity = "high"
+        cve = "CVE-2022-33891"
+        cvss = "8.8"
+        vendor = "apache"
+        product = "spark"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2022-33891"
+    strings:
+        $p = "spark" nocase
+        $v0 = "3.0.3"
+        $v1 = "3.1.1"
+        $v2 = "3.1.2"
+        $v3 = "3.2.0"
+        $v4 = "3.2.1"
+    condition:
+        $p and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2022_35405_zohocorp_manageengine_access_manager_plus : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain zohocorp manageengine access manager plus, affected by CVE-2022-35405"
+        severity = "high"
+        cve = "CVE-2022-35405"
+        cvss = "9.8"
+        vendor = "zohocorp"
+        product = "manageengine_access_manager_plus"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2022-35405"
+    strings:
+        $p = "manageengine access manager plus" nocase
+        $p2 = "manageengine-access-manager-plus" nocase
+        $p3 = "manageengine_access_manager_plus" nocase
+        $v0 = "4.3"
+    condition:
+        any of ($p*) and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2022_35405_zohocorp_manageengine_pam360 : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain zohocorp manageengine pam360, affected by CVE-2022-35405"
+        severity = "high"
+        cve = "CVE-2022-35405"
+        cvss = "9.8"
+        vendor = "zohocorp"
+        product = "manageengine_pam360"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2022-35405"
+    strings:
+        $p = "manageengine pam360" nocase
+        $p2 = "manageengine-pam360" nocase
+        $p3 = "manageengine_pam360" nocase
+        $v0 = "5.5"
+    condition:
+        any of ($p*) and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2022_35405_zohocorp_manageengine_password_manager_pr : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain zohocorp manageengine password manager pro, affected by CVE-2022-35405"
+        severity = "high"
+        cve = "CVE-2022-35405"
+        cvss = "9.8"
+        vendor = "zohocorp"
+        product = "manageengine_password_manager_pro"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2022-35405"
+    strings:
+        $p = "manageengine password manager pro" nocase
+        $p2 = "manageengine-password-manager-pro" nocase
+        $p3 = "manageengine_password_manager_pro" nocase
+        $v0 = "12.1"
+    condition:
+        any of ($p*) and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2022_26138_atlassian_questions_for_confluence : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain atlassian questions for confluence, affected by CVE-2022-26138"
+        severity = "high"
+        cve = "CVE-2022-26138"
+        cvss = "9.8"
+        vendor = "atlassian"
+        product = "questions_for_confluence"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2022-26138"
+    strings:
+        $p = "questions for confluence" nocase
+        $p2 = "questions-for-confluence" nocase
+        $p3 = "questions_for_confluence" nocase
+        $v0 = "2.7.34"
+        $v1 = "2.7.35"
+        $v2 = "3.0.2"
+    condition:
+        any of ($p*) and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2022_1096_google_chrome : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain google chrome, affected by CVE-2022-1096"
+        severity = "high"
+        cve = "CVE-2022-1096"
+        cvss = "8.8"
+        vendor = "google"
+        product = "chrome"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2022-1096"
+    strings:
+        $p = "chrome" nocase
+        $v0 = "99.0.4844.84"
+    condition:
+        $p and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2022_1364_google_chrome : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain google chrome, affected by CVE-2022-1364"
+        severity = "high"
+        cve = "CVE-2022-1364"
+        cvss = "8.8"
+        vendor = "google"
+        product = "chrome"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2022-1364"
+    strings:
+        $p = "chrome" nocase
+        $v0 = "100.0.4896.127"
+    condition:
+        $p and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2022_2294_google_chrome : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain google chrome, affected by CVE-2022-2294"
+        severity = "high"
+        cve = "CVE-2022-2294"
+        cvss = "8.8"
+        vendor = "google"
+        product = "chrome"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2022-2294"
+    strings:
+        $p = "chrome" nocase
+        $v0 = "103.0.5060.114"
+    condition:
+        $p and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2022_2294_fedoraproject_extra_packages_for_enterprise_li : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain fedoraproject extra packages for enterprise linux, affected by CVE-2022-2294"
+        severity = "high"
+        cve = "CVE-2022-2294"
+        cvss = "8.8"
+        vendor = "fedoraproject"
+        product = "extra_packages_for_enterprise_linux"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2022-2294"
+    strings:
+        $p = "extra packages for enterprise linux" nocase
+        $p2 = "extra-packages-for-enterprise-linux" nocase
+        $p3 = "extra_packages_for_enterprise_linux" nocase
+        $v0 = "8.0"
+    condition:
+        any of ($p*) and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2022_2294_webkitgtk_webkitgtk : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain webkitgtk webkitgtk, affected by CVE-2022-2294"
+        severity = "high"
+        cve = "CVE-2022-2294"
+        cvss = "8.8"
+        vendor = "webkitgtk"
+        product = "webkitgtk"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2022-2294"
+    strings:
+        $p = "webkitgtk" nocase
+        $v0 = "2.36.5"
+    condition:
+        $p and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2022_2294_wpewebkit_wpe_webkit : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain wpewebkit wpe webkit, affected by CVE-2022-2294"
+        severity = "high"
+        cve = "CVE-2022-2294"
+        cvss = "8.8"
+        vendor = "wpewebkit"
+        product = "wpe_webkit"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2022-2294"
+    strings:
+        $p = "wpe webkit" nocase
+        $p2 = "wpe-webkit" nocase
+        $p3 = "wpe_webkit" nocase
+        $v0 = "2.36.5"
+    condition:
+        any of ($p*) and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2022_37042_synacor_zimbra_collaboration_suite : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain synacor zimbra collaboration suite, affected by CVE-2022-37042"
+        severity = "high"
+        cve = "CVE-2022-37042"
+        cvss = "9.8"
+        vendor = "synacor"
+        product = "zimbra_collaboration_suite"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2022-37042"
+    strings:
+        $p = "zimbra collaboration suite" nocase
+        $p2 = "zimbra-collaboration-suite" nocase
+        $p3 = "zimbra_collaboration_suite" nocase
+        $v0 = "8.8.15"
+        $v1 = "9.0.0"
+    condition:
+        any of ($p*) and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2022_32893_apple_safari : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain apple safari, affected by CVE-2022-32893"
+        severity = "high"
+        cve = "CVE-2022-32893"
+        cvss = "8.8"
+        vendor = "apple"
+        product = "safari"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2022-32893"
+    strings:
+        $p = "safari" nocase
+        $v0 = "15.6.1"
+    condition:
+        $p and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2022_32893_webkitgtk_webkitgtk : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain webkitgtk webkitgtk, affected by CVE-2022-32893"
+        severity = "high"
+        cve = "CVE-2022-32893"
+        cvss = "8.8"
+        vendor = "webkitgtk"
+        product = "webkitgtk"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2022-32893"
+    strings:
+        $p = "webkitgtk" nocase
+        $v0 = "2.36.7"
+    condition:
+        $p and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2022_32893_wpewebkit_wpe_webkit : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain wpewebkit wpe webkit, affected by CVE-2022-32893"
+        severity = "high"
+        cve = "CVE-2022-32893"
+        cvss = "8.8"
+        vendor = "wpewebkit"
+        product = "wpe_webkit"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2022-32893"
+    strings:
+        $p = "wpe webkit" nocase
+        $p2 = "wpe-webkit" nocase
+        $p3 = "wpe_webkit" nocase
+        $v0 = "2.36.7"
+    condition:
+        any of ($p*) and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2022_36804_atlassian_bitbucket : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain atlassian bitbucket, affected by CVE-2022-36804"
+        severity = "high"
+        cve = "CVE-2022-36804"
+        cvss = "8.8"
+        vendor = "atlassian"
+        product = "bitbucket"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2022-36804"
+    strings:
+        $p = "bitbucket" nocase
+        $v0 = "7.0.0"
+        $v1 = "7.17.10"
+        $v2 = "7.18.0"
+        $v3 = "7.21.4"
+        $v4 = "7.6.17"
+        $v5 = "7.7.0"
+        $v6 = "8.0.0"
+        $v7 = "8.0.3"
+        $v8 = "8.1.0"
+        $v9 = "8.1.3"
+        $v10 = "8.2.0"
+        $v11 = "8.2.2"
+    condition:
+        $p and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2022_36537_zkoss_zk_framework : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain zkoss zk framework, affected by CVE-2022-36537"
+        severity = "high"
+        cve = "CVE-2022-36537"
+        cvss = "7.5"
+        vendor = "zkoss"
+        product = "zk_framework"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2022-36537"
+    strings:
+        $p = "zk framework" nocase
+        $p2 = "zk-framework" nocase
+        $p3 = "zk_framework" nocase
+        $v0 = "8.6.4.2"
+        $v1 = "9.0.0"
+        $v2 = "9.0.1.3"
+        $v3 = "9.5.0"
+        $v4 = "9.5.1.3"
+        $v5 = "9.6.0"
+        $v6 = "9.6.2"
+    condition:
+        any of ($p*) and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2022_27593_qnap_photo_station : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain qnap photo station, affected by CVE-2022-27593"
+        severity = "high"
+        cve = "CVE-2022-27593"
+        cvss = "10.0"
+        vendor = "qnap"
+        product = "photo_station"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2022-27593"
+    strings:
+        $p = "photo station" nocase
+        $p2 = "photo-station" nocase
+        $p3 = "photo_station" nocase
+        $v0 = "5.2.14"
+        $v1 = "5.4.15"
+        $v2 = "5.7.18"
+        $v3 = "6.0.22"
+        $v4 = "6.1.2"
+    condition:
+        any of ($p*) and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2022_39197_helpsystems_cobalt_strike : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain helpsystems cobalt strike, affected by CVE-2022-39197"
+        severity = "high"
+        cve = "CVE-2022-39197"
+        cvss = "6.1"
+        vendor = "helpsystems"
+        product = "cobalt_strike"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2022-39197"
+    strings:
+        $p = "cobalt strike" nocase
+        $p2 = "cobalt-strike" nocase
+        $p3 = "cobalt_strike" nocase
+        $v0 = "4.7.1"
+    condition:
+        any of ($p*) and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2022_3236_sophos_firewall : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain sophos firewall, affected by CVE-2022-3236"
+        severity = "high"
+        cve = "CVE-2022-3236"
+        cvss = "9.8"
+        vendor = "sophos"
+        product = "firewall"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2022-3236"
+    strings:
+        $p = "firewall" nocase
+        $v0 = "19.0.1"
+    condition:
+        $p and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2022_41352_synacor_zimbra_collaboration_suite : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain synacor zimbra collaboration suite, affected by CVE-2022-41352"
+        severity = "high"
+        cve = "CVE-2022-41352"
+        cvss = "9.8"
+        vendor = "synacor"
+        product = "zimbra_collaboration_suite"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2022-41352"
+    strings:
+        $p = "zimbra collaboration suite" nocase
+        $p2 = "zimbra-collaboration-suite" nocase
+        $p3 = "zimbra_collaboration_suite" nocase
+        $v0 = "8.8.15"
+        $v1 = "9.0.0"
+    condition:
+        any of ($p*) and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2022_2856_google_chrome : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain google chrome, affected by CVE-2022-2856"
+        severity = "high"
+        cve = "CVE-2022-2856"
+        cvss = "6.5"
+        vendor = "google"
+        product = "chrome"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2022-2856"
+    strings:
+        $p = "chrome" nocase
+        $v0 = "104.0.5112.101"
+        $v1 = "104.0.5112.102"
+    condition:
+        $p and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2022_3038_google_chrome : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain google chrome, affected by CVE-2022-3038"
+        severity = "high"
+        cve = "CVE-2022-3038"
+        cvss = "8.8"
+        vendor = "google"
+        product = "chrome"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2022-3038"
+    strings:
+        $p = "chrome" nocase
+        $v0 = "105.0.5195.52"
+    condition:
+        $p and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2022_3075_google_chrome : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain google chrome, affected by CVE-2022-3075"
+        severity = "high"
+        cve = "CVE-2022-3075"
+        cvss = "9.6"
+        vendor = "google"
+        product = "chrome"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2022-3075"
+    strings:
+        $p = "chrome" nocase
+        $v0 = "105.0.5195.102"
+    condition:
+        $p and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2022_20775_cisco_catalyst_sd_wan_manager : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain cisco catalyst sd-wan manager, affected by CVE-2022-20775"
+        severity = "high"
+        cve = "CVE-2022-20775"
+        cvss = "7.8"
+        vendor = "cisco"
+        product = "catalyst_sd-wan_manager"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2022-20775"
+    strings:
+        $p = "catalyst sd-wan manager" nocase
+        $p2 = "catalyst-sd-wan-manager" nocase
+        $p3 = "catalyst_sd-wan_manager" nocase
+        $v0 = "20.6.3"
+        $v1 = "20.7"
+        $v2 = "20.7.2"
+        $v3 = "20.8"
+    condition:
+        any of ($p*) and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2022_20775_cisco_sd_wan_vbond_orchestrator : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain cisco sd-wan vbond orchestrator, affected by CVE-2022-20775"
+        severity = "high"
+        cve = "CVE-2022-20775"
+        cvss = "7.8"
+        vendor = "cisco"
+        product = "sd-wan_vbond_orchestrator"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2022-20775"
+    strings:
+        $p = "sd-wan vbond orchestrator" nocase
+        $p2 = "sd-wan-vbond-orchestrator" nocase
+        $p3 = "sd-wan_vbond_orchestrator" nocase
+        $v0 = "20.6.3"
+        $v1 = "20.7"
+        $v2 = "20.7.2"
+        $v3 = "20.8"
+    condition:
+        any of ($p*) and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2022_20775_cisco_sd_wan_vedge_cloud : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain cisco sd-wan vedge cloud, affected by CVE-2022-20775"
+        severity = "high"
+        cve = "CVE-2022-20775"
+        cvss = "7.8"
+        vendor = "cisco"
+        product = "sd-wan_vedge_cloud"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2022-20775"
+    strings:
+        $p = "sd-wan vedge cloud" nocase
+        $p2 = "sd-wan-vedge-cloud" nocase
+        $p3 = "sd-wan_vedge_cloud" nocase
+        $v0 = "20.6.3"
+        $v1 = "20.7"
+        $v2 = "20.7.2"
+        $v3 = "20.8"
+    condition:
+        any of ($p*) and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2022_20775_cisco_sd_wan_vsmart_controller : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain cisco sd-wan vsmart controller, affected by CVE-2022-20775"
+        severity = "high"
+        cve = "CVE-2022-20775"
+        cvss = "7.8"
+        vendor = "cisco"
+        product = "sd-wan_vsmart_controller"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2022-20775"
+    strings:
+        $p = "sd-wan vsmart controller" nocase
+        $p2 = "sd-wan-vsmart-controller" nocase
+        $p3 = "sd-wan_vsmart_controller" nocase
+        $v0 = "20.6.3"
+        $v1 = "20.7"
+        $v2 = "20.7.2"
+        $v3 = "20.8"
+    condition:
+        any of ($p*) and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2022_20775_cisco_sd_wan : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain cisco sd-wan, affected by CVE-2022-20775"
+        severity = "high"
+        cve = "CVE-2022-20775"
+        cvss = "7.8"
+        vendor = "cisco"
+        product = "sd-wan"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2022-20775"
+    strings:
+        $p = "sd-wan" nocase
+        $v0 = "20.6.3"
+        $v1 = "20.7"
+        $v2 = "20.7.2"
+        $v3 = "20.8"
+    condition:
+        $p and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2022_40684_fortinet_fortiproxy : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain fortinet fortiproxy, affected by CVE-2022-40684"
+        severity = "high"
+        cve = "CVE-2022-40684"
+        cvss = "9.8"
+        vendor = "fortinet"
+        product = "fortiproxy"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2022-40684"
+    strings:
+        $p = "fortiproxy" nocase
+        $v0 = "7.0.0"
+        $v1 = "7.0.7"
+        $v2 = "7.2.0"
+    condition:
+        $p and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2022_40684_fortinet_fortiswitchmanager : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain fortinet fortiswitchmanager, affected by CVE-2022-40684"
+        severity = "high"
+        cve = "CVE-2022-40684"
+        cvss = "9.8"
+        vendor = "fortinet"
+        product = "fortiswitchmanager"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2022-40684"
+    strings:
+        $p = "fortiswitchmanager" nocase
+        $v0 = "7.0.0"
+        $v1 = "7.2.0"
+    condition:
+        $p and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2022_21587_oracle_e_business_suite : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain oracle e-business suite, affected by CVE-2022-21587"
+        severity = "high"
+        cve = "CVE-2022-21587"
+        cvss = "9.8"
+        vendor = "oracle"
+        product = "e-business_suite"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2022-21587"
+    strings:
+        $p = "e-business suite" nocase
+        $p2 = "e-business-suite" nocase
+        $p3 = "e-business_suite" nocase
+        $v0 = "12.2.11"
+        $v1 = "12.2.3"
+    condition:
+        any of ($p*) and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2022_3723_google_chrome : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain google chrome, affected by CVE-2022-3723"
+        severity = "high"
+        cve = "CVE-2022-3723"
+        cvss = "8.8"
+        vendor = "google"
+        product = "chrome"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2022-3723"
+    strings:
+        $p = "chrome" nocase
+        $v0 = "107.0.5304.87"
+    condition:
+        $p and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2022_31199_netwrix_auditor : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain netwrix auditor, affected by CVE-2022-31199"
+        severity = "high"
+        cve = "CVE-2022-31199"
+        cvss = "9.8"
+        vendor = "netwrix"
+        product = "auditor"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2022-31199"
+    strings:
+        $p = "auditor" nocase
+        $v0 = "10.5"
+    condition:
+        $p and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2022_23748_audinate_dante_application_library : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain audinate dante application library, affected by CVE-2022-23748"
+        severity = "high"
+        cve = "CVE-2022-23748"
+        cvss = "7.8"
+        vendor = "audinate"
+        product = "dante_application_library"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2022-23748"
+    strings:
+        $p = "dante application library" nocase
+        $p2 = "dante-application-library" nocase
+        $p3 = "dante_application_library" nocase
+        $v0 = "1.2.0"
+    condition:
+        any of ($p*) and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2022_40765_mitel_mivoice_connect : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain mitel mivoice connect, affected by CVE-2022-40765"
+        severity = "high"
+        cve = "CVE-2022-40765"
+        cvss = "6.8"
+        vendor = "mitel"
+        product = "mivoice_connect"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2022-40765"
+    strings:
+        $p = "mivoice connect" nocase
+        $p2 = "mivoice-connect" nocase
+        $p3 = "mivoice_connect" nocase
+        $v0 = "22.22.6100.0"
+    condition:
+        any of ($p*) and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2022_41223_mitel_mivoice_connect : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain mitel mivoice connect, affected by CVE-2022-41223"
+        severity = "high"
+        cve = "CVE-2022-41223"
+        cvss = "6.8"
+        vendor = "mitel"
+        product = "mivoice_connect"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2022-41223"
+    strings:
+        $p = "mivoice connect" nocase
+        $p2 = "mivoice-connect" nocase
+        $p3 = "mivoice_connect" nocase
+        $v0 = "22.22.6100.0"
+    condition:
+        any of ($p*) and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2022_4135_google_chrome : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain google chrome, affected by CVE-2022-4135"
+        severity = "high"
+        cve = "CVE-2022-4135"
+        cvss = "9.6"
+        vendor = "google"
+        product = "chrome"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2022-4135"
+    strings:
+        $p = "chrome" nocase
+        $v0 = "107.0.5304.121"
+    condition:
+        $p and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2022_4135_microsoft_edge_chromium : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain microsoft edge chromium, affected by CVE-2022-4135"
+        severity = "high"
+        cve = "CVE-2022-4135"
+        cvss = "9.6"
+        vendor = "microsoft"
+        product = "edge_chromium"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2022-4135"
+    strings:
+        $p = "edge chromium" nocase
+        $p2 = "edge-chromium" nocase
+        $p3 = "edge_chromium" nocase
+        $v0 = "107.0.5304.150"
+    condition:
+        any of ($p*) and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2022_4262_google_chrome : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain google chrome, affected by CVE-2022-4262"
+        severity = "high"
+        cve = "CVE-2022-4262"
+        cvss = "8.8"
+        vendor = "google"
+        product = "chrome"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2022-4262"
+    strings:
+        $p = "chrome" nocase
+        $v0 = "108.0.5359.94"
+    condition:
+        $p and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2022_46169_cacti_cacti : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain cacti cacti, affected by CVE-2022-46169"
+        severity = "high"
+        cve = "CVE-2022-46169"
+        cvss = "9.8"
+        vendor = "cacti"
+        product = "cacti"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2022-46169"
+    strings:
+        $p = "cacti" nocase
+        $v0 = "1.2.23"
+    condition:
+        $p and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2022_42856_apple_safari : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain apple safari, affected by CVE-2022-42856"
+        severity = "high"
+        cve = "CVE-2022-42856"
+        cvss = "8.8"
+        vendor = "apple"
+        product = "safari"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2022-42856"
+    strings:
+        $p = "safari" nocase
+        $v0 = "16.2"
+    condition:
+        $p and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2022_26485_mozilla_firefox : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain mozilla firefox, affected by CVE-2022-26485"
+        severity = "high"
+        cve = "CVE-2022-26485"
+        cvss = "8.8"
+        vendor = "mozilla"
+        product = "firefox"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2022-26485"
+    strings:
+        $p = "firefox" nocase
+        $v0 = "91.6.1"
+        $v1 = "97.0.2"
+    condition:
+        $p and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2022_26485_mozilla_firefox_focus : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain mozilla firefox focus, affected by CVE-2022-26485"
+        severity = "high"
+        cve = "CVE-2022-26485"
+        cvss = "8.8"
+        vendor = "mozilla"
+        product = "firefox_focus"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2022-26485"
+    strings:
+        $p = "firefox focus" nocase
+        $p2 = "firefox-focus" nocase
+        $p3 = "firefox_focus" nocase
+        $v0 = "97.3.0"
+    condition:
+        any of ($p*) and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2022_26485_mozilla_firefox_mobile : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain mozilla firefox mobile, affected by CVE-2022-26485"
+        severity = "high"
+        cve = "CVE-2022-26485"
+        cvss = "8.8"
+        vendor = "mozilla"
+        product = "firefox_mobile"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2022-26485"
+    strings:
+        $p = "firefox mobile" nocase
+        $p2 = "firefox-mobile" nocase
+        $p3 = "firefox_mobile" nocase
+        $v0 = "97.3.0"
+    condition:
+        any of ($p*) and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2022_26485_mozilla_thunderbird : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain mozilla thunderbird, affected by CVE-2022-26485"
+        severity = "high"
+        cve = "CVE-2022-26485"
+        cvss = "8.8"
+        vendor = "mozilla"
+        product = "thunderbird"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2022-26485"
+    strings:
+        $p = "thunderbird" nocase
+        $v0 = "91.6.2"
+    condition:
+        $p and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2022_26486_mozilla_firefox : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain mozilla firefox, affected by CVE-2022-26486"
+        severity = "high"
+        cve = "CVE-2022-26486"
+        cvss = "9.6"
+        vendor = "mozilla"
+        product = "firefox"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2022-26486"
+    strings:
+        $p = "firefox" nocase
+        $v0 = "91.6.1"
+        $v1 = "97.0.2"
+    condition:
+        $p and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2022_26486_mozilla_firefox_focus : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain mozilla firefox focus, affected by CVE-2022-26486"
+        severity = "high"
+        cve = "CVE-2022-26486"
+        cvss = "9.6"
+        vendor = "mozilla"
+        product = "firefox_focus"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2022-26486"
+    strings:
+        $p = "firefox focus" nocase
+        $p2 = "firefox-focus" nocase
+        $p3 = "firefox_focus" nocase
+        $v0 = "97.3.0"
+    condition:
+        any of ($p*) and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2022_26486_mozilla_firefox_mobile : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain mozilla firefox mobile, affected by CVE-2022-26486"
+        severity = "high"
+        cve = "CVE-2022-26486"
+        cvss = "9.6"
+        vendor = "mozilla"
+        product = "firefox_mobile"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2022-26486"
+    strings:
+        $p = "firefox mobile" nocase
+        $p2 = "firefox-mobile" nocase
+        $p3 = "firefox_mobile" nocase
+        $v0 = "97.3.0"
+    condition:
+        any of ($p*) and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2022_26486_mozilla_thunderbird : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain mozilla thunderbird, affected by CVE-2022-26486"
+        severity = "high"
+        cve = "CVE-2022-26486"
+        cvss = "9.6"
+        vendor = "mozilla"
+        product = "thunderbird"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2022-26486"
+    strings:
+        $p = "thunderbird" nocase
+        $v0 = "91.6.2"
+    condition:
+        $p and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2022_42475_fortinet_fortiproxy : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain fortinet fortiproxy, affected by CVE-2022-42475"
+        severity = "high"
+        cve = "CVE-2022-42475"
+        cvss = "9.8"
+        vendor = "fortinet"
+        product = "fortiproxy"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2022-42475"
+    strings:
+        $p = "fortiproxy" nocase
+        $v0 = "1.0.0"
+        $v1 = "1.0.7"
+        $v2 = "1.1.0"
+        $v3 = "1.1.6"
+        $v4 = "1.2.0"
+        $v5 = "1.2.13"
+        $v6 = "2.0.0"
+        $v7 = "2.0.12"
+        $v8 = "7.0.0"
+        $v9 = "7.0.8"
+        $v10 = "7.2.0"
+        $v11 = "7.2.2"
+    condition:
+        $p and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2022_44877_control_webpanel_webpanel : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain control-webpanel webpanel, affected by CVE-2022-44877"
+        severity = "high"
+        cve = "CVE-2022-44877"
+        cvss = "9.8"
+        vendor = "control-webpanel"
+        product = "webpanel"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2022-44877"
+    strings:
+        $p = "webpanel" nocase
+        $v0 = "0.9.8.1147"
+    condition:
+        $p and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2023_22952_sugarcrm_sugarcrm : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain sugarcrm sugarcrm, affected by CVE-2023-22952"
+        severity = "high"
+        cve = "CVE-2023-22952"
+        cvss = "8.8"
+        vendor = "sugarcrm"
+        product = "sugarcrm"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2023-22952"
+    strings:
+        $p = "sugarcrm" nocase
+        $v0 = "11.0.0"
+        $v1 = "11.0.5"
+        $v2 = "12.0.0"
+        $v3 = "12.0.2"
+    condition:
+        $p and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2023_21839_oracle_weblogic_server : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain oracle weblogic server, affected by CVE-2023-21839"
+        severity = "high"
+        cve = "CVE-2023-21839"
+        cvss = "7.5"
+        vendor = "oracle"
+        product = "weblogic_server"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2023-21839"
+    strings:
+        $p = "weblogic server" nocase
+        $p2 = "weblogic-server" nocase
+        $p3 = "weblogic_server" nocase
+        $v0 = "12.2.1.3.0"
+        $v1 = "12.2.1.4.0"
+        $v2 = "14.1.1.0.0"
+    condition:
+        any of ($p*) and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2022_47966_zohocorp_manageengine_access_manager_plus : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain zohocorp manageengine access manager plus, affected by CVE-2022-47966"
+        severity = "high"
+        cve = "CVE-2022-47966"
+        cvss = "9.8"
+        vendor = "zohocorp"
+        product = "manageengine_access_manager_plus"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2022-47966"
+    strings:
+        $p = "manageengine access manager plus" nocase
+        $p2 = "manageengine-access-manager-plus" nocase
+        $p3 = "manageengine_access_manager_plus" nocase
+        $v0 = "4.3"
+    condition:
+        any of ($p*) and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2022_47966_zohocorp_manageengine_ad360 : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain zohocorp manageengine ad360, affected by CVE-2022-47966"
+        severity = "high"
+        cve = "CVE-2022-47966"
+        cvss = "9.8"
+        vendor = "zohocorp"
+        product = "manageengine_ad360"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2022-47966"
+    strings:
+        $p = "manageengine ad360" nocase
+        $p2 = "manageengine-ad360" nocase
+        $p3 = "manageengine_ad360" nocase
+        $v0 = "4.3"
+    condition:
+        any of ($p*) and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2022_47966_zohocorp_manageengine_adaudit_plus : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain zohocorp manageengine adaudit plus, affected by CVE-2022-47966"
+        severity = "high"
+        cve = "CVE-2022-47966"
+        cvss = "9.8"
+        vendor = "zohocorp"
+        product = "manageengine_adaudit_plus"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2022-47966"
+    strings:
+        $p = "manageengine adaudit plus" nocase
+        $p2 = "manageengine-adaudit-plus" nocase
+        $p3 = "manageengine_adaudit_plus" nocase
+        $v0 = "7.0"
+    condition:
+        any of ($p*) and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2022_47966_zohocorp_manageengine_admanager_plus : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain zohocorp manageengine admanager plus, affected by CVE-2022-47966"
+        severity = "high"
+        cve = "CVE-2022-47966"
+        cvss = "9.8"
+        vendor = "zohocorp"
+        product = "manageengine_admanager_plus"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2022-47966"
+    strings:
+        $p = "manageengine admanager plus" nocase
+        $p2 = "manageengine-admanager-plus" nocase
+        $p3 = "manageengine_admanager_plus" nocase
+        $v0 = "7.1"
+    condition:
+        any of ($p*) and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2022_47966_zohocorp_manageengine_adselfservice_plus : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain zohocorp manageengine adselfservice plus, affected by CVE-2022-47966"
+        severity = "high"
+        cve = "CVE-2022-47966"
+        cvss = "9.8"
+        vendor = "zohocorp"
+        product = "manageengine_adselfservice_plus"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2022-47966"
+    strings:
+        $p = "manageengine adselfservice plus" nocase
+        $p2 = "manageengine-adselfservice-plus" nocase
+        $p3 = "manageengine_adselfservice_plus" nocase
+        $v0 = "6.2"
+    condition:
+        any of ($p*) and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2022_47966_zohocorp_manageengine_analytics_plus : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain zohocorp manageengine analytics plus, affected by CVE-2022-47966"
+        severity = "high"
+        cve = "CVE-2022-47966"
+        cvss = "9.8"
+        vendor = "zohocorp"
+        product = "manageengine_analytics_plus"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2022-47966"
+    strings:
+        $p = "manageengine analytics plus" nocase
+        $p2 = "manageengine-analytics-plus" nocase
+        $p3 = "manageengine_analytics_plus" nocase
+        $v0 = "5.1"
+    condition:
+        any of ($p*) and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2022_47966_zohocorp_manageengine_assetexplorer : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain zohocorp manageengine assetexplorer, affected by CVE-2022-47966"
+        severity = "high"
+        cve = "CVE-2022-47966"
+        cvss = "9.8"
+        vendor = "zohocorp"
+        product = "manageengine_assetexplorer"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2022-47966"
+    strings:
+        $p = "manageengine assetexplorer" nocase
+        $p2 = "manageengine-assetexplorer" nocase
+        $p3 = "manageengine_assetexplorer" nocase
+        $v0 = "6.9"
+    condition:
+        any of ($p*) and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2022_47966_zohocorp_manageengine_key_manager_plus : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain zohocorp manageengine key manager plus, affected by CVE-2022-47966"
+        severity = "high"
+        cve = "CVE-2022-47966"
+        cvss = "9.8"
+        vendor = "zohocorp"
+        product = "manageengine_key_manager_plus"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2022-47966"
+    strings:
+        $p = "manageengine key manager plus" nocase
+        $p2 = "manageengine-key-manager-plus" nocase
+        $p3 = "manageengine_key_manager_plus" nocase
+        $v0 = "6.4"
+    condition:
+        any of ($p*) and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2022_47966_zohocorp_manageengine_pam360 : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain zohocorp manageengine pam360, affected by CVE-2022-47966"
+        severity = "high"
+        cve = "CVE-2022-47966"
+        cvss = "9.8"
+        vendor = "zohocorp"
+        product = "manageengine_pam360"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2022-47966"
+    strings:
+        $p = "manageengine pam360" nocase
+        $p2 = "manageengine-pam360" nocase
+        $p3 = "manageengine_pam360" nocase
+        $v0 = "5.7"
+    condition:
+        any of ($p*) and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2022_47966_zohocorp_manageengine_password_manager_pr : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain zohocorp manageengine password manager pro, affected by CVE-2022-47966"
+        severity = "high"
+        cve = "CVE-2022-47966"
+        cvss = "9.8"
+        vendor = "zohocorp"
+        product = "manageengine_password_manager_pro"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2022-47966"
+    strings:
+        $p = "manageengine password manager pro" nocase
+        $p2 = "manageengine-password-manager-pro" nocase
+        $p3 = "manageengine_password_manager_pro" nocase
+        $v0 = "12.1"
+    condition:
+        any of ($p*) and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2022_47966_zohocorp_manageengine_servicedesk_plus : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain zohocorp manageengine servicedesk plus, affected by CVE-2022-47966"
+        severity = "high"
+        cve = "CVE-2022-47966"
+        cvss = "9.8"
+        vendor = "zohocorp"
+        product = "manageengine_servicedesk_plus"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2022-47966"
+    strings:
+        $p = "manageengine servicedesk plus" nocase
+        $p2 = "manageengine-servicedesk-plus" nocase
+        $p3 = "manageengine_servicedesk_plus" nocase
+        $v0 = "14.0"
+    condition:
+        any of ($p*) and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2022_47966_zohocorp_manageengine_servicedesk_plus_ms : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain zohocorp manageengine servicedesk plus msp, affected by CVE-2022-47966"
+        severity = "high"
+        cve = "CVE-2022-47966"
+        cvss = "9.8"
+        vendor = "zohocorp"
+        product = "manageengine_servicedesk_plus_msp"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2022-47966"
+    strings:
+        $p = "manageengine servicedesk plus msp" nocase
+        $p2 = "manageengine-servicedesk-plus-msp" nocase
+        $p3 = "manageengine_servicedesk_plus_msp" nocase
+        $v0 = "13.0"
+    condition:
+        any of ($p*) and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2022_47966_zohocorp_manageengine_supportcenter_plus : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain zohocorp manageengine supportcenter plus, affected by CVE-2022-47966"
+        severity = "high"
+        cve = "CVE-2022-47966"
+        cvss = "9.8"
+        vendor = "zohocorp"
+        product = "manageengine_supportcenter_plus"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2022-47966"
+    strings:
+        $p = "manageengine supportcenter plus" nocase
+        $p2 = "manageengine-supportcenter-plus" nocase
+        $p3 = "manageengine_supportcenter_plus" nocase
+        $v0 = "11.0"
+    condition:
+        any of ($p*) and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2022_47966_zohocorp_manageengine_application_control : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain zohocorp manageengine application control plus, affected by CVE-2022-47966"
+        severity = "high"
+        cve = "CVE-2022-47966"
+        cvss = "9.8"
+        vendor = "zohocorp"
+        product = "manageengine_application_control_plus"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2022-47966"
+    strings:
+        $p = "manageengine application control plus" nocase
+        $p2 = "manageengine-application-control-plus" nocase
+        $p3 = "manageengine_application_control_plus" nocase
+        $v0 = "10.1.2220.18"
+    condition:
+        any of ($p*) and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2022_47966_zohocorp_manageengine_browser_security_pl : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain zohocorp manageengine browser security plus, affected by CVE-2022-47966"
+        severity = "high"
+        cve = "CVE-2022-47966"
+        cvss = "9.8"
+        vendor = "zohocorp"
+        product = "manageengine_browser_security_plus"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2022-47966"
+    strings:
+        $p = "manageengine browser security plus" nocase
+        $p2 = "manageengine-browser-security-plus" nocase
+        $p3 = "manageengine_browser_security_plus" nocase
+        $v0 = "11.1.2238.6"
+    condition:
+        any of ($p*) and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2022_47966_zohocorp_manageengine_device_control_plus : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain zohocorp manageengine device control plus, affected by CVE-2022-47966"
+        severity = "high"
+        cve = "CVE-2022-47966"
+        cvss = "9.8"
+        vendor = "zohocorp"
+        product = "manageengine_device_control_plus"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2022-47966"
+    strings:
+        $p = "manageengine device control plus" nocase
+        $p2 = "manageengine-device-control-plus" nocase
+        $p3 = "manageengine_device_control_plus" nocase
+        $v0 = "10.1.2220.18"
+    condition:
+        any of ($p*) and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2022_47966_zohocorp_manageengine_endpoint_dlp_plus : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain zohocorp manageengine endpoint dlp plus, affected by CVE-2022-47966"
+        severity = "high"
+        cve = "CVE-2022-47966"
+        cvss = "9.8"
+        vendor = "zohocorp"
+        product = "manageengine_endpoint_dlp_plus"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2022-47966"
+    strings:
+        $p = "manageengine endpoint dlp plus" nocase
+        $p2 = "manageengine-endpoint-dlp-plus" nocase
+        $p3 = "manageengine_endpoint_dlp_plus" nocase
+        $v0 = "10.1.2137.6"
+    condition:
+        any of ($p*) and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2022_47966_zohocorp_manageengine_os_deployer : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain zohocorp manageengine os deployer, affected by CVE-2022-47966"
+        severity = "high"
+        cve = "CVE-2022-47966"
+        cvss = "9.8"
+        vendor = "zohocorp"
+        product = "manageengine_os_deployer"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2022-47966"
+    strings:
+        $p = "manageengine os deployer" nocase
+        $p2 = "manageengine-os-deployer" nocase
+        $p3 = "manageengine_os_deployer" nocase
+        $v0 = "1.1.2243.1"
+    condition:
+        any of ($p*) and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2022_47966_zohocorp_manageengine_patch_manager_plus : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain zohocorp manageengine patch manager plus, affected by CVE-2022-47966"
+        severity = "high"
+        cve = "CVE-2022-47966"
+        cvss = "9.8"
+        vendor = "zohocorp"
+        product = "manageengine_patch_manager_plus"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2022-47966"
+    strings:
+        $p = "manageengine patch manager plus" nocase
+        $p2 = "manageengine-patch-manager-plus" nocase
+        $p3 = "manageengine_patch_manager_plus" nocase
+        $v0 = "10.1.2220.18"
+    condition:
+        any of ($p*) and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2022_47966_zohocorp_manageengine_remote_access_plus : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain zohocorp manageengine remote access plus, affected by CVE-2022-47966"
+        severity = "high"
+        cve = "CVE-2022-47966"
+        cvss = "9.8"
+        vendor = "zohocorp"
+        product = "manageengine_remote_access_plus"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2022-47966"
+    strings:
+        $p = "manageengine remote access plus" nocase
+        $p2 = "manageengine-remote-access-plus" nocase
+        $p3 = "manageengine_remote_access_plus" nocase
+        $v0 = "10.1.2228.11"
+    condition:
+        any of ($p*) and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2022_47966_zohocorp_manageengine_remote_monitoring_a : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain zohocorp manageengine remote monitoring and management central, affected by CVE-2022-47966"
+        severity = "high"
+        cve = "CVE-2022-47966"
+        cvss = "9.8"
+        vendor = "zohocorp"
+        product = "manageengine_remote_monitoring_and_management_central"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2022-47966"
+    strings:
+        $p = "manageengine remote monitoring and management central" nocase
+        $p2 = "manageengine-remote-monitoring-and-management-central" nocase
+        $p3 = "manageengine_remote_monitoring_and_management_central" nocase
+        $v0 = "10.1.41"
+    condition:
+        any of ($p*) and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2022_47966_zohocorp_manageengine_vulnerability_manag : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain zohocorp manageengine vulnerability manager plus, affected by CVE-2022-47966"
+        severity = "high"
+        cve = "CVE-2022-47966"
+        cvss = "9.8"
+        vendor = "zohocorp"
+        product = "manageengine_vulnerability_manager_plus"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2022-47966"
+    strings:
+        $p = "manageengine vulnerability manager plus" nocase
+        $p2 = "manageengine-vulnerability-manager-plus" nocase
+        $p3 = "manageengine_vulnerability_manager_plus" nocase
+        $v0 = "10.1.2220.18"
+    condition:
+        any of ($p*) and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2023_21608_adobe_acrobat_dc : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain adobe acrobat dc, affected by CVE-2023-21608"
+        severity = "high"
+        cve = "CVE-2023-21608"
+        cvss = "7.8"
+        vendor = "adobe"
+        product = "acrobat_dc"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2023-21608"
+    strings:
+        $p = "acrobat dc" nocase
+        $p2 = "acrobat-dc" nocase
+        $p3 = "acrobat_dc" nocase
+        $v0 = "15.008.20082"
+        $v1 = "22.003.20281"
+        $v2 = "22.003.20282"
+    condition:
+        any of ($p*) and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2023_21608_adobe_acrobat_reader_dc : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain adobe acrobat reader dc, affected by CVE-2023-21608"
+        severity = "high"
+        cve = "CVE-2023-21608"
+        cvss = "7.8"
+        vendor = "adobe"
+        product = "acrobat_reader_dc"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2023-21608"
+    strings:
+        $p = "acrobat reader dc" nocase
+        $p2 = "acrobat-reader-dc" nocase
+        $p3 = "acrobat_reader_dc" nocase
+        $v0 = "15.008.20082"
+        $v1 = "22.003.20281"
+        $v2 = "22.003.20282"
+    condition:
+        any of ($p*) and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2023_21608_adobe_acrobat : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain adobe acrobat, affected by CVE-2023-21608"
+        severity = "high"
+        cve = "CVE-2023-21608"
+        cvss = "7.8"
+        vendor = "adobe"
+        product = "acrobat"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2023-21608"
+    strings:
+        $p = "acrobat" nocase
+        $v0 = "20.001.30005"
+        $v1 = "20.005.30418"
+    condition:
+        $p and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2023_21608_adobe_acrobat_reader : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain adobe acrobat reader, affected by CVE-2023-21608"
+        severity = "high"
+        cve = "CVE-2023-21608"
+        cvss = "7.8"
+        vendor = "adobe"
+        product = "acrobat_reader"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2023-21608"
+    strings:
+        $p = "acrobat reader" nocase
+        $p2 = "acrobat-reader" nocase
+        $p3 = "acrobat_reader" nocase
+        $v0 = "20.001.30005"
+        $v1 = "20.005.30418"
+    condition:
+        any of ($p*) and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2023_0669_fortra_goanywhere_managed_file_transfer : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain fortra goanywhere managed file transfer, affected by CVE-2023-0669"
+        severity = "high"
+        cve = "CVE-2023-0669"
+        cvss = "7.2"
+        vendor = "fortra"
+        product = "goanywhere_managed_file_transfer"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2023-0669"
+    strings:
+        $p = "goanywhere managed file transfer" nocase
+        $p2 = "goanywhere-managed-file-transfer" nocase
+        $p3 = "goanywhere_managed_file_transfer" nocase
+        $v0 = "7.1.2"
+    condition:
+        any of ($p*) and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2023_25717_ruckuswireless_ruckus_wireless_admin : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain ruckuswireless ruckus wireless admin, affected by CVE-2023-25717"
+        severity = "high"
+        cve = "CVE-2023-25717"
+        cvss = "9.8"
+        vendor = "ruckuswireless"
+        product = "ruckus_wireless_admin"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2023-25717"
+    strings:
+        $p = "ruckus wireless admin" nocase
+        $p2 = "ruckus-wireless-admin" nocase
+        $p3 = "ruckus_wireless_admin" nocase
+        $v0 = "10.4"
+    condition:
+        any of ($p*) and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2022_47986_ibm_aspera_faspex : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain ibm aspera faspex, affected by CVE-2022-47986"
+        severity = "high"
+        cve = "CVE-2022-47986"
+        cvss = "9.8"
+        vendor = "ibm"
+        product = "aspera_faspex"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2022-47986"
+    strings:
+        $p = "aspera faspex" nocase
+        $p2 = "aspera-faspex" nocase
+        $p3 = "aspera_faspex" nocase
+        $v0 = "4.4.1"
+        $v1 = "4.4.2"
+    condition:
+        any of ($p*) and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2023_23529_apple_safari : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain apple safari, affected by CVE-2023-23529"
+        severity = "high"
+        cve = "CVE-2023-23529"
+        cvss = "8.8"
+        vendor = "apple"
+        product = "safari"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2023-23529"
+    strings:
+        $p = "safari" nocase
+        $v0 = "16.3"
+    condition:
+        $p and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2019_8720_webkitgtk_webkitgtk : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain webkitgtk webkitgtk, affected by CVE-2019-8720"
+        severity = "high"
+        cve = "CVE-2019-8720"
+        cvss = "8.8"
+        vendor = "webkitgtk"
+        product = "webkitgtk"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2019-8720"
+    strings:
+        $p = "webkitgtk" nocase
+        $v0 = "2.26.0"
+    condition:
+        $p and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2019_8720_wpewebkit_wpe_webkit : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain wpewebkit wpe webkit, affected by CVE-2019-8720"
+        severity = "high"
+        cve = "CVE-2019-8720"
+        cvss = "8.8"
+        vendor = "wpewebkit"
+        product = "wpe_webkit"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2019-8720"
+    strings:
+        $p = "wpe webkit" nocase
+        $p2 = "wpe-webkit" nocase
+        $p3 = "wpe_webkit" nocase
+        $v0 = "2.26.0"
+    condition:
+        any of ($p*) and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2019_8720_redhat_codeready_linux_builder : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain redhat codeready linux builder, affected by CVE-2019-8720"
+        severity = "high"
+        cve = "CVE-2019-8720"
+        cvss = "8.8"
+        vendor = "redhat"
+        product = "codeready_linux_builder"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2019-8720"
+    strings:
+        $p = "codeready linux builder" nocase
+        $p2 = "codeready-linux-builder" nocase
+        $p3 = "codeready_linux_builder" nocase
+        $v0 = "8.0"
+    condition:
+        any of ($p*) and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2019_8720_redhat_codeready_linux_builder_eus : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain redhat codeready linux builder eus, affected by CVE-2019-8720"
+        severity = "high"
+        cve = "CVE-2019-8720"
+        cvss = "8.8"
+        vendor = "redhat"
+        product = "codeready_linux_builder_eus"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2019-8720"
+    strings:
+        $p = "codeready linux builder eus" nocase
+        $p2 = "codeready-linux-builder-eus" nocase
+        $p3 = "codeready_linux_builder_eus" nocase
+        $v0 = "8.4"
+        $v1 = "8.6"
+    condition:
+        any of ($p*) and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2019_8720_redhat_codeready_linux_builder_for_arm6 : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain redhat codeready linux builder for arm64 eus, affected by CVE-2019-8720"
+        severity = "high"
+        cve = "CVE-2019-8720"
+        cvss = "8.8"
+        vendor = "redhat"
+        product = "codeready_linux_builder_for_arm64_eus"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2019-8720"
+    strings:
+        $p = "codeready linux builder for arm64 eus" nocase
+        $p2 = "codeready-linux-builder-for-arm64-eus" nocase
+        $p3 = "codeready_linux_builder_for_arm64_eus" nocase
+        $v0 = "8.0"
+        $v1 = "8.4"
+        $v2 = "8.6"
+    condition:
+        any of ($p*) and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2019_8720_redhat_codeready_linux_builder_for_ibm : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain redhat codeready linux builder for ibm z systems eus, affected by CVE-2019-8720"
+        severity = "high"
+        cve = "CVE-2019-8720"
+        cvss = "8.8"
+        vendor = "redhat"
+        product = "codeready_linux_builder_for_ibm_z_systems_eus"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2019-8720"
+    strings:
+        $p = "codeready linux builder for ibm z systems eus" nocase
+        $p2 = "codeready-linux-builder-for-ibm-z-systems-eus" nocase
+        $p3 = "codeready_linux_builder_for_ibm_z_systems_eus" nocase
+        $v0 = "8.0"
+        $v1 = "8.4"
+        $v2 = "8.6"
+    condition:
+        any of ($p*) and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2019_8720_redhat_codeready_linux_builder_for_powe : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain redhat codeready linux builder for power little endian eus, affected by CVE-2019-8720"
+        severity = "high"
+        cve = "CVE-2019-8720"
+        cvss = "8.8"
+        vendor = "redhat"
+        product = "codeready_linux_builder_for_power_little_endian_eus"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2019-8720"
+    strings:
+        $p = "codeready linux builder for power little endian eus" nocase
+        $p2 = "codeready-linux-builder-for-power-little-endian-eus" nocase
+        $p3 = "codeready_linux_builder_for_power_little_endian_eus" nocase
+        $v0 = "8.0"
+        $v1 = "8.4"
+        $v2 = "8.6"
+    condition:
+        any of ($p*) and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2022_42948_helpsystems_cobalt_strike : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain helpsystems cobalt strike, affected by CVE-2022-42948"
+        severity = "high"
+        cve = "CVE-2022-42948"
+        cvss = "9.8"
+        vendor = "helpsystems"
+        product = "cobalt_strike"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2022-42948"
+    strings:
+        $p = "cobalt strike" nocase
+        $p2 = "cobalt-strike" nocase
+        $p3 = "cobalt_strike" nocase
+        $v0 = "4.7.1"
+    condition:
+        any of ($p*) and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2022_43769_hitachi_vantara_pentaho_business_analyti : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain hitachi vantara pentaho business analytics server, affected by CVE-2022-43769"
+        severity = "high"
+        cve = "CVE-2022-43769"
+        cvss = "8.8"
+        vendor = "hitachi"
+        product = "vantara_pentaho_business_analytics_server"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2022-43769"
+    strings:
+        $p = "vantara pentaho business analytics server" nocase
+        $p2 = "vantara-pentaho-business-analytics-server" nocase
+        $p3 = "vantara_pentaho_business_analytics_server" nocase
+        $v0 = "8.3.0.0"
+        $v1 = "9.3.0.2"
+        $v2 = "9.4.0.0"
+    condition:
+        any of ($p*) and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2022_43939_hitachi_vantara_pentaho_business_analyti : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain hitachi vantara pentaho business analytics server, affected by CVE-2022-43939"
+        severity = "high"
+        cve = "CVE-2022-43939"
+        cvss = "8.6"
+        vendor = "hitachi"
+        product = "vantara_pentaho_business_analytics_server"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2022-43939"
+    strings:
+        $p = "vantara pentaho business analytics server" nocase
+        $p2 = "vantara-pentaho-business-analytics-server" nocase
+        $p3 = "vantara_pentaho_business_analytics_server" nocase
+        $v0 = "9.3.0.2"
+        $v1 = "9.4.0.0"
+    condition:
+        any of ($p*) and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2023_1671_sophos_web_appliance : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain sophos web appliance, affected by CVE-2023-1671"
+        severity = "high"
+        cve = "CVE-2023-1671"
+        cvss = "9.8"
+        vendor = "sophos"
+        product = "web_appliance"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2023-1671"
+    strings:
+        $p = "web appliance" nocase
+        $p2 = "web-appliance" nocase
+        $p3 = "web_appliance" nocase
+        $v0 = "4.3.10.4"
+    condition:
+        any of ($p*) and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2023_28205_apple_safari : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain apple safari, affected by CVE-2023-28205"
+        severity = "high"
+        cve = "CVE-2023-28205"
+        cvss = "8.8"
+        vendor = "apple"
+        product = "safari"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2023-28205"
+    strings:
+        $p = "safari" nocase
+        $v0 = "16.4.1"
+    condition:
+        $p and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2023_29492_3rdmill_novi_survey : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain 3rdmill novi survey, affected by CVE-2023-29492"
+        severity = "high"
+        cve = "CVE-2023-29492"
+        cvss = "9.8"
+        vendor = "3rdmill"
+        product = "novi_survey"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2023-29492"
+    strings:
+        $p = "novi survey" nocase
+        $p2 = "novi-survey" nocase
+        $p3 = "novi_survey" nocase
+        $v0 = "8.9.43676"
+    condition:
+        any of ($p*) and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2023_2033_google_chrome : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain google chrome, affected by CVE-2023-2033"
+        severity = "high"
+        cve = "CVE-2023-2033"
+        cvss = "8.8"
+        vendor = "google"
+        product = "chrome"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2023-2033"
+    strings:
+        $p = "chrome" nocase
+        $v0 = "112.0.5615.121"
+    condition:
+        $p and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2023_2033_couchbase_couchbase_server : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain couchbase couchbase server, affected by CVE-2023-2033"
+        severity = "high"
+        cve = "CVE-2023-2033"
+        cvss = "8.8"
+        vendor = "couchbase"
+        product = "couchbase_server"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2023-2033"
+    strings:
+        $p = "couchbase server" nocase
+        $p2 = "couchbase-server" nocase
+        $p3 = "couchbase_server" nocase
+        $v0 = "7.1.5"
+        $v1 = "7.2.0"
+    condition:
+        any of ($p*) and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2023_2136_google_chrome : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain google chrome, affected by CVE-2023-2136"
+        severity = "high"
+        cve = "CVE-2023-2136"
+        cvss = "9.6"
+        vendor = "google"
+        product = "chrome"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2023-2136"
+    strings:
+        $p = "chrome" nocase
+        $v0 = "112.0.5615.137"
+    condition:
+        $p and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2023_27350_papercut_papercut_mf : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain papercut papercut mf, affected by CVE-2023-27350"
+        severity = "high"
+        cve = "CVE-2023-27350"
+        cvss = "9.8"
+        vendor = "papercut"
+        product = "papercut_mf"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2023-27350"
+    strings:
+        $p = "papercut mf" nocase
+        $p2 = "papercut-mf" nocase
+        $p3 = "papercut_mf" nocase
+        $v0 = "20.1.7"
+        $v1 = "21.0.0"
+        $v2 = "21.2.11"
+        $v3 = "22.0.0"
+        $v4 = "22.0.9"
+        $v5 = "8.0"
+    condition:
+        any of ($p*) and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2023_27350_papercut_papercut_ng : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain papercut papercut ng, affected by CVE-2023-27350"
+        severity = "high"
+        cve = "CVE-2023-27350"
+        cvss = "9.8"
+        vendor = "papercut"
+        product = "papercut_ng"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2023-27350"
+    strings:
+        $p = "papercut ng" nocase
+        $p2 = "papercut-ng" nocase
+        $p3 = "papercut_ng" nocase
+        $v0 = "20.1.7"
+        $v1 = "21.0.0"
+        $v2 = "21.2.11"
+        $v3 = "22.0.0"
+        $v4 = "22.0.9"
+        $v5 = "8.0"
+    condition:
+        any of ($p*) and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2023_27351_papercut_papercut_mf : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain papercut papercut mf, affected by CVE-2023-27351"
+        severity = "high"
+        cve = "CVE-2023-27351"
+        cvss = "7.5"
+        vendor = "papercut"
+        product = "papercut_mf"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2023-27351"
+    strings:
+        $p = "papercut mf" nocase
+        $p2 = "papercut-mf" nocase
+        $p3 = "papercut_mf" nocase
+        $v0 = "15.0"
+        $v1 = "20.1.7"
+        $v2 = "21.0.0"
+        $v3 = "21.2.11"
+        $v4 = "22.0.0"
+        $v5 = "22.0.9"
+    condition:
+        any of ($p*) and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2023_27351_papercut_papercut_ng : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain papercut papercut ng, affected by CVE-2023-27351"
+        severity = "high"
+        cve = "CVE-2023-27351"
+        cvss = "7.5"
+        vendor = "papercut"
+        product = "papercut_ng"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2023-27351"
+    strings:
+        $p = "papercut ng" nocase
+        $p2 = "papercut-ng" nocase
+        $p3 = "papercut_ng" nocase
+        $v0 = "15.0"
+        $v1 = "20.1.7"
+        $v2 = "21.0.0"
+        $v3 = "21.2.11"
+        $v4 = "22.0.0"
+        $v5 = "22.0.9"
+    condition:
+        any of ($p*) and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2023_27524_apache_superset : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain apache superset, affected by CVE-2023-27524"
+        severity = "high"
+        cve = "CVE-2023-27524"
+        cvss = "8.9"
+        vendor = "apache"
+        product = "superset"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2023-27524"
+    strings:
+        $p = "superset" nocase
+        $v0 = "2.0.1"
+    condition:
+        $p and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2023_33246_apache_rocketmq : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain apache rocketmq, affected by CVE-2023-33246"
+        severity = "high"
+        cve = "CVE-2023-33246"
+        cvss = "9.8"
+        vendor = "apache"
+        product = "rocketmq"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2023-33246"
+    strings:
+        $p = "rocketmq" nocase
+        $v0 = "4.9.6"
+        $v1 = "5.0.0"
+        $v2 = "5.1.1"
+    condition:
+        $p and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2023_32315_igniterealtime_openfire : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain igniterealtime openfire, affected by CVE-2023-32315"
+        severity = "high"
+        cve = "CVE-2023-32315"
+        cvss = "8.6"
+        vendor = "igniterealtime"
+        product = "openfire"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2023-32315"
+    strings:
+        $p = "openfire" nocase
+        $v0 = "3.10.0"
+        $v1 = "4.6.8"
+        $v2 = "4.7.0"
+        $v3 = "4.7.5"
+    condition:
+        $p and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2023_34362_progress_moveit_cloud : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain progress moveit cloud, affected by CVE-2023-34362"
+        severity = "high"
+        cve = "CVE-2023-34362"
+        cvss = "9.8"
+        vendor = "progress"
+        product = "moveit_cloud"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2023-34362"
+    strings:
+        $p = "moveit cloud" nocase
+        $p2 = "moveit-cloud" nocase
+        $p3 = "moveit_cloud" nocase
+        $v0 = "14.0.5.45"
+        $v1 = "14.1.0.0"
+        $v2 = "14.1.6.97"
+        $v3 = "15.0.0.0"
+        $v4 = "15.0.2.39"
+    condition:
+        any of ($p*) and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2023_34362_progress_moveit_transfer : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain progress moveit transfer, affected by CVE-2023-34362"
+        severity = "high"
+        cve = "CVE-2023-34362"
+        cvss = "9.8"
+        vendor = "progress"
+        product = "moveit_transfer"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2023-34362"
+    strings:
+        $p = "moveit transfer" nocase
+        $p2 = "moveit-transfer" nocase
+        $p3 = "moveit_transfer" nocase
+        $v0 = "2021.0.7"
+        $v1 = "2021.1.0"
+        $v2 = "2021.1.5"
+        $v3 = "2022.0.0"
+        $v4 = "2022.0.5"
+        $v5 = "2022.1.0"
+        $v6 = "2022.1.6"
+        $v7 = "2023.0.0"
+        $v8 = "2023.0.2"
+    condition:
+        any of ($p*) and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2023_3079_google_chrome : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain google chrome, affected by CVE-2023-3079"
+        severity = "high"
+        cve = "CVE-2023-3079"
+        cvss = "8.8"
+        vendor = "google"
+        product = "chrome"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2023-3079"
+    strings:
+        $p = "chrome" nocase
+        $v0 = "114.0.5735.110"
+    condition:
+        $p and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2023_3079_couchbase_couchbase_server : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain couchbase couchbase server, affected by CVE-2023-3079"
+        severity = "high"
+        cve = "CVE-2023-3079"
+        cvss = "8.8"
+        vendor = "couchbase"
+        product = "couchbase_server"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2023-3079"
+    strings:
+        $p = "couchbase server" nocase
+        $p2 = "couchbase-server" nocase
+        $p3 = "couchbase_server" nocase
+        $v0 = "7.1.5"
+        $v1 = "7.2.0"
+    condition:
+        any of ($p*) and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2023_20887_vmware_aria_operations_for_networks : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain vmware aria operations for networks, affected by CVE-2023-20887"
+        severity = "high"
+        cve = "CVE-2023-20887"
+        cvss = "9.8"
+        vendor = "vmware"
+        product = "aria_operations_for_networks"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2023-20887"
+    strings:
+        $p = "aria operations for networks" nocase
+        $p2 = "aria-operations-for-networks" nocase
+        $p3 = "aria_operations_for_networks" nocase
+        $v0 = "6.10.0"
+        $v1 = "6.2.0"
+    condition:
+        any of ($p*) and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2023_27997_fortinet_fortiproxy : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain fortinet fortiproxy, affected by CVE-2023-27997"
+        severity = "high"
+        cve = "CVE-2023-27997"
+        cvss = "9.8"
+        vendor = "fortinet"
+        product = "fortiproxy"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2023-27997"
+    strings:
+        $p = "fortiproxy" nocase
+        $v0 = "1.1.0"
+        $v1 = "1.1.6"
+        $v2 = "1.2.0"
+        $v3 = "1.2.13"
+        $v4 = "2.0.0"
+        $v5 = "2.0.12"
+        $v6 = "7.0.0"
+        $v7 = "7.0.9"
+        $v8 = "7.2.0"
+        $v9 = "7.2.3"
+    condition:
+        $p and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2023_2533_papercut_papercut_mf : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain papercut papercut mf, affected by CVE-2023-2533"
+        severity = "high"
+        cve = "CVE-2023-2533"
+        cvss = "8.4"
+        vendor = "papercut"
+        product = "papercut_mf"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2023-2533"
+    strings:
+        $p = "papercut mf" nocase
+        $p2 = "papercut-mf" nocase
+        $p3 = "papercut_mf" nocase
+        $v0 = "20.1.8"
+        $v1 = "21.0.0"
+        $v2 = "21.2.12"
+        $v3 = "22.0.0"
+        $v4 = "22.1.1"
+    condition:
+        any of ($p*) and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2023_2533_papercut_papercut_ng : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain papercut papercut ng, affected by CVE-2023-2533"
+        severity = "high"
+        cve = "CVE-2023-2533"
+        cvss = "8.4"
+        vendor = "papercut"
+        product = "papercut_ng"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2023-2533"
+    strings:
+        $p = "papercut ng" nocase
+        $p2 = "papercut-ng" nocase
+        $p3 = "papercut_ng" nocase
+        $v0 = "20.1.8"
+        $v1 = "21.0.0"
+        $v2 = "21.2.12"
+        $v3 = "22.0.0"
+        $v4 = "22.1.1"
+    condition:
+        any of ($p*) and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2023_28204_apple_safari : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain apple safari, affected by CVE-2023-28204"
+        severity = "high"
+        cve = "CVE-2023-28204"
+        cvss = "6.5"
+        vendor = "apple"
+        product = "safari"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2023-28204"
+    strings:
+        $p = "safari" nocase
+        $v0 = "16.5"
+    condition:
+        $p and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2023_32373_apple_safari : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain apple safari, affected by CVE-2023-32373"
+        severity = "high"
+        cve = "CVE-2023-32373"
+        cvss = "8.8"
+        vendor = "apple"
+        product = "safari"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2023-32373"
+    strings:
+        $p = "safari" nocase
+        $v0 = "16.5"
+    condition:
+        $p and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2023_32409_apple_safari : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain apple safari, affected by CVE-2023-32409"
+        severity = "high"
+        cve = "CVE-2023-32409"
+        cvss = "8.6"
+        vendor = "apple"
+        product = "safari"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2023-32409"
+    strings:
+        $p = "safari" nocase
+        $v0 = "16.5"
+    condition:
+        $p and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2023_32435_apple_safari : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain apple safari, affected by CVE-2023-32435"
+        severity = "high"
+        cve = "CVE-2023-32435"
+        cvss = "8.8"
+        vendor = "apple"
+        product = "safari"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2023-32435"
+    strings:
+        $p = "safari" nocase
+        $v0 = "16.4"
+    condition:
+        $p and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2023_32439_apple_safari : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain apple safari, affected by CVE-2023-32439"
+        severity = "high"
+        cve = "CVE-2023-32439"
+        cvss = "8.8"
+        vendor = "apple"
+        product = "safari"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2023-32439"
+    strings:
+        $p = "safari" nocase
+        $v0 = "16.5.1"
+    condition:
+        $p and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2023_34192_synacor_zimbra_collaboration_suite : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain synacor zimbra collaboration suite, affected by CVE-2023-34192"
+        severity = "high"
+        cve = "CVE-2023-34192"
+        cvss = "9.0"
+        vendor = "synacor"
+        product = "zimbra_collaboration_suite"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2023-34192"
+    strings:
+        $p = "zimbra collaboration suite" nocase
+        $p2 = "zimbra-collaboration-suite" nocase
+        $p3 = "zimbra_collaboration_suite" nocase
+        $v0 = "8.8.15"
+    condition:
+        any of ($p*) and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2023_24489_citrix_sharefile_storage_zones_controll : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain citrix sharefile storage zones controller, affected by CVE-2023-24489"
+        severity = "high"
+        cve = "CVE-2023-24489"
+        cvss = "9.8"
+        vendor = "citrix"
+        product = "sharefile_storage_zones_controller"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2023-24489"
+    strings:
+        $p = "sharefile storage zones controller" nocase
+        $p2 = "sharefile-storage-zones-controller" nocase
+        $p3 = "sharefile_storage_zones_controller" nocase
+        $v0 = "5.11.24"
+    condition:
+        any of ($p*) and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2023_3519_citrix_netscaler_application_delivery_c : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain citrix netscaler application delivery controller, affected by CVE-2023-3519"
+        severity = "high"
+        cve = "CVE-2023-3519"
+        cvss = "9.8"
+        vendor = "citrix"
+        product = "netscaler_application_delivery_controller"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2023-3519"
+    strings:
+        $p = "netscaler application delivery controller" nocase
+        $p2 = "netscaler-application-delivery-controller" nocase
+        $p3 = "netscaler_application_delivery_controller" nocase
+        $v0 = "12.1"
+        $v1 = "13.0"
+        $v2 = "13.1"
+    condition:
+        any of ($p*) and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2023_3519_citrix_netscaler_gateway : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain citrix netscaler gateway, affected by CVE-2023-3519"
+        severity = "high"
+        cve = "CVE-2023-3519"
+        cvss = "9.8"
+        vendor = "citrix"
+        product = "netscaler_gateway"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2023-3519"
+    strings:
+        $p = "netscaler gateway" nocase
+        $p2 = "netscaler-gateway" nocase
+        $p3 = "netscaler_gateway" nocase
+        $v0 = "13.0"
+        $v1 = "13.1"
+    condition:
+        any of ($p*) and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2023_35078_ivanti_endpoint_manager_mobile : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain ivanti endpoint manager mobile, affected by CVE-2023-35078"
+        severity = "high"
+        cve = "CVE-2023-35078"
+        cvss = "9.8"
+        vendor = "ivanti"
+        product = "endpoint_manager_mobile"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2023-35078"
+    strings:
+        $p = "endpoint manager mobile" nocase
+        $p2 = "endpoint-manager-mobile" nocase
+        $p3 = "endpoint_manager_mobile" nocase
+        $v0 = "11.10"
+        $v1 = "11.10.0.2"
+        $v2 = "11.8.1.1"
+        $v3 = "11.9.0"
+        $v4 = "11.9.1.1"
+    condition:
+        any of ($p*) and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2023_37450_apple_safari : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain apple safari, affected by CVE-2023-37450"
+        severity = "high"
+        cve = "CVE-2023-37450"
+        cvss = "8.8"
+        vendor = "apple"
+        product = "safari"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2023-37450"
+    strings:
+        $p = "safari" nocase
+        $v0 = "16.5.2"
+    condition:
+        $p and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2023_37580_synacor_zimbra_collaboration_suite : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain synacor zimbra collaboration suite, affected by CVE-2023-37580"
+        severity = "high"
+        cve = "CVE-2023-37580"
+        cvss = "6.1"
+        vendor = "synacor"
+        product = "zimbra_collaboration_suite"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2023-37580"
+    strings:
+        $p = "zimbra collaboration suite" nocase
+        $p2 = "zimbra-collaboration-suite" nocase
+        $p3 = "zimbra_collaboration_suite" nocase
+        $v0 = "8.8.0"
+        $v1 = "8.8.15"
+    condition:
+        any of ($p*) and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2023_35081_ivanti_endpoint_manager_mobile : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain ivanti endpoint manager mobile, affected by CVE-2023-35081"
+        severity = "high"
+        cve = "CVE-2023-35081"
+        cvss = "7.2"
+        vendor = "ivanti"
+        product = "endpoint_manager_mobile"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2023-35081"
+    strings:
+        $p = "endpoint manager mobile" nocase
+        $p2 = "endpoint-manager-mobile" nocase
+        $p3 = "endpoint_manager_mobile" nocase
+        $v0 = "11.10.0"
+        $v1 = "11.10.0.3"
+        $v2 = "11.8.0"
+        $v3 = "11.8.1.2"
+        $v4 = "11.9.0"
+        $v5 = "11.9.1.2"
+    condition:
+        any of ($p*) and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2023_38950_zkteco_biotime : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain zkteco biotime, affected by CVE-2023-38950"
+        severity = "high"
+        cve = "CVE-2023-38950"
+        cvss = "7.5"
+        vendor = "zkteco"
+        product = "biotime"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2023-38950"
+    strings:
+        $p = "biotime" nocase
+        $v0 = "9.0.1"
+    condition:
+        $p and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2023_38180_microsoft_asp_net_core : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain microsoft asp.net core, affected by CVE-2023-38180"
+        severity = "high"
+        cve = "CVE-2023-38180"
+        cvss = "7.5"
+        vendor = "microsoft"
+        product = "asp.net_core"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2023-38180"
+    strings:
+        $p = "asp.net core" nocase
+        $p2 = "asp.net-core" nocase
+        $p3 = "asp.net_core" nocase
+        $v0 = "2.1"
+        $v1 = "2.1.40"
+    condition:
+        any of ($p*) and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2023_38180_microsoft_visual_studio_2022 : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain microsoft visual studio 2022, affected by CVE-2023-38180"
+        severity = "high"
+        cve = "CVE-2023-38180"
+        cvss = "7.5"
+        vendor = "microsoft"
+        product = "visual_studio_2022"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2023-38180"
+    strings:
+        $p = "visual studio 2022" nocase
+        $p2 = "visual-studio-2022" nocase
+        $p3 = "visual_studio_2022" nocase
+        $v0 = "17.2.0"
+        $v1 = "17.2.18"
+        $v2 = "17.4.0"
+        $v3 = "17.4.10"
+        $v4 = "17.6.0"
+        $v5 = "17.6.6"
+    condition:
+        any of ($p*) and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2022_48503_apple_safari : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain apple safari, affected by CVE-2022-48503"
+        severity = "high"
+        cve = "CVE-2022-48503"
+        cvss = "8.8"
+        vendor = "apple"
+        product = "safari"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2022-48503"
+    strings:
+        $p = "safari" nocase
+        $v0 = "15.6"
+    condition:
+        $p and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2023_35082_ivanti_endpoint_manager_mobile : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain ivanti endpoint manager mobile, affected by CVE-2023-35082"
+        severity = "high"
+        cve = "CVE-2023-35082"
+        cvss = "9.8"
+        vendor = "ivanti"
+        product = "endpoint_manager_mobile"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2023-35082"
+    strings:
+        $p = "endpoint manager mobile" nocase
+        $p2 = "endpoint-manager-mobile" nocase
+        $p3 = "endpoint_manager_mobile" nocase
+        $v0 = "11.11.0"
+    condition:
+        any of ($p*) and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2023_38035_ivanti_mobileiron_sentry : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain ivanti mobileiron sentry, affected by CVE-2023-38035"
+        severity = "high"
+        cve = "CVE-2023-38035"
+        cvss = "9.8"
+        vendor = "ivanti"
+        product = "mobileiron_sentry"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2023-38035"
+    strings:
+        $p = "mobileiron sentry" nocase
+        $p2 = "mobileiron-sentry" nocase
+        $p3 = "mobileiron_sentry" nocase
+        $v0 = "9.18.0"
+    condition:
+        any of ($p*) and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2023_38831_rarlab_winrar : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain rarlab winrar, affected by CVE-2023-38831"
+        severity = "high"
+        cve = "CVE-2023-38831"
+        cvss = "7.8"
+        vendor = "rarlab"
+        product = "winrar"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2023-38831"
+    strings:
+        $p = "winrar" nocase
+        $v0 = "6.23"
+    condition:
+        $p and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2023_4762_google_chrome : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain google chrome, affected by CVE-2023-4762"
+        severity = "high"
+        cve = "CVE-2023-4762"
+        cvss = "8.8"
+        vendor = "google"
+        product = "chrome"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2023-4762"
+    strings:
+        $p = "chrome" nocase
+        $v0 = "116.0.5845.179"
+    condition:
+        $p and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2023_4762_microsoft_edge_chromium : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain microsoft edge chromium, affected by CVE-2023-4762"
+        severity = "high"
+        cve = "CVE-2023-4762"
+        cvss = "8.8"
+        vendor = "microsoft"
+        product = "edge_chromium"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2023-4762"
+    strings:
+        $p = "edge chromium" nocase
+        $p2 = "edge-chromium" nocase
+        $p3 = "edge_chromium" nocase
+        $v0 = "116.0.1938.76"
+    condition:
+        any of ($p*) and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2023_20269_cisco_secure_firewall_threat_defense : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain cisco secure firewall threat defense, affected by CVE-2023-20269"
+        severity = "high"
+        cve = "CVE-2023-20269"
+        cvss = "5.0"
+        vendor = "cisco"
+        product = "secure_firewall_threat_defense"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2023-20269"
+    strings:
+        $p = "secure firewall threat defense" nocase
+        $p2 = "secure-firewall-threat-defense" nocase
+        $p3 = "secure_firewall_threat_defense" nocase
+        $v0 = "6.2.3"
+        $v1 = "6.2.3.1"
+        $v2 = "6.2.3.10"
+        $v3 = "6.2.3.11"
+        $v4 = "6.2.3.12"
+        $v5 = "6.2.3.13"
+        $v6 = "6.2.3.14"
+        $v7 = "6.2.3.15"
+        $v8 = "6.2.3.16"
+        $v9 = "6.2.3.17"
+        $v10 = "6.2.3.18"
+        $v11 = "6.2.3.2"
+    condition:
+        any of ($p*) and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2023_4863_google_chrome : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain google chrome, affected by CVE-2023-4863"
+        severity = "high"
+        cve = "CVE-2023-4863"
+        cvss = "8.8"
+        vendor = "google"
+        product = "chrome"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2023-4863"
+    strings:
+        $p = "chrome" nocase
+        $v0 = "116.0.5845.187"
+    condition:
+        $p and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2023_4863_mozilla_firefox : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain mozilla firefox, affected by CVE-2023-4863"
+        severity = "high"
+        cve = "CVE-2023-4863"
+        cvss = "8.8"
+        vendor = "mozilla"
+        product = "firefox"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2023-4863"
+    strings:
+        $p = "firefox" nocase
+        $v0 = "102.15.1"
+        $v1 = "115.1.0"
+        $v2 = "115.2.1"
+        $v3 = "117.0.1"
+    condition:
+        $p and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2023_4863_mozilla_thunderbird : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain mozilla thunderbird, affected by CVE-2023-4863"
+        severity = "high"
+        cve = "CVE-2023-4863"
+        cvss = "8.8"
+        vendor = "mozilla"
+        product = "thunderbird"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2023-4863"
+    strings:
+        $p = "thunderbird" nocase
+        $v0 = "102.15.1"
+        $v1 = "115.0"
+        $v2 = "115.2.2"
+    condition:
+        $p and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2023_4863_microsoft_edge_chromium : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain microsoft edge chromium, affected by CVE-2023-4863"
+        severity = "high"
+        cve = "CVE-2023-4863"
+        cvss = "8.8"
+        vendor = "microsoft"
+        product = "edge_chromium"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2023-4863"
+    strings:
+        $p = "edge chromium" nocase
+        $p2 = "edge-chromium" nocase
+        $p3 = "edge_chromium" nocase
+        $v0 = "116.0.1938.81"
+    condition:
+        any of ($p*) and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2023_4863_microsoft_teams : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain microsoft teams, affected by CVE-2023-4863"
+        severity = "high"
+        cve = "CVE-2023-4863"
+        cvss = "8.8"
+        vendor = "microsoft"
+        product = "teams"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2023-4863"
+    strings:
+        $p = "teams" nocase
+        $v0 = "1.6.00.26463"
+        $v1 = "1.6.00.26474"
+    condition:
+        $p and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2023_4863_microsoft_webp_image_extension : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain microsoft webp image extension, affected by CVE-2023-4863"
+        severity = "high"
+        cve = "CVE-2023-4863"
+        cvss = "8.8"
+        vendor = "microsoft"
+        product = "webp_image_extension"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2023-4863"
+    strings:
+        $p = "webp image extension" nocase
+        $p2 = "webp-image-extension" nocase
+        $p3 = "webp_image_extension" nocase
+        $v0 = "1.0.62681.0"
+    condition:
+        any of ($p*) and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2023_4863_webmproject_libwebp : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain webmproject libwebp, affected by CVE-2023-4863"
+        severity = "high"
+        cve = "CVE-2023-4863"
+        cvss = "8.8"
+        vendor = "webmproject"
+        product = "libwebp"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2023-4863"
+    strings:
+        $p = "libwebp" nocase
+        $v0 = "1.3.2"
+    condition:
+        $p and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2023_4863_bentley_seequent_leapfrog : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain bentley seequent leapfrog, affected by CVE-2023-4863"
+        severity = "high"
+        cve = "CVE-2023-4863"
+        cvss = "8.8"
+        vendor = "bentley"
+        product = "seequent_leapfrog"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2023-4863"
+    strings:
+        $p = "seequent leapfrog" nocase
+        $p2 = "seequent-leapfrog" nocase
+        $p3 = "seequent_leapfrog" nocase
+        $v0 = "2023.2"
+    condition:
+        any of ($p*) and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2023_4863_bandisoft_honeyview : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain bandisoft honeyview, affected by CVE-2023-4863"
+        severity = "high"
+        cve = "CVE-2023-4863"
+        cvss = "8.8"
+        vendor = "bandisoft"
+        product = "honeyview"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2023-4863"
+    strings:
+        $p = "honeyview" nocase
+        $v0 = "5.51"
+    condition:
+        $p and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2023_26369_adobe_acrobat : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain adobe acrobat, affected by CVE-2023-26369"
+        severity = "high"
+        cve = "CVE-2023-26369"
+        cvss = "7.8"
+        vendor = "adobe"
+        product = "acrobat"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2023-26369"
+    strings:
+        $p = "acrobat" nocase
+        $v0 = "20.001.3005"
+        $v1 = "20.005.30524"
+    condition:
+        $p and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2023_26369_adobe_acrobat_dc : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain adobe acrobat dc, affected by CVE-2023-26369"
+        severity = "high"
+        cve = "CVE-2023-26369"
+        cvss = "7.8"
+        vendor = "adobe"
+        product = "acrobat_dc"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2023-26369"
+    strings:
+        $p = "acrobat dc" nocase
+        $p2 = "acrobat-dc" nocase
+        $p3 = "acrobat_dc" nocase
+        $v0 = "15.007.20033"
+        $v1 = "23.006.20320"
+    condition:
+        any of ($p*) and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2023_26369_adobe_acrobat_reader : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain adobe acrobat reader, affected by CVE-2023-26369"
+        severity = "high"
+        cve = "CVE-2023-26369"
+        cvss = "7.8"
+        vendor = "adobe"
+        product = "acrobat_reader"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2023-26369"
+    strings:
+        $p = "acrobat reader" nocase
+        $p2 = "acrobat-reader" nocase
+        $p3 = "acrobat_reader" nocase
+        $v0 = "20.001.3005"
+        $v1 = "20.005.30524"
+    condition:
+        any of ($p*) and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2023_26369_adobe_acrobat_reader_dc : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain adobe acrobat reader dc, affected by CVE-2023-26369"
+        severity = "high"
+        cve = "CVE-2023-26369"
+        cvss = "7.8"
+        vendor = "adobe"
+        product = "acrobat_reader_dc"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2023-26369"
+    strings:
+        $p = "acrobat reader dc" nocase
+        $p2 = "acrobat-reader-dc" nocase
+        $p3 = "acrobat_reader_dc" nocase
+        $v0 = "15.007.20033"
+        $v1 = "23.006.20320"
+    condition:
+        any of ($p*) and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2023_41179_trendmicro_worry_free_business_security : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain trendmicro worry-free business security, affected by CVE-2023-41179"
+        severity = "high"
+        cve = "CVE-2023-41179"
+        cvss = "7.2"
+        vendor = "trendmicro"
+        product = "worry-free_business_security"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2023-41179"
+    strings:
+        $p = "worry-free business security" nocase
+        $p2 = "worry-free-business-security" nocase
+        $p3 = "worry-free_business_security" nocase
+        $v0 = "10.0"
+    condition:
+        any of ($p*) and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2023_42793_jetbrains_teamcity : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain jetbrains teamcity, affected by CVE-2023-42793"
+        severity = "high"
+        cve = "CVE-2023-42793"
+        cvss = "9.8"
+        vendor = "jetbrains"
+        product = "teamcity"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2023-42793"
+    strings:
+        $p = "teamcity" nocase
+        $v0 = "2023.05.4"
+    condition:
+        $p and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2023_41993_oracle_graalvm : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain oracle graalvm, affected by CVE-2023-41993"
+        severity = "high"
+        cve = "CVE-2023-41993"
+        cvss = "8.8"
+        vendor = "oracle"
+        product = "graalvm"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2023-41993"
+    strings:
+        $p = "graalvm" nocase
+        $v0 = "20.3.13"
+        $v1 = "21.3.9"
+    condition:
+        $p and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2023_43770_roundcube_webmail : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain roundcube webmail, affected by CVE-2023-43770"
+        severity = "high"
+        cve = "CVE-2023-43770"
+        cvss = "6.1"
+        vendor = "roundcube"
+        product = "webmail"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2023-43770"
+    strings:
+        $p = "webmail" nocase
+        $v0 = "1.4.14"
+        $v1 = "1.5.0"
+        $v2 = "1.5.4"
+        $v3 = "1.6.0"
+        $v4 = "1.6.3"
+    condition:
+        $p and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2023_40044_progress_ws_ftp_server : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain progress ws ftp server, affected by CVE-2023-40044"
+        severity = "high"
+        cve = "CVE-2023-40044"
+        cvss = "10.0"
+        vendor = "progress"
+        product = "ws_ftp_server"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2023-40044"
+    strings:
+        $p = "ws ftp server" nocase
+        $p2 = "ws-ftp-server" nocase
+        $p3 = "ws_ftp_server" nocase
+        $v0 = "8.7.4"
+        $v1 = "8.8"
+        $v2 = "8.8.2"
+    condition:
+        any of ($p*) and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2023_5217_webmproject_libvpx : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain webmproject libvpx, affected by CVE-2023-5217"
+        severity = "high"
+        cve = "CVE-2023-5217"
+        cvss = "8.8"
+        vendor = "webmproject"
+        product = "libvpx"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2023-5217"
+    strings:
+        $p = "libvpx" nocase
+        $v0 = "1.13.1"
+    condition:
+        $p and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2023_5217_microsoft_edge_chromium : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain microsoft edge chromium, affected by CVE-2023-5217"
+        severity = "high"
+        cve = "CVE-2023-5217"
+        cvss = "8.8"
+        vendor = "microsoft"
+        product = "edge_chromium"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2023-5217"
+    strings:
+        $p = "edge chromium" nocase
+        $p2 = "edge-chromium" nocase
+        $p3 = "edge_chromium" nocase
+        $v0 = "116.0.5845.229"
+        $v1 = "117.0.5938.132"
+    condition:
+        any of ($p*) and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2023_5217_mozilla_firefox : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain mozilla firefox, affected by CVE-2023-5217"
+        severity = "high"
+        cve = "CVE-2023-5217"
+        cvss = "8.8"
+        vendor = "mozilla"
+        product = "firefox"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2023-5217"
+    strings:
+        $p = "firefox" nocase
+        $v0 = "115.3.1"
+        $v1 = "118.0.1"
+        $v2 = "118.1"
+    condition:
+        $p and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2023_5217_mozilla_thunderbird : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain mozilla thunderbird, affected by CVE-2023-5217"
+        severity = "high"
+        cve = "CVE-2023-5217"
+        cvss = "8.8"
+        vendor = "mozilla"
+        product = "thunderbird"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2023-5217"
+    strings:
+        $p = "thunderbird" nocase
+        $v0 = "115.3.1"
+    condition:
+        $p and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2023_5217_google_chrome : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain google chrome, affected by CVE-2023-5217"
+        severity = "high"
+        cve = "CVE-2023-5217"
+        cvss = "8.8"
+        vendor = "google"
+        product = "chrome"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2023-5217"
+    strings:
+        $p = "chrome" nocase
+        $v0 = "117.0.5938.132"
+    condition:
+        $p and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2023_4911_gnu_glibc : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain gnu glibc, affected by CVE-2023-4911"
+        severity = "high"
+        cve = "CVE-2023-4911"
+        cvss = "7.8"
+        vendor = "gnu"
+        product = "glibc"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2023-4911"
+    strings:
+        $p = "glibc" nocase
+        $v0 = "2.34"
+        $v1 = "2.39"
+    condition:
+        $p and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2023_4911_redhat_codeready_linux_builder : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain redhat codeready linux builder, affected by CVE-2023-4911"
+        severity = "high"
+        cve = "CVE-2023-4911"
+        cvss = "7.8"
+        vendor = "redhat"
+        product = "codeready_linux_builder"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2023-4911"
+    strings:
+        $p = "codeready linux builder" nocase
+        $p2 = "codeready-linux-builder" nocase
+        $p3 = "codeready_linux_builder" nocase
+        $v0 = "9.0"
+    condition:
+        any of ($p*) and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2023_4911_redhat_codeready_linux_builder_eus : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain redhat codeready linux builder eus, affected by CVE-2023-4911"
+        severity = "high"
+        cve = "CVE-2023-4911"
+        cvss = "7.8"
+        vendor = "redhat"
+        product = "codeready_linux_builder_eus"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2023-4911"
+    strings:
+        $p = "codeready linux builder eus" nocase
+        $p2 = "codeready-linux-builder-eus" nocase
+        $p3 = "codeready_linux_builder_eus" nocase
+        $v0 = "8.6"
+        $v1 = "9.2"
+        $v2 = "9.4"
+        $v3 = "9.6"
+    condition:
+        any of ($p*) and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2023_4911_redhat_codeready_linux_builder_for_arm6 : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain redhat codeready linux builder for arm64, affected by CVE-2023-4911"
+        severity = "high"
+        cve = "CVE-2023-4911"
+        cvss = "7.8"
+        vendor = "redhat"
+        product = "codeready_linux_builder_for_arm64"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2023-4911"
+    strings:
+        $p = "codeready linux builder for arm64" nocase
+        $p2 = "codeready-linux-builder-for-arm64" nocase
+        $p3 = "codeready_linux_builder_for_arm64" nocase
+        $v0 = "9.0_aarch64"
+    condition:
+        any of ($p*) and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2023_4911_redhat_codeready_linux_builder_for_ibm : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain redhat codeready linux builder for ibm z systems, affected by CVE-2023-4911"
+        severity = "high"
+        cve = "CVE-2023-4911"
+        cvss = "7.8"
+        vendor = "redhat"
+        product = "codeready_linux_builder_for_ibm_z_systems"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2023-4911"
+    strings:
+        $p = "codeready linux builder for ibm z systems" nocase
+        $p2 = "codeready-linux-builder-for-ibm-z-systems" nocase
+        $p3 = "codeready_linux_builder_for_ibm_z_systems" nocase
+        $v0 = "9.0_s390x"
+    condition:
+        any of ($p*) and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2023_4911_redhat_codeready_linux_builder_for_powe : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain redhat codeready linux builder for power little endian, affected by CVE-2023-4911"
+        severity = "high"
+        cve = "CVE-2023-4911"
+        cvss = "7.8"
+        vendor = "redhat"
+        product = "codeready_linux_builder_for_power_little_endian"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2023-4911"
+    strings:
+        $p = "codeready linux builder for power little endian" nocase
+        $p2 = "codeready-linux-builder-for-power-little-endian" nocase
+        $p3 = "codeready_linux_builder_for_power_little_endian" nocase
+        $v0 = "9.0_ppc64le"
+    condition:
+        any of ($p*) and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2023_4911_redhat_virtualization : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain redhat virtualization, affected by CVE-2023-4911"
+        severity = "high"
+        cve = "CVE-2023-4911"
+        cvss = "7.8"
+        vendor = "redhat"
+        product = "virtualization"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2023-4911"
+    strings:
+        $p = "virtualization" nocase
+        $v0 = "4.0"
+    condition:
+        $p and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2023_4911_redhat_virtualization_host : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain redhat virtualization host, affected by CVE-2023-4911"
+        severity = "high"
+        cve = "CVE-2023-4911"
+        cvss = "7.8"
+        vendor = "redhat"
+        product = "virtualization_host"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2023-4911"
+    strings:
+        $p = "virtualization host" nocase
+        $p2 = "virtualization-host" nocase
+        $p3 = "virtualization_host" nocase
+        $v0 = "4.0"
+    condition:
+        any of ($p*) and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2023_22515_atlassian_confluence_data_center : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain atlassian confluence data center, affected by CVE-2023-22515"
+        severity = "high"
+        cve = "CVE-2023-22515"
+        cvss = "9.8"
+        vendor = "atlassian"
+        product = "confluence_data_center"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2023-22515"
+    strings:
+        $p = "confluence data center" nocase
+        $p2 = "confluence-data-center" nocase
+        $p3 = "confluence_data_center" nocase
+        $v0 = "8.0.0"
+        $v1 = "8.3.3"
+        $v2 = "8.4.0"
+        $v3 = "8.4.3"
+        $v4 = "8.5.0"
+        $v5 = "8.5.2"
+    condition:
+        any of ($p*) and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2023_22515_atlassian_confluence_server : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain atlassian confluence server, affected by CVE-2023-22515"
+        severity = "high"
+        cve = "CVE-2023-22515"
+        cvss = "9.8"
+        vendor = "atlassian"
+        product = "confluence_server"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2023-22515"
+    strings:
+        $p = "confluence server" nocase
+        $p2 = "confluence-server" nocase
+        $p3 = "confluence_server" nocase
+        $v0 = "8.0.0"
+        $v1 = "8.3.3"
+        $v2 = "8.4.0"
+        $v3 = "8.4.3"
+        $v4 = "8.5.0"
+        $v5 = "8.5.2"
+    condition:
+        any of ($p*) and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2023_44487_siemens_sinec_ins : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain siemens sinec ins, affected by CVE-2023-44487"
+        severity = "high"
+        cve = "CVE-2023-44487"
+        cvss = "7.5"
+        vendor = "siemens"
+        product = "sinec_ins"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2023-44487"
+    strings:
+        $p = "sinec ins" nocase
+        $p2 = "sinec-ins" nocase
+        $p3 = "sinec_ins" nocase
+        $v0 = "1.0"
+    condition:
+        any of ($p*) and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2023_44487_siemens_sinec_nms : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain siemens sinec nms, affected by CVE-2023-44487"
+        severity = "high"
+        cve = "CVE-2023-44487"
+        cvss = "7.5"
+        vendor = "siemens"
+        product = "sinec_nms"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2023-44487"
+    strings:
+        $p = "sinec nms" nocase
+        $p2 = "sinec-nms" nocase
+        $p3 = "sinec_nms" nocase
+        $v0 = "3.0"
+    condition:
+        any of ($p*) and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2023_44487_siemens_st7_scadaconnect : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain siemens st7 scadaconnect, affected by CVE-2023-44487"
+        severity = "high"
+        cve = "CVE-2023-44487"
+        cvss = "7.5"
+        vendor = "siemens"
+        product = "st7_scadaconnect"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2023-44487"
+    strings:
+        $p = "st7 scadaconnect" nocase
+        $p2 = "st7-scadaconnect" nocase
+        $p3 = "st7_scadaconnect" nocase
+        $v0 = "1.1"
+    condition:
+        any of ($p*) and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2023_44487_nghttp2_nghttp2 : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain nghttp2 nghttp2, affected by CVE-2023-44487"
+        severity = "high"
+        cve = "CVE-2023-44487"
+        cvss = "7.5"
+        vendor = "nghttp2"
+        product = "nghttp2"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2023-44487"
+    strings:
+        $p = "nghttp2" nocase
+        $v0 = "1.57.0"
+    condition:
+        $p and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2023_44487_netty_netty : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain netty netty, affected by CVE-2023-44487"
+        severity = "high"
+        cve = "CVE-2023-44487"
+        cvss = "7.5"
+        vendor = "netty"
+        product = "netty"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2023-44487"
+    strings:
+        $p = "netty" nocase
+        $v0 = "4.1.100"
+    condition:
+        $p and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2023_44487_envoyproxy_envoy : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain envoyproxy envoy, affected by CVE-2023-44487"
+        severity = "high"
+        cve = "CVE-2023-44487"
+        cvss = "7.5"
+        vendor = "envoyproxy"
+        product = "envoy"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2023-44487"
+    strings:
+        $p = "envoy" nocase
+        $v0 = "1.24.10"
+        $v1 = "1.25.9"
+        $v2 = "1.26.4"
+        $v3 = "1.27.0"
+    condition:
+        $p and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2023_44487_eclipse_jetty : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain eclipse jetty, affected by CVE-2023-44487"
+        severity = "high"
+        cve = "CVE-2023-44487"
+        cvss = "7.5"
+        vendor = "eclipse"
+        product = "jetty"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2023-44487"
+    strings:
+        $p = "jetty" nocase
+        $v0 = "10.0.0"
+        $v1 = "10.0.17"
+        $v2 = "11.0.0"
+        $v3 = "11.0.17"
+        $v4 = "12.0.0"
+        $v5 = "12.0.2"
+        $v6 = "9.4.53"
+    condition:
+        $p and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2023_44487_caddyserver_caddy : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain caddyserver caddy, affected by CVE-2023-44487"
+        severity = "high"
+        cve = "CVE-2023-44487"
+        cvss = "7.5"
+        vendor = "caddyserver"
+        product = "caddy"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2023-44487"
+    strings:
+        $p = "caddy" nocase
+        $v0 = "2.7.5"
+    condition:
+        $p and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2023_44487_golang_http2 : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain golang http2, affected by CVE-2023-44487"
+        severity = "high"
+        cve = "CVE-2023-44487"
+        cvss = "7.5"
+        vendor = "golang"
+        product = "http2"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2023-44487"
+    strings:
+        $p = "http2" nocase
+        $v0 = "0.17.0"
+    condition:
+        $p and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2023_44487_golang_networking : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain golang networking, affected by CVE-2023-44487"
+        severity = "high"
+        cve = "CVE-2023-44487"
+        cvss = "7.5"
+        vendor = "golang"
+        product = "networking"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2023-44487"
+    strings:
+        $p = "networking" nocase
+        $v0 = "0.17.0"
+    condition:
+        $p and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2023_44487_f5_big_ip_access_policy_manager : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain f5 big-ip access policy manager, affected by CVE-2023-44487"
+        severity = "high"
+        cve = "CVE-2023-44487"
+        cvss = "7.5"
+        vendor = "f5"
+        product = "big-ip_access_policy_manager"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2023-44487"
+    strings:
+        $p = "big-ip access policy manager" nocase
+        $p2 = "big-ip-access-policy-manager" nocase
+        $p3 = "big-ip_access_policy_manager" nocase
+        $v0 = "13.1.0"
+        $v1 = "13.1.5"
+        $v2 = "14.1.0"
+        $v3 = "14.1.5"
+        $v4 = "15.1.0"
+        $v5 = "15.1.10"
+        $v6 = "16.1.0"
+        $v7 = "16.1.4"
+        $v8 = "17.1.0"
+    condition:
+        any of ($p*) and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2023_44487_f5_big_ip_advanced_firewall_manager : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain f5 big-ip advanced firewall manager, affected by CVE-2023-44487"
+        severity = "high"
+        cve = "CVE-2023-44487"
+        cvss = "7.5"
+        vendor = "f5"
+        product = "big-ip_advanced_firewall_manager"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2023-44487"
+    strings:
+        $p = "big-ip advanced firewall manager" nocase
+        $p2 = "big-ip-advanced-firewall-manager" nocase
+        $p3 = "big-ip_advanced_firewall_manager" nocase
+        $v0 = "13.1.0"
+        $v1 = "13.1.5"
+        $v2 = "14.1.0"
+        $v3 = "14.1.5"
+        $v4 = "15.1.0"
+        $v5 = "15.1.10"
+        $v6 = "16.1.0"
+        $v7 = "16.1.4"
+        $v8 = "17.1.0"
+    condition:
+        any of ($p*) and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2023_44487_f5_big_ip_advanced_web_application : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain f5 big-ip advanced web application firewall, affected by CVE-2023-44487"
+        severity = "high"
+        cve = "CVE-2023-44487"
+        cvss = "7.5"
+        vendor = "f5"
+        product = "big-ip_advanced_web_application_firewall"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2023-44487"
+    strings:
+        $p = "big-ip advanced web application firewall" nocase
+        $p2 = "big-ip-advanced-web-application-firewall" nocase
+        $p3 = "big-ip_advanced_web_application_firewall" nocase
+        $v0 = "13.1.0"
+        $v1 = "13.1.5"
+        $v2 = "14.1.0"
+        $v3 = "14.1.5"
+        $v4 = "15.1.0"
+        $v5 = "15.1.10"
+        $v6 = "16.1.0"
+        $v7 = "16.1.4"
+        $v8 = "17.1.0"
+    condition:
+        any of ($p*) and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2023_44487_f5_big_ip_analytics : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain f5 big-ip analytics, affected by CVE-2023-44487"
+        severity = "high"
+        cve = "CVE-2023-44487"
+        cvss = "7.5"
+        vendor = "f5"
+        product = "big-ip_analytics"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2023-44487"
+    strings:
+        $p = "big-ip analytics" nocase
+        $p2 = "big-ip-analytics" nocase
+        $p3 = "big-ip_analytics" nocase
+        $v0 = "13.1.0"
+        $v1 = "13.1.5"
+        $v2 = "14.1.0"
+        $v3 = "14.1.5"
+        $v4 = "15.1.0"
+        $v5 = "15.1.10"
+        $v6 = "16.1.0"
+        $v7 = "16.1.4"
+        $v8 = "17.1.0"
+    condition:
+        any of ($p*) and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2023_44487_f5_big_ip_application_acceleration : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain f5 big-ip application acceleration manager, affected by CVE-2023-44487"
+        severity = "high"
+        cve = "CVE-2023-44487"
+        cvss = "7.5"
+        vendor = "f5"
+        product = "big-ip_application_acceleration_manager"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2023-44487"
+    strings:
+        $p = "big-ip application acceleration manager" nocase
+        $p2 = "big-ip-application-acceleration-manager" nocase
+        $p3 = "big-ip_application_acceleration_manager" nocase
+        $v0 = "13.1.0"
+        $v1 = "13.1.5"
+        $v2 = "14.1.0"
+        $v3 = "14.1.5"
+        $v4 = "15.1.0"
+        $v5 = "15.1.10"
+        $v6 = "16.1.0"
+        $v7 = "16.1.4"
+        $v8 = "17.1.0"
+    condition:
+        any of ($p*) and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2023_44487_f5_big_ip_application_security_mana : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain f5 big-ip application security manager, affected by CVE-2023-44487"
+        severity = "high"
+        cve = "CVE-2023-44487"
+        cvss = "7.5"
+        vendor = "f5"
+        product = "big-ip_application_security_manager"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2023-44487"
+    strings:
+        $p = "big-ip application security manager" nocase
+        $p2 = "big-ip-application-security-manager" nocase
+        $p3 = "big-ip_application_security_manager" nocase
+        $v0 = "13.1.0"
+        $v1 = "13.1.5"
+        $v2 = "14.1.0"
+        $v3 = "14.1.5"
+        $v4 = "15.1.0"
+        $v5 = "15.1.10"
+        $v6 = "16.1.0"
+        $v7 = "16.1.4"
+        $v8 = "17.1.0"
+    condition:
+        any of ($p*) and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2023_44487_f5_big_ip_application_visibility_an : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain f5 big-ip application visibility and reporting, affected by CVE-2023-44487"
+        severity = "high"
+        cve = "CVE-2023-44487"
+        cvss = "7.5"
+        vendor = "f5"
+        product = "big-ip_application_visibility_and_reporting"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2023-44487"
+    strings:
+        $p = "big-ip application visibility and reporting" nocase
+        $p2 = "big-ip-application-visibility-and-reporting" nocase
+        $p3 = "big-ip_application_visibility_and_reporting" nocase
+        $v0 = "13.1.0"
+        $v1 = "13.1.5"
+        $v2 = "14.1.0"
+        $v3 = "14.1.5"
+        $v4 = "15.1.0"
+        $v5 = "15.1.10"
+        $v6 = "16.1.0"
+        $v7 = "16.1.4"
+        $v8 = "17.1.0"
+    condition:
+        any of ($p*) and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2023_44487_f5_big_ip_carrier_grade_nat : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain f5 big-ip carrier-grade nat, affected by CVE-2023-44487"
+        severity = "high"
+        cve = "CVE-2023-44487"
+        cvss = "7.5"
+        vendor = "f5"
+        product = "big-ip_carrier-grade_nat"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2023-44487"
+    strings:
+        $p = "big-ip carrier-grade nat" nocase
+        $p2 = "big-ip-carrier-grade-nat" nocase
+        $p3 = "big-ip_carrier-grade_nat" nocase
+        $v0 = "13.1.0"
+        $v1 = "13.1.5"
+        $v2 = "14.1.0"
+        $v3 = "14.1.5"
+        $v4 = "15.1.0"
+        $v5 = "15.1.10"
+        $v6 = "16.1.0"
+        $v7 = "16.1.4"
+        $v8 = "17.1.0"
+    condition:
+        any of ($p*) and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2023_44487_f5_big_ip_ddos_hybrid_defender : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain f5 big-ip ddos hybrid defender, affected by CVE-2023-44487"
+        severity = "high"
+        cve = "CVE-2023-44487"
+        cvss = "7.5"
+        vendor = "f5"
+        product = "big-ip_ddos_hybrid_defender"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2023-44487"
+    strings:
+        $p = "big-ip ddos hybrid defender" nocase
+        $p2 = "big-ip-ddos-hybrid-defender" nocase
+        $p3 = "big-ip_ddos_hybrid_defender" nocase
+        $v0 = "13.1.0"
+        $v1 = "13.1.5"
+        $v2 = "14.1.0"
+        $v3 = "14.1.5"
+        $v4 = "15.1.0"
+        $v5 = "15.1.10"
+        $v6 = "16.1.0"
+        $v7 = "16.1.4"
+        $v8 = "17.1.0"
+    condition:
+        any of ($p*) and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2023_44487_f5_big_ip_domain_name_system : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain f5 big-ip domain name system, affected by CVE-2023-44487"
+        severity = "high"
+        cve = "CVE-2023-44487"
+        cvss = "7.5"
+        vendor = "f5"
+        product = "big-ip_domain_name_system"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2023-44487"
+    strings:
+        $p = "big-ip domain name system" nocase
+        $p2 = "big-ip-domain-name-system" nocase
+        $p3 = "big-ip_domain_name_system" nocase
+        $v0 = "13.1.0"
+        $v1 = "13.1.5"
+        $v2 = "14.1.0"
+        $v3 = "14.1.5"
+        $v4 = "15.1.0"
+        $v5 = "15.1.10"
+        $v6 = "16.1.0"
+        $v7 = "16.1.4"
+        $v8 = "17.1.0"
+    condition:
+        any of ($p*) and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2023_44487_f5_big_ip_fraud_protection_service : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain f5 big-ip fraud protection service, affected by CVE-2023-44487"
+        severity = "high"
+        cve = "CVE-2023-44487"
+        cvss = "7.5"
+        vendor = "f5"
+        product = "big-ip_fraud_protection_service"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2023-44487"
+    strings:
+        $p = "big-ip fraud protection service" nocase
+        $p2 = "big-ip-fraud-protection-service" nocase
+        $p3 = "big-ip_fraud_protection_service" nocase
+        $v0 = "13.1.0"
+        $v1 = "13.1.5"
+        $v2 = "14.1.0"
+        $v3 = "14.1.5"
+        $v4 = "15.1.0"
+        $v5 = "15.1.10"
+        $v6 = "16.1.0"
+        $v7 = "16.1.4"
+        $v8 = "17.1.0"
+    condition:
+        any of ($p*) and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2023_44487_f5_big_ip_global_traffic_manager : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain f5 big-ip global traffic manager, affected by CVE-2023-44487"
+        severity = "high"
+        cve = "CVE-2023-44487"
+        cvss = "7.5"
+        vendor = "f5"
+        product = "big-ip_global_traffic_manager"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2023-44487"
+    strings:
+        $p = "big-ip global traffic manager" nocase
+        $p2 = "big-ip-global-traffic-manager" nocase
+        $p3 = "big-ip_global_traffic_manager" nocase
+        $v0 = "13.1.0"
+        $v1 = "13.1.5"
+        $v2 = "14.1.0"
+        $v3 = "14.1.5"
+        $v4 = "15.1.0"
+        $v5 = "15.1.10"
+        $v6 = "16.1.0"
+        $v7 = "16.1.4"
+        $v8 = "17.1.0"
+    condition:
+        any of ($p*) and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2023_44487_f5_big_ip_link_controller : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain f5 big-ip link controller, affected by CVE-2023-44487"
+        severity = "high"
+        cve = "CVE-2023-44487"
+        cvss = "7.5"
+        vendor = "f5"
+        product = "big-ip_link_controller"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2023-44487"
+    strings:
+        $p = "big-ip link controller" nocase
+        $p2 = "big-ip-link-controller" nocase
+        $p3 = "big-ip_link_controller" nocase
+        $v0 = "13.1.0"
+        $v1 = "13.1.5"
+        $v2 = "14.1.0"
+        $v3 = "14.1.5"
+        $v4 = "15.1.0"
+        $v5 = "15.1.10"
+        $v6 = "16.1.0"
+        $v7 = "16.1.4"
+        $v8 = "17.1.0"
+    condition:
+        any of ($p*) and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2023_44487_f5_big_ip_local_traffic_manager : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain f5 big-ip local traffic manager, affected by CVE-2023-44487"
+        severity = "high"
+        cve = "CVE-2023-44487"
+        cvss = "7.5"
+        vendor = "f5"
+        product = "big-ip_local_traffic_manager"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2023-44487"
+    strings:
+        $p = "big-ip local traffic manager" nocase
+        $p2 = "big-ip-local-traffic-manager" nocase
+        $p3 = "big-ip_local_traffic_manager" nocase
+        $v0 = "13.1.0"
+        $v1 = "13.1.5"
+        $v2 = "14.1.0"
+        $v3 = "14.1.5"
+        $v4 = "15.1.0"
+        $v5 = "15.1.10"
+        $v6 = "16.1.0"
+        $v7 = "16.1.4"
+        $v8 = "17.1.0"
+    condition:
+        any of ($p*) and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2023_44487_f5_big_ip_next : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain f5 big-ip next, affected by CVE-2023-44487"
+        severity = "high"
+        cve = "CVE-2023-44487"
+        cvss = "7.5"
+        vendor = "f5"
+        product = "big-ip_next"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2023-44487"
+    strings:
+        $p = "big-ip next" nocase
+        $p2 = "big-ip-next" nocase
+        $p3 = "big-ip_next" nocase
+        $v0 = "20.0.1"
+    condition:
+        any of ($p*) and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2023_44487_f5_big_ip_next_service_proxy_for_ku : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain f5 big-ip next service proxy for kubernetes, affected by CVE-2023-44487"
+        severity = "high"
+        cve = "CVE-2023-44487"
+        cvss = "7.5"
+        vendor = "f5"
+        product = "big-ip_next_service_proxy_for_kubernetes"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2023-44487"
+    strings:
+        $p = "big-ip next service proxy for kubernetes" nocase
+        $p2 = "big-ip-next-service-proxy-for-kubernetes" nocase
+        $p3 = "big-ip_next_service_proxy_for_kubernetes" nocase
+        $v0 = "1.5.0"
+        $v1 = "1.8.2"
+    condition:
+        any of ($p*) and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2023_44487_f5_big_ip_policy_enforcement_manage : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain f5 big-ip policy enforcement manager, affected by CVE-2023-44487"
+        severity = "high"
+        cve = "CVE-2023-44487"
+        cvss = "7.5"
+        vendor = "f5"
+        product = "big-ip_policy_enforcement_manager"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2023-44487"
+    strings:
+        $p = "big-ip policy enforcement manager" nocase
+        $p2 = "big-ip-policy-enforcement-manager" nocase
+        $p3 = "big-ip_policy_enforcement_manager" nocase
+        $v0 = "13.1.0"
+        $v1 = "13.1.5"
+        $v2 = "14.1.0"
+        $v3 = "14.1.5"
+        $v4 = "15.1.0"
+        $v5 = "15.1.10"
+        $v6 = "16.1.0"
+        $v7 = "16.1.4"
+        $v8 = "17.1.0"
+    condition:
+        any of ($p*) and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2023_44487_f5_big_ip_ssl_orchestrator : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain f5 big-ip ssl orchestrator, affected by CVE-2023-44487"
+        severity = "high"
+        cve = "CVE-2023-44487"
+        cvss = "7.5"
+        vendor = "f5"
+        product = "big-ip_ssl_orchestrator"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2023-44487"
+    strings:
+        $p = "big-ip ssl orchestrator" nocase
+        $p2 = "big-ip-ssl-orchestrator" nocase
+        $p3 = "big-ip_ssl_orchestrator" nocase
+        $v0 = "13.1.0"
+        $v1 = "13.1.5"
+        $v2 = "14.1.0"
+        $v3 = "14.1.5"
+        $v4 = "15.1.0"
+        $v5 = "15.1.10"
+        $v6 = "16.1.0"
+        $v7 = "16.1.4"
+        $v8 = "17.1.0"
+    condition:
+        any of ($p*) and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2023_44487_f5_big_ip_webaccelerator : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain f5 big-ip webaccelerator, affected by CVE-2023-44487"
+        severity = "high"
+        cve = "CVE-2023-44487"
+        cvss = "7.5"
+        vendor = "f5"
+        product = "big-ip_webaccelerator"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2023-44487"
+    strings:
+        $p = "big-ip webaccelerator" nocase
+        $p2 = "big-ip-webaccelerator" nocase
+        $p3 = "big-ip_webaccelerator" nocase
+        $v0 = "13.1.0"
+        $v1 = "13.1.5"
+        $v2 = "14.1.0"
+        $v3 = "14.1.5"
+        $v4 = "15.1.0"
+        $v5 = "15.1.10"
+        $v6 = "16.1.0"
+        $v7 = "16.1.4"
+        $v8 = "17.1.0"
+    condition:
+        any of ($p*) and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2023_44487_f5_big_ip_websafe : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain f5 big-ip websafe, affected by CVE-2023-44487"
+        severity = "high"
+        cve = "CVE-2023-44487"
+        cvss = "7.5"
+        vendor = "f5"
+        product = "big-ip_websafe"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2023-44487"
+    strings:
+        $p = "big-ip websafe" nocase
+        $p2 = "big-ip-websafe" nocase
+        $p3 = "big-ip_websafe" nocase
+        $v0 = "13.1.0"
+        $v1 = "13.1.5"
+        $v2 = "14.1.0"
+        $v3 = "14.1.5"
+        $v4 = "15.1.0"
+        $v5 = "15.1.10"
+        $v6 = "16.1.0"
+        $v7 = "16.1.4"
+        $v8 = "17.1.0"
+    condition:
+        any of ($p*) and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2023_44487_f5_nginx : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain f5 nginx, affected by CVE-2023-44487"
+        severity = "high"
+        cve = "CVE-2023-44487"
+        cvss = "7.5"
+        vendor = "f5"
+        product = "nginx"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2023-44487"
+    strings:
+        $p = "nginx" nocase
+        $v0 = "1.25.2"
+        $v1 = "1.9.5"
+    condition:
+        $p and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2023_44487_f5_nginx_ingress_controller : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain f5 nginx ingress controller, affected by CVE-2023-44487"
+        severity = "high"
+        cve = "CVE-2023-44487"
+        cvss = "7.5"
+        vendor = "f5"
+        product = "nginx_ingress_controller"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2023-44487"
+    strings:
+        $p = "nginx ingress controller" nocase
+        $p2 = "nginx-ingress-controller" nocase
+        $p3 = "nginx_ingress_controller" nocase
+        $v0 = "2.0.0"
+        $v1 = "2.4.2"
+        $v2 = "3.0.0"
+        $v3 = "3.3.0"
+    condition:
+        any of ($p*) and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2023_44487_apache_tomcat : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain apache tomcat, affected by CVE-2023-44487"
+        severity = "high"
+        cve = "CVE-2023-44487"
+        cvss = "7.5"
+        vendor = "apache"
+        product = "tomcat"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2023-44487"
+    strings:
+        $p = "tomcat" nocase
+        $v0 = "10.1.0"
+        $v1 = "10.1.13"
+        $v2 = "11.0.0"
+        $v3 = "8.5.0"
+        $v4 = "8.5.93"
+        $v5 = "9.0.0"
+        $v6 = "9.0.80"
+    condition:
+        $p and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2023_44487_microsoft_asp_net_core : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain microsoft asp.net core, affected by CVE-2023-44487"
+        severity = "high"
+        cve = "CVE-2023-44487"
+        cvss = "7.5"
+        vendor = "microsoft"
+        product = "asp.net_core"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2023-44487"
+    strings:
+        $p = "asp.net core" nocase
+        $p2 = "asp.net-core" nocase
+        $p3 = "asp.net_core" nocase
+        $v0 = "6.0.0"
+        $v1 = "6.0.23"
+        $v2 = "7.0.0"
+        $v3 = "7.0.12"
+    condition:
+        any of ($p*) and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2023_44487_microsoft_visual_studio_2022 : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain microsoft visual studio 2022, affected by CVE-2023-44487"
+        severity = "high"
+        cve = "CVE-2023-44487"
+        cvss = "7.5"
+        vendor = "microsoft"
+        product = "visual_studio_2022"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2023-44487"
+    strings:
+        $p = "visual studio 2022" nocase
+        $p2 = "visual-studio-2022" nocase
+        $p3 = "visual_studio_2022" nocase
+        $v0 = "17.0"
+        $v1 = "17.2.20"
+        $v2 = "17.4"
+        $v3 = "17.4.12"
+        $v4 = "17.6"
+        $v5 = "17.6.8"
+        $v6 = "17.7"
+        $v7 = "17.7.5"
+    condition:
+        any of ($p*) and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2023_44487_nodejs_node_js : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain nodejs node.js, affected by CVE-2023-44487"
+        severity = "high"
+        cve = "CVE-2023-44487"
+        cvss = "7.5"
+        vendor = "nodejs"
+        product = "node.js"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2023-44487"
+    strings:
+        $p = "node.js" nocase
+        $v0 = "18.0.0"
+        $v1 = "18.18.2"
+        $v2 = "20.0.0"
+        $v3 = "20.8.1"
+    condition:
+        $p and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2023_44487_facebook_proxygen : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain facebook proxygen, affected by CVE-2023-44487"
+        severity = "high"
+        cve = "CVE-2023-44487"
+        cvss = "7.5"
+        vendor = "facebook"
+        product = "proxygen"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2023-44487"
+    strings:
+        $p = "proxygen" nocase
+        $v0 = "2023.10.16.00"
+    condition:
+        $p and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2023_44487_apache_apisix : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain apache apisix, affected by CVE-2023-44487"
+        severity = "high"
+        cve = "CVE-2023-44487"
+        cvss = "7.5"
+        vendor = "apache"
+        product = "apisix"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2023-44487"
+    strings:
+        $p = "apisix" nocase
+        $v0 = "3.6.1"
+    condition:
+        $p and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2023_44487_apache_traffic_server : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain apache traffic server, affected by CVE-2023-44487"
+        severity = "high"
+        cve = "CVE-2023-44487"
+        cvss = "7.5"
+        vendor = "apache"
+        product = "traffic_server"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2023-44487"
+    strings:
+        $p = "traffic server" nocase
+        $p2 = "traffic-server" nocase
+        $p3 = "traffic_server" nocase
+        $v0 = "8.0.0"
+        $v1 = "8.1.9"
+        $v2 = "9.0.0"
+        $v3 = "9.2.3"
+    condition:
+        any of ($p*) and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2023_44487_amazon_opensearch_data_prepper : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain amazon opensearch data prepper, affected by CVE-2023-44487"
+        severity = "high"
+        cve = "CVE-2023-44487"
+        cvss = "7.5"
+        vendor = "amazon"
+        product = "opensearch_data_prepper"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2023-44487"
+    strings:
+        $p = "opensearch data prepper" nocase
+        $p2 = "opensearch-data-prepper" nocase
+        $p3 = "opensearch_data_prepper" nocase
+        $v0 = "2.5.0"
+    condition:
+        any of ($p*) and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2023_44487_kazu_yamamoto_http2 : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain kazu-yamamoto http2, affected by CVE-2023-44487"
+        severity = "high"
+        cve = "CVE-2023-44487"
+        cvss = "7.5"
+        vendor = "kazu-yamamoto"
+        product = "http2"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2023-44487"
+    strings:
+        $p = "http2" nocase
+        $v0 = "4.2.2"
+    condition:
+        $p and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2023_44487_istio_istio : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain istio istio, affected by CVE-2023-44487"
+        severity = "high"
+        cve = "CVE-2023-44487"
+        cvss = "7.5"
+        vendor = "istio"
+        product = "istio"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2023-44487"
+    strings:
+        $p = "istio" nocase
+        $v0 = "1.17.6"
+        $v1 = "1.18.0"
+        $v2 = "1.18.3"
+        $v3 = "1.19.0"
+        $v4 = "1.19.1"
+    condition:
+        $p and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2023_44487_traefik_traefik : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain traefik traefik, affected by CVE-2023-44487"
+        severity = "high"
+        cve = "CVE-2023-44487"
+        cvss = "7.5"
+        vendor = "traefik"
+        product = "traefik"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2023-44487"
+    strings:
+        $p = "traefik" nocase
+        $v0 = "2.10.5"
+        $v1 = "3.0.0"
+    condition:
+        $p and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2023_44487_linkerd_linkerd : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain linkerd linkerd, affected by CVE-2023-44487"
+        severity = "high"
+        cve = "CVE-2023-44487"
+        cvss = "7.5"
+        vendor = "linkerd"
+        product = "linkerd"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2023-44487"
+    strings:
+        $p = "linkerd" nocase
+        $v0 = "2.12.0"
+        $v1 = "2.12.5"
+        $v2 = "2.13.0"
+        $v3 = "2.13.1"
+        $v4 = "2.14.0"
+        $v5 = "2.14.1"
+    condition:
+        $p and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2023_44487_linecorp_armeria : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain linecorp armeria, affected by CVE-2023-44487"
+        severity = "high"
+        cve = "CVE-2023-44487"
+        cvss = "7.5"
+        vendor = "linecorp"
+        product = "armeria"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2023-44487"
+    strings:
+        $p = "armeria" nocase
+        $v0 = "1.26.0"
+    condition:
+        $p and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2023_44487_redhat_3scale_api_management_platform : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain redhat 3scale api management platform, affected by CVE-2023-44487"
+        severity = "high"
+        cve = "CVE-2023-44487"
+        cvss = "7.5"
+        vendor = "redhat"
+        product = "3scale_api_management_platform"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2023-44487"
+    strings:
+        $p = "3scale api management platform" nocase
+        $p2 = "3scale-api-management-platform" nocase
+        $p3 = "3scale_api_management_platform" nocase
+        $v0 = "2.0"
+    condition:
+        any of ($p*) and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2023_44487_redhat_advanced_cluster_management_for : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain redhat advanced cluster management for kubernetes, affected by CVE-2023-44487"
+        severity = "high"
+        cve = "CVE-2023-44487"
+        cvss = "7.5"
+        vendor = "redhat"
+        product = "advanced_cluster_management_for_kubernetes"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2023-44487"
+    strings:
+        $p = "advanced cluster management for kubernetes" nocase
+        $p2 = "advanced-cluster-management-for-kubernetes" nocase
+        $p3 = "advanced_cluster_management_for_kubernetes" nocase
+        $v0 = "2.0"
+    condition:
+        any of ($p*) and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2023_44487_redhat_advanced_cluster_security : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain redhat advanced cluster security, affected by CVE-2023-44487"
+        severity = "high"
+        cve = "CVE-2023-44487"
+        cvss = "7.5"
+        vendor = "redhat"
+        product = "advanced_cluster_security"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2023-44487"
+    strings:
+        $p = "advanced cluster security" nocase
+        $p2 = "advanced-cluster-security" nocase
+        $p3 = "advanced_cluster_security" nocase
+        $v0 = "3.0"
+        $v1 = "4.0"
+    condition:
+        any of ($p*) and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2023_44487_redhat_ansible_automation_platform : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain redhat ansible automation platform, affected by CVE-2023-44487"
+        severity = "high"
+        cve = "CVE-2023-44487"
+        cvss = "7.5"
+        vendor = "redhat"
+        product = "ansible_automation_platform"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2023-44487"
+    strings:
+        $p = "ansible automation platform" nocase
+        $p2 = "ansible-automation-platform" nocase
+        $p3 = "ansible_automation_platform" nocase
+        $v0 = "2.0"
+    condition:
+        any of ($p*) and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2023_44487_redhat_build_of_optaplanner : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain redhat build of optaplanner, affected by CVE-2023-44487"
+        severity = "high"
+        cve = "CVE-2023-44487"
+        cvss = "7.5"
+        vendor = "redhat"
+        product = "build_of_optaplanner"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2023-44487"
+    strings:
+        $p = "build of optaplanner" nocase
+        $p2 = "build-of-optaplanner" nocase
+        $p3 = "build_of_optaplanner" nocase
+        $v0 = "8.0"
+    condition:
+        any of ($p*) and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2023_44487_redhat_ceph_storage : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain redhat ceph storage, affected by CVE-2023-44487"
+        severity = "high"
+        cve = "CVE-2023-44487"
+        cvss = "7.5"
+        vendor = "redhat"
+        product = "ceph_storage"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2023-44487"
+    strings:
+        $p = "ceph storage" nocase
+        $p2 = "ceph-storage" nocase
+        $p3 = "ceph_storage" nocase
+        $v0 = "5.0"
+    condition:
+        any of ($p*) and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2023_44487_redhat_certification_for_red_hat_enterp : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain redhat certification for red hat enterprise linux, affected by CVE-2023-44487"
+        severity = "high"
+        cve = "CVE-2023-44487"
+        cvss = "7.5"
+        vendor = "redhat"
+        product = "certification_for_red_hat_enterprise_linux"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2023-44487"
+    strings:
+        $p = "certification for red hat enterprise linux" nocase
+        $p2 = "certification-for-red-hat-enterprise-linux" nocase
+        $p3 = "certification_for_red_hat_enterprise_linux" nocase
+        $v0 = "8.0"
+        $v1 = "9.0"
+    condition:
+        any of ($p*) and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2023_44487_redhat_cryostat : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain redhat cryostat, affected by CVE-2023-44487"
+        severity = "high"
+        cve = "CVE-2023-44487"
+        cvss = "7.5"
+        vendor = "redhat"
+        product = "cryostat"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2023-44487"
+    strings:
+        $p = "cryostat" nocase
+        $v0 = "2.0"
+    condition:
+        $p and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2023_44487_redhat_decision_manager : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain redhat decision manager, affected by CVE-2023-44487"
+        severity = "high"
+        cve = "CVE-2023-44487"
+        cvss = "7.5"
+        vendor = "redhat"
+        product = "decision_manager"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2023-44487"
+    strings:
+        $p = "decision manager" nocase
+        $p2 = "decision-manager" nocase
+        $p3 = "decision_manager" nocase
+        $v0 = "7.0"
+    condition:
+        any of ($p*) and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2023_44487_redhat_jboss_data_grid : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain redhat jboss data grid, affected by CVE-2023-44487"
+        severity = "high"
+        cve = "CVE-2023-44487"
+        cvss = "7.5"
+        vendor = "redhat"
+        product = "jboss_data_grid"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2023-44487"
+    strings:
+        $p = "jboss data grid" nocase
+        $p2 = "jboss-data-grid" nocase
+        $p3 = "jboss_data_grid" nocase
+        $v0 = "7.0.0"
+    condition:
+        any of ($p*) and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2023_44487_redhat_jboss_enterprise_application_pla : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain redhat jboss enterprise application platform, affected by CVE-2023-44487"
+        severity = "high"
+        cve = "CVE-2023-44487"
+        cvss = "7.5"
+        vendor = "redhat"
+        product = "jboss_enterprise_application_platform"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2023-44487"
+    strings:
+        $p = "jboss enterprise application platform" nocase
+        $p2 = "jboss-enterprise-application-platform" nocase
+        $p3 = "jboss_enterprise_application_platform" nocase
+        $v0 = "6.0.0"
+        $v1 = "7.0.0"
+    condition:
+        any of ($p*) and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2023_44487_redhat_jboss_fuse : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain redhat jboss fuse, affected by CVE-2023-44487"
+        severity = "high"
+        cve = "CVE-2023-44487"
+        cvss = "7.5"
+        vendor = "redhat"
+        product = "jboss_fuse"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2023-44487"
+    strings:
+        $p = "jboss fuse" nocase
+        $p2 = "jboss-fuse" nocase
+        $p3 = "jboss_fuse" nocase
+        $v0 = "6.0.0"
+        $v1 = "7.0.0"
+    condition:
+        any of ($p*) and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2023_44487_redhat_migration_toolkit_for_applicatio : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain redhat migration toolkit for applications, affected by CVE-2023-44487"
+        severity = "high"
+        cve = "CVE-2023-44487"
+        cvss = "7.5"
+        vendor = "redhat"
+        product = "migration_toolkit_for_applications"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2023-44487"
+    strings:
+        $p = "migration toolkit for applications" nocase
+        $p2 = "migration-toolkit-for-applications" nocase
+        $p3 = "migration_toolkit_for_applications" nocase
+        $v0 = "6.0"
+    condition:
+        any of ($p*) and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2023_44487_redhat_openshift_container_platform : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain redhat openshift container platform, affected by CVE-2023-44487"
+        severity = "high"
+        cve = "CVE-2023-44487"
+        cvss = "7.5"
+        vendor = "redhat"
+        product = "openshift_container_platform"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2023-44487"
+    strings:
+        $p = "openshift container platform" nocase
+        $p2 = "openshift-container-platform" nocase
+        $p3 = "openshift_container_platform" nocase
+        $v0 = "4.0"
+    condition:
+        any of ($p*) and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2023_44487_redhat_openshift_service_mesh : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain redhat openshift service mesh, affected by CVE-2023-44487"
+        severity = "high"
+        cve = "CVE-2023-44487"
+        cvss = "7.5"
+        vendor = "redhat"
+        product = "openshift_service_mesh"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2023-44487"
+    strings:
+        $p = "openshift service mesh" nocase
+        $p2 = "openshift-service-mesh" nocase
+        $p3 = "openshift_service_mesh" nocase
+        $v0 = "2.0"
+    condition:
+        any of ($p*) and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2023_44487_redhat_openstack_platform : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain redhat openstack platform, affected by CVE-2023-44487"
+        severity = "high"
+        cve = "CVE-2023-44487"
+        cvss = "7.5"
+        vendor = "redhat"
+        product = "openstack_platform"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2023-44487"
+    strings:
+        $p = "openstack platform" nocase
+        $p2 = "openstack-platform" nocase
+        $p3 = "openstack_platform" nocase
+        $v0 = "16.1"
+        $v1 = "16.2"
+        $v2 = "17.1"
+    condition:
+        any of ($p*) and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2023_44487_redhat_process_automation : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain redhat process automation, affected by CVE-2023-44487"
+        severity = "high"
+        cve = "CVE-2023-44487"
+        cvss = "7.5"
+        vendor = "redhat"
+        product = "process_automation"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2023-44487"
+    strings:
+        $p = "process automation" nocase
+        $p2 = "process-automation" nocase
+        $p3 = "process_automation" nocase
+        $v0 = "7.0"
+    condition:
+        any of ($p*) and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2023_44487_redhat_satellite : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain redhat satellite, affected by CVE-2023-44487"
+        severity = "high"
+        cve = "CVE-2023-44487"
+        cvss = "7.5"
+        vendor = "redhat"
+        product = "satellite"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2023-44487"
+    strings:
+        $p = "satellite" nocase
+        $v0 = "6.0"
+    condition:
+        $p and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2023_44487_redhat_service_interconnect : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain redhat service interconnect, affected by CVE-2023-44487"
+        severity = "high"
+        cve = "CVE-2023-44487"
+        cvss = "7.5"
+        vendor = "redhat"
+        product = "service_interconnect"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2023-44487"
+    strings:
+        $p = "service interconnect" nocase
+        $p2 = "service-interconnect" nocase
+        $p3 = "service_interconnect" nocase
+        $v0 = "1.0"
+    condition:
+        any of ($p*) and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2023_44487_redhat_single_sign_on : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain redhat single sign-on, affected by CVE-2023-44487"
+        severity = "high"
+        cve = "CVE-2023-44487"
+        cvss = "7.5"
+        vendor = "redhat"
+        product = "single_sign-on"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2023-44487"
+    strings:
+        $p = "single sign-on" nocase
+        $p2 = "single-sign-on" nocase
+        $p3 = "single_sign-on" nocase
+        $v0 = "7.0"
+    condition:
+        any of ($p*) and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2023_44487_redhat_service_telemetry_framework : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain redhat service telemetry framework, affected by CVE-2023-44487"
+        severity = "high"
+        cve = "CVE-2023-44487"
+        cvss = "7.5"
+        vendor = "redhat"
+        product = "service_telemetry_framework"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2023-44487"
+    strings:
+        $p = "service telemetry framework" nocase
+        $p2 = "service-telemetry-framework" nocase
+        $p3 = "service_telemetry_framework" nocase
+        $v0 = "1.5"
+    condition:
+        any of ($p*) and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2023_44487_akka_http_server : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain akka http server, affected by CVE-2023-44487"
+        severity = "high"
+        cve = "CVE-2023-44487"
+        cvss = "7.5"
+        vendor = "akka"
+        product = "http_server"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2023-44487"
+    strings:
+        $p = "http server" nocase
+        $p2 = "http-server" nocase
+        $p3 = "http_server" nocase
+        $v0 = "10.5.3"
+    condition:
+        any of ($p*) and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2023_44487_konghq_kong_gateway : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain konghq kong gateway, affected by CVE-2023-44487"
+        severity = "high"
+        cve = "CVE-2023-44487"
+        cvss = "7.5"
+        vendor = "konghq"
+        product = "kong_gateway"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2023-44487"
+    strings:
+        $p = "kong gateway" nocase
+        $p2 = "kong-gateway" nocase
+        $p3 = "kong_gateway" nocase
+        $v0 = "3.4.2"
+    condition:
+        any of ($p*) and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2023_44487_jenkins_jenkins : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain jenkins jenkins, affected by CVE-2023-44487"
+        severity = "high"
+        cve = "CVE-2023-44487"
+        cvss = "7.5"
+        vendor = "jenkins"
+        product = "jenkins"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2023-44487"
+    strings:
+        $p = "jenkins" nocase
+        $v0 = "2.414.2"
+        $v1 = "2.427"
+    condition:
+        $p and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2023_44487_openresty_openresty : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain openresty openresty, affected by CVE-2023-44487"
+        severity = "high"
+        cve = "CVE-2023-44487"
+        cvss = "7.5"
+        vendor = "openresty"
+        product = "openresty"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2023-44487"
+    strings:
+        $p = "openresty" nocase
+        $v0 = "1.21.4.3"
+    condition:
+        $p and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2023_44487_cisco_business_process_automation : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain cisco business process automation, affected by CVE-2023-44487"
+        severity = "high"
+        cve = "CVE-2023-44487"
+        cvss = "7.5"
+        vendor = "cisco"
+        product = "business_process_automation"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2023-44487"
+    strings:
+        $p = "business process automation" nocase
+        $p2 = "business-process-automation" nocase
+        $p3 = "business_process_automation" nocase
+        $v0 = "3.2.003.009"
+    condition:
+        any of ($p*) and any of ($v*) and filesize < 50MB
+}
+
+rule NVD_CVE_2023_44487_cisco_connected_mobile_experiences : vulnerable_component kev
+{
+    meta:
+        description = "Artifact appears to contain cisco connected mobile experiences, affected by CVE-2023-44487"
+        severity = "high"
+        cve = "CVE-2023-44487"
+        cvss = "7.5"
+        vendor = "cisco"
+        product = "connected_mobile_experiences"
+        known_exploited = "yes"
+        generator = "nvd-rulegen"
+        reference = "https://nvd.nist.gov/vuln/detail/CVE-2023-44487"
+    strings:
+        $p = "connected mobile experiences" nocase
+        $p2 = "connected-mobile-experiences" nocase
+        $p3 = "connected_mobile_experiences" nocase
+        $v0 = "11.1"
     condition:
         any of ($p*) and any of ($v*) and filesize < 50MB
 }

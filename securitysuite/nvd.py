@@ -148,7 +148,22 @@ class NvdClient:
                              str(value).replace(" ", "%20").replace(":", "%3A"))
         query = "&".join(parts)
         self.limiter.wait()
-        return get_json(BASE_URL + "?" + query, headers=self._headers(), timeout=self.timeout)
+        url = BASE_URL + "?" + query
+        try:
+            return get_json(url, headers=self._headers(), timeout=self.timeout)
+        except HttpError as exc:
+            # NVD remains available without a key. A revoked or malformed key
+            # can currently surface as either 403 or 404, so degrade to the
+            # documented public cadence instead of disabling intelligence.
+            if not self.api_key or exc.status not in (403, 404):
+                raise
+            self.api_key = ""
+            self.limiter = RateLimiter(6.5)
+            self.last_error = (
+                "configured NVD API key was rejected; using the public rate limit"
+            )
+            self.limiter.wait()
+            return get_json(url, headers={}, timeout=self.timeout)
 
     # --------------------------------------------------------------- queries
     def fetch_cve(self, cve_id: str, use_cache: bool = True) -> dict:

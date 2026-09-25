@@ -53,7 +53,7 @@ def test_ruleset() -> None:
     cfg = load_config()
     info = YaraEngine(cfg.rules_dir, cfg.max_file_bytes).info()
     assert_true(not info["load_errors"], "ruleset has compile errors")
-    assert_true(info["rule_count"] >= 1004, "generated rules did not load")
+    assert_true(info["rule_count"] == 1500, "ruleset must contain exactly 1,500 rules")
     assert_true(len(info["rule_files"]) >= 16, "expected namespaces missing")
 
 

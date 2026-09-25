@@ -19,9 +19,10 @@ ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT))
 
 import securitysuite.config as config_module
+import securitysuite.nvd as nvd_module
 from securitysuite.config import load_config
 from securitysuite.engine import YaraEngine
-from securitysuite.net import get_json, post_json
+from securitysuite.net import HttpError, get_json, post_json
 from securitysuite.nvd import NvdClient
 from securitysuite.server import MAX_BODY, serve
 from securitysuite.store import EventStore
@@ -77,6 +78,30 @@ def main() -> int:
                 raise AssertionError("unsafe URL was accepted: " + target)
             except ValueError:
                 pass
+
+    # A rejected NVD key must fall back to the supported public endpoint
+    # instead of disabling vulnerability intelligence.
+    original_nvd_get_json = nvd_module.get_json
+    nvd_calls = []
+
+    def fake_nvd_get_json(url, headers=None, timeout=30.0):
+        nvd_calls.append(dict(headers or {}))
+        if headers and headers.get("apiKey"):
+            raise HttpError(404)
+        return {"totalResults": 1, "vulnerabilities": [{"cve": {"id": "CVE-TEST"}}]}
+
+    nvd_module.get_json = fake_nvd_get_json
+    try:
+        fallback_client = NvdClient(tempfile.mkdtemp(prefix="ss_nvd_fallback_"),
+                                    "a" * 32)
+        fallback_payload = fallback_client._get({"resultsPerPage": 1})
+        assert_true(fallback_payload["totalResults"] == 1,
+                    "NVD public fallback did not return data")
+        assert_true(len(nvd_calls) == 2 and "apiKey" in nvd_calls[0]
+                    and "apiKey" not in nvd_calls[1],
+                    "NVD fallback did not remove the rejected key")
+    finally:
+        nvd_module.get_json = original_nvd_get_json
 
     tmp = Path(tempfile.mkdtemp(prefix="ss_api_"))
     watch = tmp / "watch"

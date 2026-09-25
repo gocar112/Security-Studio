@@ -11,10 +11,29 @@
 ![Security Studio dashboard overview](docs/images/dashboard.png)
 
 Security Studio is a local defensive tool arena. It watches local folders,
-scans files against **1,004 YARA rules**,
+scans files against **1,500 YARA rules**,
 correlates detections with authentication telemetry, extracts indicators,
 enriches CVE findings with NVD/CISA context, and streams everything into a live
 browser dashboard.
+
+## Included In This Release
+
+- Updated Security Studio README and operator quick start.
+- Live dashboard and localhost API.
+- Security Studio logo and Windows desktop icons.
+- Security books, home-defense guidance, and printable field guide.
+- Exactly **1,500 compiled YARA rules**: 73 hand-written detection rules and
+  1,427 generated rules derived from CISA Known Exploited Vulnerabilities.
+- Smoke, API, frontend-wiring, and GitHub Actions checks.
+
+Regenerate the exact rule count from current NVD data with:
+
+```powershell
+python generate_rules.py --total-rules 1500
+```
+
+Generated candidates must compile and must not fire on the repository's benign
+test corpus. The count is a release target, not a reason to bypass those gates.
 
 ## Security Studio Books
 
@@ -45,7 +64,7 @@ browser dashboard.
 
 | Capability | What it does |
 | --- | --- |
-| Detect | Scans files with 1,004 YARA rules across malware, web shell, ransomware, credential theft, C2, supply-chain, Linux, Windows, and vulnerable-component namespaces. |
+| Detect | Scans files with 1,500 YARA rules across malware, web shell, ransomware, credential theft, C2, supply-chain, Linux, Windows, and vulnerable-component namespaces. |
 | Correlate | Pulls nearby failed-logon telemetry from Windows Security log, macOS unified log, Linux auth logs, or journald. |
 | Pivot | Extracts URLs, domains, IPs, wallets, CVEs, hashes, registry keys, and file paths; dashboard values are defanged. |
 | Enrich | Uses NVD, OSV, CISA KEV, and optional VirusTotal hash lookups for context. |
@@ -224,7 +243,7 @@ An earlier version of that rail listed protected directories instead of
 protecting the tree, and a test deleted this README. Enumerating what to protect
 produces a list that is never complete.
 
-> **Expect false positives.** 1,004 rules, 931 of them generated and never run
+> **Expect false positives.** 1,500 rules, 1,427 of them generated and never run
 > against your data. One rule in this repo raised *critical* on a reading list
 > containing the word *Exodus*. Prefer `quarantine` until a rule has earned your
 > trust; `delete` cannot be undone.

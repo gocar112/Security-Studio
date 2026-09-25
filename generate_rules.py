@@ -11,6 +11,8 @@ expressible as a file-matching rule.
 from __future__ import annotations
 
 import argparse
+import math
+import re
 import sys
 from pathlib import Path
 
@@ -19,6 +21,9 @@ from securitysuite.nvd import NvdClient
 from securitysuite.rulegen import emit_file, generate
 
 ROOT = Path(__file__).resolve().parent
+RULE_DECLARATION_RE = re.compile(
+    r"^\s*(?:(?:private|global)\s+)?rule\s+", re.MULTILINE
+)
 
 # Real files plus prose that mentions software by name. A generated rule that
 # fires on any of this is too loose to ship.
@@ -52,10 +57,27 @@ def build_corpus() -> list:
     return corpus
 
 
+def count_rules_outside(output: Path) -> int:
+    """Count hand-written rules without including the generated output file."""
+    total = 0
+    for path in sorted((ROOT / "rules").rglob("*.yar")):
+        if path.resolve() == output.resolve():
+            continue
+        try:
+            total += len(RULE_DECLARATION_RE.findall(
+                path.read_text(encoding="utf-8", errors="replace")
+            ))
+        except OSError:
+            continue
+    return total
+
+
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__.splitlines()[0])
     parser.add_argument("--limit", type=int, default=1000,
                         help="maximum candidate rules to consider (default 1000)")
+    parser.add_argument("--total-rules", type=int,
+                        help="emit enough generated rules for this exact ruleset total")
     parser.add_argument("--days", type=int, default=1460,
                         help="how far back to take recent CVEs (default 4 years)")
     parser.add_argument("--min-score", type=float, default=9.0,
@@ -64,6 +86,25 @@ def main() -> int:
     parser.add_argument("--dry-run", action="store_true",
                         help="report the tally without writing the file")
     args = parser.parse_args()
+
+    out = ROOT / args.out
+    generated_target = None
+    candidate_limit = args.limit
+    if args.total_rules is not None:
+        hand_written = count_rules_outside(out)
+        generated_target = args.total_rules - hand_written
+        if generated_target < 1:
+            print("[-] --total-rules must exceed the %d hand-written rules" % hand_written)
+            return 2
+        # The gate rejects some candidates. Harvest a measured buffer, then
+        # keep the highest-priority survivors in deterministic order.
+        candidate_limit = max(
+            candidate_limit,
+            math.ceil(generated_target * 1.25) + 50,
+        )
+        print("[*] Exact target  : %d total = %d hand-written + %d generated" % (
+            args.total_rules, hand_written, generated_target
+        ))
 
     cfg = load_config()
     client = NvdClient(cfg.nvd_cache_dir, cfg.nvd_api_key)
@@ -77,7 +118,7 @@ def main() -> int:
     def progress(label, seen, total):
         print("    %-24s %d of %s" % (label, seen, format(total or 0, ",")))
 
-    result = generate(client, days=args.days, limit=args.limit,
+    result = generate(client, days=args.days, limit=candidate_limit,
                       min_score=args.min_score, benign_corpus=corpus,
                       progress=progress)
     if "error" in result:
@@ -95,6 +136,13 @@ def main() -> int:
                                     key=lambda kv: -kv[1]):
             print("      %-44s %d" % (reason, count))
     kept = result["rules"]
+    if generated_target is not None:
+        if len(kept) < generated_target:
+            print("[-] Only %d candidates survived; need %d. Increase --limit." % (
+                len(kept), generated_target
+            ))
+            return 1
+        kept = kept[:generated_target]
     if kept:
         kev = sum(1 for r in kept if r["kev"])
         print()
@@ -112,7 +160,6 @@ def main() -> int:
         print("\n[*] --dry-run: nothing written.")
         return 0
 
-    out = ROOT / args.out
     out.parent.mkdir(parents=True, exist_ok=True)
     out.write_text(emit_file(kept), encoding="utf-8")
     print("\n[*] Wrote %s (%d rules)" % (out, len(kept)))

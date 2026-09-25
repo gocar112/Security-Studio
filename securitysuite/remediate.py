@@ -4,7 +4,7 @@ Everything else in this package is read-only. This module is not, and that
 changes the stakes completely. A detection that is merely wrong produces an
 alert somebody dismisses; a *remediation* that is wrong destroys a file.
 
-The ruleset that drives it contains 1,004 rules, 931 of them generated. Pointed
+The ruleset that drives it contains 1,500 rules, 1,427 of them generated. Pointed
 at this project's own directory it flags 27 of 55 tracked files, 16 of them
 critical - including the detector's own rule files. So the question this module
 answers is not "can I delete a file" but "how do I refuse to delete the wrong
