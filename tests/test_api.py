@@ -5,6 +5,8 @@ answer them. No live network calls and no OS auth logs, so they are safe in CI.
 """
 from __future__ import annotations
 
+import contextlib
+import io
 import socket
 import sys
 import tempfile
@@ -256,6 +258,33 @@ def main() -> int:
         status, body = get(base, "/api/state")
         assert_true(b"dropped_subscribers" in body,
                     "/api/state should report stream health")
+
+        # A client that hangs up mid-request is routine - browsers drop idle
+        # keep-alive sockets constantly - and on Windows it surfaces as
+        # ConnectionAbortedError (WinError 10053). It must not print a
+        # traceback to the console as if the server had failed.
+        for dropped in (ConnectionAbortedError(10053, "aborted"),
+                        ConnectionResetError(10054, "reset"),
+                        BrokenPipeError(32, "broken pipe")):
+            captured = io.StringIO()
+            with contextlib.redirect_stderr(captured):
+                try:
+                    raise dropped
+                except OSError:
+                    httpd.handle_error(None, ("127.0.0.1", 0))
+            assert_true(captured.getvalue() == "",
+                        type(dropped).__name__ + " printed a traceback: "
+                        + captured.getvalue()[:200])
+
+        # A real failure must still be reported, not swallowed with the rest.
+        captured = io.StringIO()
+        with contextlib.redirect_stderr(captured):
+            try:
+                raise RuntimeError("genuine failure")
+            except RuntimeError:
+                httpd.handle_error(None, ("127.0.0.1", 0))
+        assert_true("genuine failure" in captured.getvalue(),
+                    "a genuine handler error was hidden")
 
         print("API tests passed")
         return 0

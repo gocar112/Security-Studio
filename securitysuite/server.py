@@ -7,6 +7,7 @@ from __future__ import annotations
 
 import json
 import queue
+import sys
 import threading
 import time
 import traceback
@@ -235,7 +236,7 @@ class Handler(BaseHTTPRequestHandler):
         """Run a route so no exception escapes as a silently dropped socket."""
         try:
             handler()
-        except (BrokenPipeError, ConnectionResetError):
+        except ConnectionError:
             pass                                  # client hung up; nothing to say
         except Exception:
             traceback.print_exc()
@@ -911,6 +912,20 @@ class Handler(BaseHTTPRequestHandler):
 class DashboardServer(ThreadingHTTPServer):
     daemon_threads = True
     allow_reuse_address = True
+
+    def handle_error(self, request, client_address):
+        """Stay quiet when a client hangs up; report everything else.
+
+        Browsers drop idle keep-alive and stream sockets all the time. On
+        Windows that arrives as ConnectionAbortedError (WinError 10053), often
+        while the server is still reading the request line - before any route
+        runs, so ``_guard`` never sees it - and the stock handler prints a full
+        traceback that reads like a crash. ConnectionError covers the abort,
+        reset and broken-pipe cases alike.
+        """
+        if isinstance(sys.exc_info()[1], ConnectionError):
+            return
+        super().handle_error(request, client_address)
 
 
 def serve(cfg, engine, store, telemetry, monitor, nvd=None, osv=None,

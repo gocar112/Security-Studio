@@ -149,6 +149,57 @@ def test_auto_remediation_quarantines_critical() -> None:
                     "automatic quarantine did not create an audit record")
 
 
+def test_operator_restore_is_not_undone_by_auto_rule() -> None:
+    """Restoring a quarantined file is an operator verdict on that content.
+
+    The restored file lands back in a watched folder, the monitor scans it
+    again, and the auto-rule used to quarantine it within seconds - so with
+    auto-remediation armed, Restore could never actually restore anything.
+    """
+    with tempfile.TemporaryDirectory(prefix="ss_restore_") as raw:
+        tmp = Path(raw)
+        watch = tmp / "SecurityDrop"
+        watch.mkdir()
+        cfg, _, store, _, remediator, monitor = make_stack(tmp, watch)
+        cfg.auto_remediate = True
+        cfg.auto_remediate_severity = "critical"
+        cfg.auto_remediate_action = "quarantine"
+        target = watch / "ransom-note.txt"
+        note = ("Your files have been encrypted. Pay bitcoin at "
+                "http://abcdefghijklmnop.onion for the decryption key.\n")
+        target.write_text(note, encoding="utf-8")
+
+        first = monitor.scan_and_record(str(target), "ci-restore")
+        assert_true(not target.exists(), "setup: critical target was not quarantined")
+        restored = remediator.act(first["id"], "restore", confirm=True)
+        assert_true(restored.get("ok"), "restore failed: " + str(restored))
+        assert_true(target.exists(), "restore did not put the file back")
+
+        # The monitor sees the restored file. It is still a detection...
+        again = monitor.scan_and_record(str(target), "ci-restore")
+        assert_true(again.get("severity") == "critical",
+                    "restored file should still be reported")
+        # ...but the unattended rule must not overrule the operator.
+        assert_true(target.exists(),
+                    "auto-rule re-quarantined a file the operator restored")
+
+        # A restore covers that content only. Changed bytes are a new file.
+        target.write_text(note + "changed\n", encoding="utf-8")
+        monitor.scan_and_record(str(target), "ci-restore")
+        assert_true(not target.exists(),
+                    "auto-rule should still act once the restored file changes")
+
+        # And the decision survives a restart.
+        fresh = Remediator(cfg, store)
+        restored = fresh.act(store.events(limit=50, event_type="yara_match")[0]["id"],
+                             "restore", confirm=True)
+        assert_true(restored.get("ok"), "second restore failed: " + str(restored))
+        reloaded = Remediator(cfg, store)
+        latest = monitor.scan_and_record(str(target), "ci-restore")
+        assert_true(reloaded.consider_auto(latest) is None,
+                    "restore decision was lost on restart")
+
+
 def test_clear_preserves_audit_trail_beyond_memory_window() -> None:
     """store.clear() must not lose remediation records older than the deque.
 
@@ -308,6 +359,7 @@ def main() -> int:
     test_risk_recommender_is_explainable()
     test_remediation_self_protection_and_delete()
     test_auto_remediation_quarantines_critical()
+    test_operator_restore_is_not_undone_by_auto_rule()
     test_clear_preserves_audit_trail_beyond_memory_window()
     test_overflowed_subscriber_is_notified()
     test_triage_survives_memory_window()

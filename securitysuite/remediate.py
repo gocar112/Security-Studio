@@ -87,6 +87,11 @@ class Remediator:
         self.state_path = Path(getattr(cfg, "remediation_file",
                                        "data/remediation.json"))
         self._state: dict = {}
+        # Files an operator restored from quarantine: normalised path -> the
+        # SHA-256 they restored. Kept apart from _state, whose entries are
+        # counted as findings acted on.
+        self.restored_path = self.state_path.with_suffix(".restored.json")
+        self._restored: dict = {}
         self.quarantine_dir.mkdir(parents=True, exist_ok=True)
         self.state_path.parent.mkdir(parents=True, exist_ok=True)
         self._load_state()
@@ -220,11 +225,18 @@ class Remediator:
                 self._state = json.loads(self.state_path.read_text(encoding="utf-8"))
             except (OSError, json.JSONDecodeError):
                 self._state = {}
+        if self.restored_path.exists():
+            try:
+                self._restored = json.loads(self.restored_path.read_text(encoding="utf-8"))
+            except (OSError, json.JSONDecodeError):
+                self._restored = {}
 
     def _save_state(self) -> None:
         try:
             self.state_path.write_text(json.dumps(self._state, indent=1),
                                        encoding="utf-8")
+            self.restored_path.write_text(json.dumps(self._restored, indent=1),
+                                          encoding="utf-8")
         except OSError as exc:
             print("[-] Could not persist remediation state: " + str(exc))
 
@@ -491,6 +503,7 @@ class Remediator:
                                            "path": original, "detail": detail}
             else:
                 self._state.pop(finding_id, None)
+                self._restored[_norm(original)] = finding.get("sha256", "")
             self._save_state()
 
         result.update({"ok": True, "outcome": action + "d", "detail": detail})
@@ -594,6 +607,14 @@ class Remediator:
         threshold = getattr(self.cfg, "auto_remediate_severity", "critical")
         rank = SEVERITY_RANK.get(finding.get("severity", "info"), 99)
         if rank > SEVERITY_RANK.get(threshold, 0):
+            return None
+        # A restore is an operator verdict on these exact bytes. The restored
+        # file lands back in a watched folder and is scanned again; acting on
+        # it here would silently overrule that verdict within seconds. It is
+        # still recorded and alerted - only the unattended action stands down.
+        # Different bytes at the same path are a different file.
+        restored = self._restored.get(_norm(finding.get("file_path", "")))
+        if restored and restored == finding.get("sha256"):
             return None
         action = getattr(self.cfg, "auto_remediate_action", "quarantine")
         return self.act(finding["id"], action, confirm=True, trigger="auto")
