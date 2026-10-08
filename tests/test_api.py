@@ -22,6 +22,7 @@ sys.path.insert(0, str(ROOT))
 
 import securitysuite.config as config_module
 import securitysuite.nvd as nvd_module
+from securitysuite.__main__ import log_when_windowless, running_instance
 from securitysuite.config import load_config
 from securitysuite.engine import YaraEngine
 from securitysuite.net import HttpError, get_json, post_json
@@ -285,6 +286,35 @@ def main() -> int:
                 httpd.handle_error(None, ("127.0.0.1", 0))
         assert_true("genuine failure" in captured.getvalue(),
                     "a genuine handler error was hidden")
+
+        # A second launch must find this instance before starting its own
+        # monitor - and must not mistake another workspace, or nothing, for it.
+        assert_true(running_instance(base, cfg.findings_log),
+                    "running instance for this workspace was not recognised")
+        assert_true(not running_instance(base, str(tmp / "other" / "findings.ndjson")),
+                    "an instance for another workspace was taken for this one")
+        assert_true(not running_instance("http://127.0.0.1:%d" % free_port(), cfg.findings_log),
+                    "an empty port was taken for a running instance")
+
+        # Under pythonw there is no stdout or stderr. Output must land in the
+        # log rather than vanish, and a console run must be left alone.
+        saved = sys.stdout, sys.stderr
+        log_path = tmp / "windowless" / "securitysuite.log"
+        try:
+            assert_true(not log_when_windowless(log_path),
+                        "redirected although a console was present")
+            sys.stdout = sys.stderr = None
+            assert_true(log_when_windowless(log_path), "did not redirect without a console")
+            print("windowless status line")
+            sys.stderr.write("windowless error line\n")
+        finally:
+            redirected = sys.stdout
+            sys.stdout, sys.stderr = saved
+            if redirected not in (None, saved[0]):
+                redirected.close()
+        logged = log_path.read_text(encoding="utf-8")
+        assert_true("windowless status line" in logged and "windowless error line" in logged,
+                    "windowless output did not reach the log: " + logged[-200:])
 
         print("API tests passed")
         return 0

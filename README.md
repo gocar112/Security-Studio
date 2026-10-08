@@ -150,6 +150,18 @@ python run.py
 The console prints the loaded rule count, watched folders, telemetry source, and
 whether auto-remediation is armed.
 
+To run it without a console window, create the desktop shortcut:
+
+```powershell
+python install_shortcut.py
+```
+
+On Windows the shortcut runs `pythonw.exe`, which opens no window. The same
+startup report, alerts and errors go to `data/securitysuite.log` instead, and the
+dashboard opens in the browser. Clicking the shortcut again while it is running
+opens the running dashboard rather than starting a second monitor. To stop it,
+end `pythonw.exe` in Task Manager.
+
 ### 2. Drop A Test File
 
 ```powershell

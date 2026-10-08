@@ -55,6 +55,18 @@ def best_icon() -> Path | None:
 
 
 # ------------------------------------------------------------------ windows
+def windowless_python() -> str:
+    """pythonw.exe beside the running interpreter, or python.exe if absent.
+
+    python.exe is a console program, so a shortcut to it holds a terminal
+    window open for as long as the suite runs. pythonw.exe is the same
+    interpreter without a console; the suite then logs to
+    data/securitysuite.log instead.
+    """
+    candidate = Path(sys.executable).with_name("pythonw.exe")
+    return str(candidate) if candidate.exists() else sys.executable
+
+
 def install_windows(remove: bool) -> Path:
     target = desktop_dir() / (NAME + ".lnk")
     if remove:
@@ -68,7 +80,7 @@ def install_windows(remove: bool) -> Path:
         "$l.Arguments = 'run.py'; "
         "$l.WorkingDirectory = %s; "
         "$l.Description = 'Security Studio - local defensive tool arena'; "
-        % (ps_quote(str(target)), ps_quote(sys.executable), ps_quote(str(ROOT)))
+        % (ps_quote(str(target)), ps_quote(windowless_python()), ps_quote(str(ROOT)))
     )
     if icon:
         script += "$l.IconLocation = %s; " % ps_quote(str(icon) + ",0")
@@ -76,7 +88,7 @@ def install_windows(remove: bool) -> Path:
     powershell = (Path(os.environ.get("SystemRoot", r"C:\Windows")) / "System32" /
                   "WindowsPowerShell" / "v1.0" / "powershell.exe")
     # Every interpolated value is derived from this script's resolved path or
-    # sys.executable and escaped as a PowerShell single-quoted literal.
+    # the interpreter's own path and escaped as a PowerShell single-quoted literal.
     subprocess.run([str(powershell), "-NoProfile", "-Command", script], check=True,
                    capture_output=True)  # nosec B603
     return target
@@ -173,7 +185,10 @@ def main() -> int:
         else:
             icon = best_icon()
         print("[*] Icon    : " + (str(icon) if icon else "system default"))
-        print("[*] Runs    : " + sys.executable + " run.py")
+        runs = windowless_python() if platform == "Windows" else sys.executable
+        print("[*] Runs    : " + runs + " run.py")
+        if platform == "Windows" and runs != sys.executable:
+            print("[*] No console window; output goes to data/securitysuite.log")
         print("[*] From    : " + str(ROOT))
         if platform == "macOS":
             print("[*] macOS may ask for confirmation the first time it is opened.")

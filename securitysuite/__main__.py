@@ -2,11 +2,16 @@
 from __future__ import annotations
 
 import argparse
+import json
+import os
 import sys
 import time
+import urllib.error
+import urllib.request
 import webbrowser
+from pathlib import Path
 
-from .config import load_config
+from .config import ROOT, load_config
 from .engine import YaraEngine
 from .nvd import NvdClient
 from .guidance import Guidance
@@ -75,7 +80,51 @@ def build(args):
     return cfg, engine, store, telemetry, monitor, nvd, osv, vt, remediator, guidance
 
 
+LOG_FILE = ROOT / "data" / "securitysuite.log"
+LOG_ROLL_BYTES = 5 * 1024 * 1024
+
+
+def log_when_windowless(path: Path = LOG_FILE) -> bool:
+    """Send output to a log file when there is no console to send it to.
+
+    The desktop shortcut runs pythonw.exe so that no console window opens.
+    pythonw gives the process no stdout or stderr at all - they are None - so
+    every status line, alert and traceback, including why the suite refused
+    to start, would vanish. Returns True when it redirected.
+    """
+    if sys.stdout is not None and sys.stderr is not None:
+        return False
+    path.parent.mkdir(parents=True, exist_ok=True)
+    try:
+        if path.stat().st_size > LOG_ROLL_BYTES:
+            os.replace(path, path.with_name(path.name + ".1"))
+    except OSError:
+        pass
+    stream = open(path, "a", encoding="utf-8", buffering=1)  # line-buffered
+    stream.write("\n==== " + time.strftime("%Y-%m-%d %H:%M:%S %z")
+                 + " Security Studio (pid " + str(os.getpid()) + ")\n")
+    sys.stdout = sys.stderr = stream
+    return True
+
+
+def running_instance(url: str, findings_log: str) -> bool:
+    """Is a Security Studio for this same workspace already serving at url?
+
+    Matching on the findings log, not just a response on the port, keeps an
+    unrelated service on 8900 from being mistaken for ours.
+    """
+    try:
+        with urllib.request.urlopen(url + "/api/state", timeout=1.5) as response:
+            state = json.loads(response.read().decode("utf-8"))
+    except (OSError, ValueError, urllib.error.URLError):
+        return False
+    theirs = str((state.get("config") or {}).get("findings_log", ""))
+    return bool(theirs) and (os.path.normcase(os.path.abspath(theirs))
+                             == os.path.normcase(os.path.abspath(findings_log)))
+
+
 def main(argv=None) -> int:
+    log_when_windowless()
     args = parse_args(argv)
     cfg, engine, store, telemetry, monitor, nvd, osv, vt, remediator, guidance = build(args)
 
@@ -104,10 +153,24 @@ def main(argv=None) -> int:
         print("[*] Remediate  : manual only (auto-remediate off)")
 
     if args.scan:
-        import json
         result = monitor.scan_path(args.scan)
         print(json.dumps(result, indent=2))
         return 0 if "error" not in result else 1
+
+    # Before the monitor starts, not after the bind fails: a second monitor on
+    # the same folders would scan every file twice and, with auto-remediation
+    # armed, race the first one to quarantine it. Without a console window a
+    # second double-click is the likely way to get here, so it opens the
+    # dashboard that is already running.
+    url = "http://" + cfg.host + ":" + str(cfg.port)
+    if not args.headless and running_instance(url, cfg.findings_log):
+        print("[*] Dashboard already running: " + url)
+        if not args.no_browser:
+            try:
+                webbrowser.open(url)
+            except (OSError, webbrowser.Error):
+                pass
+        return 0
 
     monitor.start()
     print("[*] Watching   : " + ", ".join(cfg.watch_paths))
@@ -120,8 +183,8 @@ def main(argv=None) -> int:
                           remediator, guidance)
         except OSError as exc:
             print("[-] Could not bind " + cfg.host + ":" + str(cfg.port) + " -> " + str(exc))
+            monitor.stop()
             return 1
-        url = "http://" + cfg.host + ":" + str(cfg.port)
         print("[*] Dashboard  : " + url)
         if not args.no_browser:
             try:
